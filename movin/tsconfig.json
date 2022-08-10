@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve"
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/components/units/board/detail/BoardRouted_styles.ts",
+    "src/components/units/board/detail/BoardRouted_queries.ts",
+    "src/components/units/board/detail/BoardRouted_presenter.tsx",
+    "src/components/units/board/detail/BoardRouted_container.tsx",
+    "pages/boards/new/index.js",
+    "pages/boards/index.tsx",
+    "pages/boards/[Board]/index.tsx",
+    "pages/boards/[Board]/edit/index.tsx",
+    "src/components/units/board/Routing_board/BoardRouting_styles.ts",
+    "src/components/units/board/Routing_board/BoardRouting_queries.ts",
+    "src/components/units/board/Routing_board/BoardRouting_presenter.tsx",
+    "src/components/units/board/Routing_board/BoardRouting_container.tsx",
+    "src/components/units/board/list/BoardList_styles.ts",
+    "src/components/units/board/list/BoardList_queries.ts",
+    "src/components/units/board/list/BoardList_presenter.tsx",
+    "src/components/units/board/list/BoardList_container.tsx"
+  ],
+  "exclude": ["node_modules"]
+}
