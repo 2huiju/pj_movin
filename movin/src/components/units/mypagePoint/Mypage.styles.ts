@@ -73,12 +73,9 @@ export const SearchTitle = styled.input`
   background: #f2f2f2;
   border-radius: 10px;
   border-style: none;
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #000000;
   background-image: url(/freeboard_search.png);
   background-repeat: no-repeat;
   background-position: 20px;
@@ -89,8 +86,6 @@ export const SearchDate = styled.input`
   height: 50px;
   background: #ffffff;
   border: 1px solid #bdbdbd;
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -105,8 +100,6 @@ export const SearchButton = styled.button`
   top: 1115px;
   background: #000000;
   border-radius: 10px;
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
@@ -131,8 +124,6 @@ export const ListTitleRow = styled.div`
   padding-bottom: 15px;
   padding-top: 15px;
   border-bottom: 1px solid #bdbdbd;
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
@@ -169,8 +160,6 @@ export const ListRow = styled.div`
   padding-top: 15px;
   border-bottom: 1px solid #bdbdbd;
   text-align: center;
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -230,8 +219,6 @@ export const WriteButton = styled.button`
   background-image: url(/freeboard_pen.png);
   background-repeat: no-repeat;
   background-position: 20px;
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;

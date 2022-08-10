@@ -29,7 +29,6 @@ export const CommentWrite = styled.textarea`
   padding-top: 20px;
   border: 1px solid #bdbdbd;
   border-bottom: 1px solid #f2f2f2;
-  font-family: "Noto Sans CJK KR";
   &:placeholder {
     font-family: "Noto Sans CJK KR";
   }
@@ -49,7 +48,6 @@ export const CommentNumber = styled.div`
   text-justify: center;
   padding-left: 20px;
   padding-top: 10px;
-  font-family: "Noto Sans CJK KR";
   color: #bdbdbd;
 `;
 
@@ -57,8 +55,6 @@ export const CommentButton = styled.button`
   width: 10%;
   height: 44px;
   background: #000000;
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
@@ -95,8 +91,6 @@ export const MainWrapper = styled.div`
 export const WriterWrapper = styled.div``;
 
 export const Writer = styled.div`
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
@@ -108,8 +102,6 @@ export const Heart = styled(Rate)`
 `;
 
 export const Contents = styled.div`
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -122,8 +114,6 @@ export const OptionWrapper = styled.div`
 `;
 
 export const CreateTime = styled.div`
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;

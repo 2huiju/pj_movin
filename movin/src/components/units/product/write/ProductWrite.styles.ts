@@ -22,8 +22,6 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.div`
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 700;
   font-size: 36px;
   line-height: 53px;
@@ -41,9 +39,6 @@ export const SerchButton = styled.div`
   width: 120px;
   height: 52px;
   background-color: black;
-  color: #ffffff;
-  font-family: "Noto Sans KR";
-  font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 23px;
@@ -55,15 +50,12 @@ export const SerchButton = styled.div`
 `;
 
 export const InputTitle = styled.div`
-  font-family: "Noto Sans KR";
-  font-style: normal;
   font-weight: 400;
   font-size: 24px;
   line-height: 100%;
   display: flex;
   align-items: center;
   letter-spacing: -0.05em;
-  color: #000000;
   padding-top: 40px;
 `;
 
@@ -142,8 +134,6 @@ export const NumberCode = styled.input`
   height: 52px;
   text-align: center;
   border: 1px solid #bdbdbd;
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -159,8 +149,6 @@ export const NumberButton = styled.button`
   background-color: black;
   color: white;
   border: none;
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
@@ -210,8 +198,6 @@ export const MapWrapper2 = styled.div`
 
 export const Label = styled.div`
   padding-bottom: 10px;
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
@@ -234,8 +220,6 @@ export const RadioLabel = styled.label`
   margin-right: 20px;
   font-weight: 500;
   cursor: pointer;
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
@@ -261,8 +245,6 @@ export const SubmitButton = styled.button`
   border: 0;
   cursor: pointer;
   margin-left: 20px;
-  font-family: "Noto Sans KR";
-  font-style: normal;
   font-weight: 700;
   font-size: 20px;
   line-height: 100%;
@@ -278,8 +260,6 @@ export const SubmitButton2 = styled.button`
   border: 0;
   cursor: pointer;
   margin-left: 20px;
-  font-family: "Noto Sans KR";
-  font-style: normal;
   font-weight: 700;
   font-size: 20px;
   line-height: 100%;

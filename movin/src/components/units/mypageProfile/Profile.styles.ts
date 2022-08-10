@@ -43,30 +43,24 @@ export const InputBox = styled.input`
 `;
 
 export const InputTitle = styled.div`
-  font-family: "Noto Sans KR";
-  font-style: normal;
   font-weight: 500;
   font-size: 26px;
   line-height: 100%;
   display: flex;
   align-items: center;
   letter-spacing: -0.05em;
-  color: #000000;
   padding-top: 40px;
   margin-bottom: 20px;
 `;
 
 export const InputContents = styled.div`
   width: 200px;
-  font-family: "Noto Sans KR";
-  font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 100%;
   display: flex;
   align-items: center;
   letter-spacing: -0.05em;
-  color: #000000;
   padding-top: 40px;
 `;
 
@@ -76,15 +70,12 @@ export const SubmitButton = styled.button`
   border: 0;
   cursor: pointer;
   margin-left: 20px;
-  font-family: "Noto Sans KR";
-  font-style: normal;
   font-weight: 500;
   font-size: 20px;
   line-height: 100%;
   text-align: center;
   letter-spacing: -0.05em;
   background-color: #cccccc;
-  color: #000000;
 `;
 
 export const ButtonWrapper = styled.div`

@@ -25,8 +25,6 @@ export const BottomWrapper = styled.div`
 `;
 
 export const Name = styled.div`
-  font-family: "Noto Sans KR";
-  font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 100%;
@@ -76,8 +74,6 @@ export const NameWrapper = styled.div`
 export const Writer = styled.div`
   padding: 30px;
   height: 170px;
-  font-family: "Noto Sans KR";
-  font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 100%;
@@ -92,8 +88,6 @@ export const Tags = styled.div`
   width: 100px;
   height: 30px;
   background-color: #ffe004;
-  font-family: "Noto Sans KR";
-  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 100%;
@@ -116,8 +110,6 @@ export const PickButton = styled.div`
   text-align: center;
   color: white;
   background-color: #c9c9c9;
-  font-family: "Noto Sans KR";
-  font-style: normal;
   font-weight: 700;
   font-size: 30px;
   line-height: 100%;
@@ -130,8 +122,6 @@ export const BasketButton = styled.div`
   text-align: center;
   color: white;
   background-color: #a0a0a0;
-  font-family: "Noto Sans KR";
-  font-style: normal;
   font-weight: 700;
   font-size: 30px;
   line-height: 100%;
@@ -145,8 +135,6 @@ export const BuyButton = styled.div`
   text-align: center;
   color: white;
   background-color: #000000;
-  font-family: "Noto Sans KR";
-  font-style: normal;
   font-weight: 700;
   font-size: 30px;
   line-height: 100%;
@@ -154,8 +142,6 @@ export const BuyButton = styled.div`
 `;
 
 export const CreateAt = styled.div`
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -185,8 +171,6 @@ export const MainWrapper = styled.div`
 `;
 
 export const Title = styled.div`
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 700;
   font-size: 36px;
   line-height: 53px;
@@ -248,8 +232,6 @@ export const LikeIcon = styled.img`
 `;
 
 export const LikeCount = styled.div`
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 27px;
@@ -272,8 +254,6 @@ export const DislikeIcon = styled.img`
 `;
 
 export const DislikeCount = styled.div`
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 27px;
@@ -295,8 +275,6 @@ export const ListButton = styled.button`
   height: 80px;
   background: #ffffff;
   border: 1px solid #bdbdbd;
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
@@ -321,8 +299,6 @@ export const EditButton = styled.button`
   top: 2338px;
   background: #ffffff;
   border: 1px solid #bdbdbd;
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
@@ -345,8 +321,6 @@ export const DeleteButton = styled.button`
   top: 2338px;
   background: #ffffff;
   border: 1px solid #bdbdbd;
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;

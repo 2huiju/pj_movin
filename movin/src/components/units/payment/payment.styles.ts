@@ -50,8 +50,6 @@ export const CancelImg = styled.img`
 `;
 
 export const Title = styled.div`
-  font-family: "Noto Sans KR";
-  font-style: normal;
   font-weight: 700;
   font-size: 20px;
   line-height: 29px;
@@ -64,8 +62,6 @@ export const SelectBox = styled.div`
   width: 350px;
   height: 40px;
   margin: 30px;
-  font-family: "Noto Sans KR";
-  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;

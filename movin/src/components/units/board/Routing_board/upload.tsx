@@ -7,8 +7,6 @@ export function Upload01UI(props: any) {
     margin: 5px 20px 40px 0px;
     background-color: #bdbdbd;
     border: 0;
-    font-family: "Noto Sans CJK KR";
-    font-style: normal;
     font-weight: 500;
     font-size: 12px;
     line-height: 18px;

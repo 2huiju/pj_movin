@@ -28,12 +28,9 @@ const MyColumn = styled.div`
 `;
 
 const Title = styled.div`
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 700;
   font-size: 18px;
   line-height: 27px;
-  color: #000000;
 `;
 
 export const Image = styled.img`

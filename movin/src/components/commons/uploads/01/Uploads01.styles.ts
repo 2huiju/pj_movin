@@ -6,8 +6,6 @@ export const UploadButton = styled.button`
   margin-right: 20px;
   background-color: #bdbdbd;
   border: 0;
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 500;
   font-size: 12px;
   cursor: pointer;

@@ -66,12 +66,9 @@ export const SearchTitle = styled.input`
   background: #f2f2f2;
   border-radius: 10px;
   border-style: none;
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #000000;
   background-image: url(/freeboard_search.png);
   background-repeat: no-repeat;
   background-position: 20px;
@@ -90,8 +87,6 @@ export const SearchDate = styled.input`
   height: 50px;
   background: #ffffff;
   border: 1px solid #bdbdbd;
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -190,7 +185,6 @@ export const ListRow = styled.div`
   text-align: center;
   &:hover {
     font-weight: 500;
-    color: #000000;
   }
 `;
 

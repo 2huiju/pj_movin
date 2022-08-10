@@ -27,12 +27,9 @@ export const MainWrapper = styled.div`
 export const WriterWrapper = styled.div``;
 
 export const Writer = styled.div`
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
-  color: #000000;
 `;
 
 export const Heart = styled(Rate)`
@@ -40,8 +37,6 @@ export const Heart = styled(Rate)`
 `;
 
 export const Contents = styled.div`
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -54,8 +49,6 @@ export const OptionWrapper = styled.div`
 `;
 
 export const CreatTime = styled.div`
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;

@@ -20,12 +20,9 @@ export const CommentTitle = styled.div`
   background-repeat: no-repeat;
   background-position: 0px;
   padding: 20px 0px 24px 30px;
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
-  color: #000000;
 `;
 
 export const CommentHeader = styled.div`
@@ -64,7 +61,6 @@ export const CommentWrite = styled.textarea`
   padding-top: 20px;
   border: 1px solid #bdbdbd;
   border-bottom: 1px solid #f2f2f2;
-  font-family: "Noto Sans CJK KR";
   &:placeholder {
     font-family: "Noto Sans CJK KR";
   }
@@ -87,7 +83,6 @@ export const CommentNumber = styled.div`
   text-justify: center;
   padding-left: 20px;
   padding-top: 10px;
-  font-family: "Noto Sans CJK KR";
   color: #bdbdbd;
 `;
 

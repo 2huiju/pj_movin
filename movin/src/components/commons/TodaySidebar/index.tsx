@@ -27,12 +27,10 @@ const MyRow = styled.div`
 `;
 
 const Title = styled.div`
-  font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 100%;
-  color: #000000;
   margin-bottom: 10px;
 `;
 

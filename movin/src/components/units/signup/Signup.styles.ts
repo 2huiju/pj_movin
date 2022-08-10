@@ -49,17 +49,12 @@ export const InputWrapper = styled.div`
 `;
 
 export const Title = styled.div`
-  font-family: "Noto Sans KR";
-  font-style: normal;
   font-weight: 700;
   font-size: 50px;
   line-height: 100%;
-  color: #000000;
 `;
 
 export const SubTitle = styled.div`
-  font-family: "Noto Sans KR";
-  font-style: normal;
   font-weight: 400;
   font-size: 32px;
   line-height: 100%;
@@ -68,8 +63,6 @@ export const SubTitle = styled.div`
 `;
 
 export const SignUpFont = styled.div`
-  font-family: "Noto Sans KR";
-  font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 100%;
@@ -81,14 +74,11 @@ export const SignUpFont = styled.div`
 export const SignUp = styled.div`
   margin-left: 10px;
   cursor: pointer;
-  font-family: "Noto Sans KR";
-  font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 100%;
   display: flex;
   align-items: center;
-  color: #000000;
   border-bottom: 1px solid;
 `;
 
@@ -106,13 +96,10 @@ export const Error = styled.div`
 `;
 
 export const InputTitle = styled.div`
-  font-family: "Noto Sans KR";
-  font-style: normal;
   font-weight: 400;
   font-size: 15px;
   display: flex;
   align-items: center;
-  color: #000000;
 
   @media ${breakPoints.mobile} {
     font-size: 13px;
@@ -145,8 +132,6 @@ export const LoginBox = styled.button`
   height: 50px;
   background-color: #ff3c8d;
   text-align: center;
-  font-family: "Noto Sans KR";
-  font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 100%;
@@ -160,8 +145,6 @@ export const LoginBox2 = styled.button`
   height: 50px;
   background-color: #cccccc;
   text-align: center;
-  font-family: "Noto Sans KR";
-  font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 100%;

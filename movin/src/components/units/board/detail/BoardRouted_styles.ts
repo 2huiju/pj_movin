@@ -38,16 +38,12 @@ export const NameWrapper = styled.div`
 `;
 
 export const Writer = styled.div`
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 30px;
 `;
 
 export const CreateAt = styled.div`
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -76,12 +72,9 @@ export const MainWrapper = styled.div`
 `;
 
 export const Title = styled.div`
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 700;
   font-size: 36px;
   line-height: 53px;
-  color: #000000;
   padding-bottom: 40px;
 `;
 
@@ -123,8 +116,6 @@ export const LikeIcon = styled.img`
 `;
 
 export const LikeCount = styled.div`
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 27px;
@@ -147,8 +138,6 @@ export const DislikeIcon = styled.img`
 `;
 
 export const DislikeCount = styled.div`
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 27px;
@@ -172,13 +161,10 @@ export const ListButton = styled.button`
   top: 2338px;
   background: #ffffff;
   border: 1px solid #bdbdbd;
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
   text-align: center;
-  color: #000000;
   flex: none;
   order: 0;
   flex-grow: 0;
@@ -197,13 +183,10 @@ export const EditButton = styled.button`
   top: 2338px;
   background: #ffffff;
   border: 1px solid #bdbdbd;
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
   text-align: center;
-  color: #000000;
   flex: none;
   order: 0;
   flex-grow: 0;
@@ -221,13 +204,10 @@ export const DeleteButton = styled.button`
   top: 2338px;
   background: #ffffff;
   border: 1px solid #bdbdbd;
-  font-family: "Noto Sans CJK KR";
-  font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
   text-align: center;
-  color: #000000;
   flex: none;
   order: 0;
   flex-grow: 0;
