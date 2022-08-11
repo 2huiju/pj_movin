@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
-import { ISubmitButtonProps } from "./BoardWirte.types";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -62,6 +61,10 @@ export const InputWriterPwd = styled.input`
   padding-left: 10px;
   border: 1px solid #bdbdbd;
 
+  &:focus {
+    outline: none;
+  }
+
   @media ${breakPoints.mobile} {
     width: 100%;
   }
@@ -76,6 +79,10 @@ export const InputTitle = styled.input`
   height: 52px;
   padding-left: 10px;
   border: 1px solid #bdbdbd;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const InputContent = styled.textarea`
@@ -83,9 +90,11 @@ export const InputContent = styled.textarea`
   padding-left: 10px;
   padding-top: 20px;
   border: 1px solid #bdbdbd;
-  &:placeholder {
-    font-family: "Noto Sans CJK KR";
+
+  &:focus {
+    outline: none;
   }
+
   resize: none;
 `;
 
@@ -104,16 +113,20 @@ export const NumberCode = styled.input`
   font-size: 16px;
   line-height: 24px;
   color: #bdbdbd;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const NumberButton = styled.button`
   width: 124px;
-  height: 55px;
+  height: 51px;
   padding-top: 15px;
   padding-bottom: 12px;
   text-align: center;
   margin-left: 10px;
-  background-color: black;
+  background-color: #484848;
   color: white;
   border: none;
   font-weight: 500;
@@ -124,21 +137,33 @@ export const NumberButton = styled.button`
 export const Address = styled.input`
   height: 52px;
   margin: 10px 0px;
-  padding-left: 16px;
+  padding-left: 10px;
   border: 1px solid #bdbdbd;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const AddressDetail = styled.input`
   height: 52px;
   margin: 10px 0px;
-  padding-left: 16px;
+  padding-left: 10px;
   border: 1px solid #bdbdbd;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const InputYoutube = styled.input`
   height: 52px;
   padding-left: 10px;
   border: 1px solid #bdbdbd;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const UploadWrapper = styled.div`
@@ -175,8 +200,7 @@ export const ButtonWrapper = styled.div`
 export const SubmitButton = styled.button`
   width: 179px;
   height: 52px;
-  background-color: ${(props: ISubmitButtonProps) =>
-    props.isActive || props.isEdit ? "#FFD600" : "default"};
+  background-color: #fff0f5;
   border: 0;
   cursor: pointer;
 `;

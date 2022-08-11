@@ -26,7 +26,7 @@ export default function BoardRoutingUI(props: IBoardWriteUIProps) {
             <S.Label>작성자</S.Label>
             <S.InputWriterPwd
               type="text"
-              placeholder="이름을 적어주세요"
+              placeholder="이름을 입력해주세요"
               defaultValue={props.boardData?.fetchBoard.writer}
               {...props.register("writer")}
             ></S.InputWriterPwd>
