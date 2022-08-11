@@ -7,20 +7,16 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 60px 100px 70px 100px;
-  margin: 100px 10;
+  padding: 150px 100px 70px 100px;
   background: #ffffff;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
 
   @media ${breakPoints.tablet} {
-    padding: 10px 15px 30px 15px;
-    margin: 100px 10;
+    padding: 150px 15px 70px 15px;
     box-shadow: none;
   }
 
   @media ${breakPoints.mobile} {
-    padding: 10px 10px 30px 10px;
-    margin: 100px 0;
+    padding: 150px 10px 70px 10px;
     box-shadow: none;
   }
 `;
@@ -73,6 +69,7 @@ export const InputWriterPwd = styled.input`
 
 export const SpaceDiv = styled.div`
   width: 10%;
+  height: 10px;
 `;
 
 export const InputTitle = styled.input`
