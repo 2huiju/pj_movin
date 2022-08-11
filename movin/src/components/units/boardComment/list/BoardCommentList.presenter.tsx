@@ -1,7 +1,7 @@
 import * as S from "./BoardCommentList.styles";
 import { getDate } from "../../../../commons/libraries/utils";
 import { HeartOutlined } from "@ant-design/icons";
-import BoardCommentWriteUI from "../Routing_Comment/BoardCommentRouting.container";
+import BoardCommentWriteUI from "../write/BoardCommentWrite.container";
 import InfiniteScroll from "react-infinite-scroller";
 
 export default function BoardCommentListUI(props: any) {

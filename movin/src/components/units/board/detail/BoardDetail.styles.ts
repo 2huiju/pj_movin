@@ -4,7 +4,7 @@ import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   width: 100%;
-  padding: 150px 0;
+  padding: 150px 0 80px 0;
 
   @media ${breakPoints.tablet} {
     padding: 0;

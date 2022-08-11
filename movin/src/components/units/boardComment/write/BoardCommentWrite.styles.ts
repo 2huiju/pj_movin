@@ -1,17 +1,21 @@
 import styled from "@emotion/styled";
 import { Rate } from "antd";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
-  width: 1200px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 100px;
-`;
-
-export const CommentWrapper = styled.div`
-  width: 100%;
   padding-top: 10px;
+
+  @media ${breakPoints.tablet} {
+    padding: 0 10px;
+  }
+
+  @media ${breakPoints.mobile} {
+    padding: 0 10px;
+  }
 `;
 
 export const CommentTitle = styled.div`
@@ -30,6 +34,11 @@ export const CommentHeader = styled.div`
   padding-top: 10px;
 `;
 
+export const CommentErrorBox = styled.div`
+  display: flex;
+  width: 100%;
+`;
+
 export const CommentWriter = styled.input`
   width: 180px;
   height: 52px;
@@ -37,6 +46,13 @@ export const CommentWriter = styled.input`
   border: 1px solid #bdbdbd;
   padding-left: 20px;
   margin-right: 20px;
+  &:focus {
+    outline: none;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 140px;
+  }
 `;
 
 export const CommentPassword = styled.input`
@@ -46,34 +62,52 @@ export const CommentPassword = styled.input`
   border: 1px solid #bdbdbd;
   padding-left: 20px;
   margin-right: 20px;
+  &:focus {
+    outline: none;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 140px;
+  }
 `;
 
 export const Heart = styled(Rate)`
-  color: hotpink;
+  color: #ff3c8d;
+  cursor: pointer;
+  padding-top: 7px;
 `;
 
-export const CommentWrite = styled.textarea`
-  width: 99%;
+export const CommentContents = styled.textarea`
+  width: 100%;
   height: 70px;
   margin-top: 20px;
-  padding-left: 1%;
-  padding-top: 20px;
+  padding: 20px;
   border: 1px solid #bdbdbd;
-  border-bottom: 1px solid #f2f2f2;
+  border-bottom: none;
+  display: block;
+  resize: none;
   &:placeholder {
     font-family: "Noto Sans CJK KR";
   }
-  resize: none;
-  margin-bottom: 0;
+  &:focus {
+    outline: none;
+  }
+
+  @media ${breakPoints.tablet} {
+    height: 105px;
+  }
+
+  @media ${breakPoints.mobile} {
+    height: 105px;
+  }
 `;
 
-export const CommentBoard = styled.div`
+export const CommentBox = styled.div`
   display: flex;
-  margin: 0;
 `;
 
-export const CommentNumber = styled.div`
-  width: 90%;
+export const CommentLength = styled.div`
+  width: 100%;
   height: 44px;
   border: 1px solid #bdbdbd;
   text-justify: center;
@@ -83,22 +117,21 @@ export const CommentNumber = styled.div`
 `;
 
 export const CommentButton = styled.button`
-  width: 10%;
+  width: 100px;
   height: 44px;
-  background: #000000;
+  background: #484848;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
   text-align: center;
   color: #ffffff;
+  border: none;
+  cursor: pointer;
 `;
 
-export const CommentStar = styled.div``;
-
-export const Red = styled.div`
-  color: red;
+export const Error = styled.div`
+  width: 200px;
+  font-weight: 500;
   font-size: 8px;
-  font-weight: bold;
-  padding-top: 5px;
-  padding-bottom: 30px;
+  padding: 3px 0 10px 0;
 `;
