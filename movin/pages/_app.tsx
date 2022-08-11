@@ -1,5 +1,4 @@
 // 모든 페이지가 시작되기 전에 맨 처음 한 번 시작되는 파일
-
 import { AppProps } from "next/app";
 import "antd/dist/antd.css";
 import { Global } from "@emotion/react";

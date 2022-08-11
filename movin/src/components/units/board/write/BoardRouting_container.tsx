@@ -34,12 +34,12 @@ export default function BoardRouting(props: IBoardRoutingUIprops) {
 
   // const [data, setData] = useState("")
 
-  //유튜브 링크 삽입하기
+  // 유튜브 링크 삽입하기
   const onChangeYoutubeUrl = (event: any) => {
     setYoutubeUrl(event.target.value);
   };
 
-  //주소 삽입하기
+  // 주소 삽입하기
   const showModal = () => {
     setIsModalVisible(true);
   };

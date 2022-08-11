@@ -1,5 +1,5 @@
-//수정페이지
-import BoardRouting from "../../../../src/components/units/board/Routing_board/BoardRouting_container";
+// 수정페이지
+import BoardRouting from "../../../../src/components/units/board/write/BoardRouting_container";
 import { useRouter } from "next/router";
 import { useQuery, gql } from "@apollo/client";
 
