@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   padding-top: 10px;
+  margin-bottom: 50px;
 
   @media ${breakPoints.tablet} {
     padding: 0 10px;

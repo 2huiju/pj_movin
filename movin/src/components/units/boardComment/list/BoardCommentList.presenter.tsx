@@ -3,8 +3,9 @@ import { getDate } from "../../../../commons/libraries/utils";
 import { HeartOutlined } from "@ant-design/icons";
 import BoardCommentWriteUI from "../write/BoardCommentWrite.container";
 import InfiniteScroll from "react-infinite-scroller";
+import { IBoardCommentListUIProps } from "./BoardCommentList.types";
 
-export default function BoardCommentListUI(props: any) {
+export default function BoardCommentListUI(props: IBoardCommentListUIProps) {
   if (!props.data) return <div />;
   return (
     <>
@@ -14,32 +15,34 @@ export default function BoardCommentListUI(props: any) {
             return (
               <S.Wrapper key={el._id}>
                 <S.CommentWrapper>
-                  <S.Avatar src="/freeboard_profile.svg" />
-                  <S.MainWrapper>
-                    <S.WriterWrapper>
-                      <S.Writer>{el.writer}</S.Writer>
-                      <S.Contents>{el.contents}</S.Contents>
-                    </S.WriterWrapper>
-                    <S.Heart
-                      character={<HeartOutlined />}
-                      value={el.rating}
-                    ></S.Heart>
-                  </S.MainWrapper>
-                  <S.OptionWrapper>
-                    <S.EditIcon
-                      src="/freeboard_pen.png"
-                      id={el._id}
-                      onClick={props.onClickToEdit}
-                    />
-                    <S.DeleteIcon
-                      src="/delete.png"
-                      id={el._id}
-                      // onClick={props.onClickDelete}
-                      onClick={props.onClickOpenDeleteModal}
-                    />
-                  </S.OptionWrapper>
+                  <S.RowBox>
+                    <S.Avatar src="/commons/profile.svg" />
+                    <S.MainWrapper>
+                      <S.WriterWrapper>
+                        <S.Writer>{el.writer}</S.Writer>
+                        <S.Contents>{el.contents}</S.Contents>
+                      </S.WriterWrapper>
+                      <S.Heart
+                        character={<HeartOutlined />}
+                        value={el.rating}
+                      ></S.Heart>
+                    </S.MainWrapper>
+                    <S.OptionWrapper>
+                      <S.EditIcon
+                        src="/boardCommentList/edit.svg"
+                        id={el._id}
+                        onClick={props.onClickToEdit}
+                      />
+                      <S.DeleteIcon
+                        src="/boardCommentList/delete.svg"
+                        id={el._id}
+                        // onClick={props.onClickDelete}
+                        onClick={props.onClickOpenDeleteModal}
+                      />
+                    </S.OptionWrapper>
+                  </S.RowBox>
+                  <S.CreatTime>{getDate(el.createdAt)}</S.CreatTime>
                 </S.CommentWrapper>
-                <S.CreatTime>{getDate(el.createdAt)}</S.CreatTime>
               </S.Wrapper>
             );
           else {
@@ -50,9 +53,6 @@ export default function BoardCommentListUI(props: any) {
                   setEditId={props.setEditId}
                   el={el}
                   data={props.data}
-                  writer={el.writer}
-                  contents={el.contents}
-                  rating={el.rating}
                 />
               </>
             );

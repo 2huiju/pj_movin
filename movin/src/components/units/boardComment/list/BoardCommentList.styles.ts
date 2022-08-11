@@ -1,22 +1,39 @@
 import styled from "@emotion/styled";
 import { Rate } from "antd";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
-  width: 1200px;
-  margin: 0px 200px 30px 100px;
-  height: 130px;
-  border-bottom: 1px solid lightgray;
+  width: 100%;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 export const CommentWrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  height: 130px;
+  border-bottom: 1px solid lightgray;
+
+  @media ${breakPoints.tablet} {
+    margin: 0 10px;
+  }
+
+  @media ${breakPoints.mobile} {
+    margin: 0 10px;
+  }
 `;
 
+export const RowBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+`;
 export const Avatar = styled.img`
   width: 48px;
   height: 48px;
-  padding-top: 5px;
 `;
 
 export const MainWrapper = styled.div`
@@ -40,7 +57,6 @@ export const Contents = styled.div`
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #4f4f4f;
 `;
 
 export const OptionWrapper = styled.div`
@@ -58,10 +74,11 @@ export const CreatTime = styled.div`
 `;
 
 export const EditIcon = styled.img`
-  width: 24px;
-  height: 24px;
+  width: 29px;
+  height: 29px;
   cursor: pointer;
   margin-right: 10px;
+  margin-top: -2px;
 `;
 
 export const DeleteIcon = styled.img`
