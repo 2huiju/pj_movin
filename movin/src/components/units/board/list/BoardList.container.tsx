@@ -1,16 +1,17 @@
 import { useQuery } from "@apollo/client";
-import BoardListUI from "./BoardList_presenter";
 import {
   FETCH_BOARDS,
   FETCH_BOARDS_COUNT,
   FETCH_BOARDS_OF_BEST,
-} from "./BoardList_queries";
+} from "./BoardList.queries";
 import { useRouter } from "next/router";
 import { ChangeEvent, useState } from "react";
 import _ from "lodash";
 import useMoveToPage from "../../../../commons/hooks/UseMoveToPage";
+import BoardListPresenter from "./BoardList.presenter";
+import { IBoardListContainerProps } from "./BoardList.types";
 
-export default function BoardList() {
+export default function BoardListContainer() {
   const router = useRouter();
 
   const [keyword, setKeyword] = useState("");
@@ -30,7 +31,7 @@ export default function BoardList() {
     router.push("/boards/new");
   };
 
-  const onClickMoveToDetail = (event: any) => {
+  const onClickMoveToDetail = (event: IBoardListContainerProps) => {
     router.push(`/boards/${event.currentTarget.id}`);
   };
 
@@ -48,7 +49,10 @@ export default function BoardList() {
     getDebounce(keyword);
   };
 
-  const onChangeStartDate = (date, dateString) => {
+  const onChangeStartDate = (
+    date: IBoardListContainerProps,
+    dateString: IBoardListContainerProps
+  ) => {
     if (date === null) {
       const setDate = new Date(1900, 2, 1);
       setStartDate(setDate.toISOString());
@@ -58,7 +62,10 @@ export default function BoardList() {
     }
   };
 
-  const onChangeEndDate = (date, dateString) => {
+  const onChangeEndDate = (
+    date: IBoardListContainerProps,
+    dateString: IBoardListContainerProps
+  ) => {
     if (date === null) {
       const setDate = new Date(3000, 2, 1);
       setEndDate(setDate.toISOString());
@@ -70,7 +77,7 @@ export default function BoardList() {
 
   return (
     <>
-      <BoardListUI
+      <BoardListPresenter
         data={data}
         onClickMoveToWrite={onClickMoveToWrite}
         onClickMoveToDetail={onClickMoveToDetail}
@@ -83,6 +90,7 @@ export default function BoardList() {
         refetch={refetch}
         count={BoardsCountData?.fetchBoardsCount}
         BoardsBestData={BoardsBestData}
+        isMatched={false}
       />
     </>
   );

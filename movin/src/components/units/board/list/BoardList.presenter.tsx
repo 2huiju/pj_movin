@@ -1,10 +1,10 @@
-import * as S from "./BoardList_styles";
+import * as S from "./BoardList.styles";
 import { getDate } from "../../../../commons/libraries/utils";
 import Paginations01 from "../../../commons/layout/paginations/01/pagination_container";
-import { IBoardListUIProps } from "./BoardList_types";
+import { IBoardListUIProps } from "./BoardList.types";
 import { v4 as uuidv4 } from "uuid";
 
-export default function BoardListUI(props: IBoardListUIProps) {
+export default function BoardListPresenter(props: IBoardListUIProps) {
   const myImg = /^.*[.(jpg | svg | png | jpeg | gif )]$/g;
 
   return (
@@ -12,7 +12,7 @@ export default function BoardListUI(props: IBoardListUIProps) {
       <S.Wrapper>
         <S.Title>베스트 게시글</S.Title>
         <S.BestBoardsWrapper>
-          {props.BoardsBestData?.fetchBoardsOfTheBest.map((el) => (
+          {props.BoardsBestData?.fetchBoardsOfTheBest.map((el: any) => (
             <S.BestBox
               key={el._id}
               onClick={props.onClickMoveToPage(`/boards/${el._id}`)}
@@ -59,7 +59,7 @@ export default function BoardListUI(props: IBoardListUIProps) {
                 {el.title
                   .replaceAll(props.keyword, `#$%${props.keyword}#$%`)
                   .split("#$%")
-                  .map((el) => (
+                  .map((el: any) => (
                     <S.Word key={uuidv4()} isMatched={props.keyword === el}>
                       {el}
                     </S.Word>

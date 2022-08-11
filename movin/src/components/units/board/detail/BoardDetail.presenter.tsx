@@ -1,27 +1,27 @@
-import * as S from "./BoardRouted_styles";
+import * as S from "./BoardDetail.styles";
 import { getDate } from "../../../../commons/libraries/utils";
-import { IBoardRoutedUIProps } from "./BoardRouted_types";
+import { IBoardRoutedUIProps } from "./BoardDetail.types";
 import DOMPurify from "dompurify";
 
-export default function BoardRoutedUI(props: IBoardRoutedUIProps) {
+export default function BoardDetailPresenter(props: IBoardRoutedUIProps) {
   return (
     <>
-      {/* <div>BoardId: {router.query._id} 입니다.</div> */}
       <S.Wrapper>
         <S.BoardWrapper>
           <S.HeadWrapper>
-            <S.ProfileIcon src="/freeboard_profile.svg" />
-            <S.NameWrapper>
+            <S.ProfileIcon src="/boardDetail/profile.svg" />
+            <S.WriterBox>
               <S.Writer>{props.data?.fetchBoard.writer}</S.Writer>
               <S.CreateAt>
                 Date : {getDate(props.data?.fetchBoard.createdAt)}
               </S.CreateAt>
-              <S.CreateAt>
-                {props.data?.fetchBoard.boardAddress?.address}
-              </S.CreateAt>
-            </S.NameWrapper>
-            <S.FileIcon src="/freeboard_file.svg" />
-            <S.MapIcon src="/freeboard_map.svg" />
+            </S.WriterBox>
+            <S.Address>
+              {props.data?.fetchBoard.boardAddress?.address
+                .split(" ")
+                .slice(0, 2)
+                .join(" ")}
+            </S.Address>
           </S.HeadWrapper>
           <S.Hr></S.Hr>
           <S.MainWrapper>
@@ -73,15 +73,15 @@ export default function BoardRoutedUI(props: IBoardRoutedUIProps) {
           </S.FooterWrapper>
         </S.BoardWrapper>
         <S.ButtonWrapper>
-          <S.ListButton onClick={props.onClickMoveTolist}>
+          <S.Button onClick={props.onClickMoveToPage("/boards")}>
             목록으로
-          </S.ListButton>
-          <S.EditButton onClick={props.onClickMoveToEdit}>
+          </S.Button>
+          <S.Button
+            onClick={props.onClickMoveToPage(`/boards/${props.BoardId}/edit`)}
+          >
             수정하기
-          </S.EditButton>
-          <S.DeleteButton onClick={props.onClickDelete}>
-            삭제하기
-          </S.DeleteButton>
+          </S.Button>
+          <S.Button onClick={props.onClickDelete}>삭제하기</S.Button>
         </S.ButtonWrapper>
         <S.Hr></S.Hr>
       </S.Wrapper>

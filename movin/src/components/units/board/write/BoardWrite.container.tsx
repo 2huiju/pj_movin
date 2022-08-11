@@ -115,7 +115,6 @@ export default function BoardWriteContainer(props: IBoardWriteContainerProps) {
         },
       });
       reset();
-      console.log(result);
       router.push("/boards/" + result.data.createBoard._id);
       Modal.success({
         content: "게시물이 등록되었습니다!",
@@ -156,7 +155,6 @@ export default function BoardWriteContainer(props: IBoardWriteContainerProps) {
         content: "게시물이 수정되었습니다!",
       });
       router.push("/boards/" + result.data.updateBoard._id);
-      console.log(result);
     } catch (error) {
       console.log(error);
     }

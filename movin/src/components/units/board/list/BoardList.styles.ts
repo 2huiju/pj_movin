@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { DatePicker } from "antd";
 import { breakPoints } from "../../../../commons/styles/media";
+import { IBoardListStylesProps } from "./BoardList.types";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -272,7 +273,8 @@ export const WriteButton = styled.button`
 `;
 
 export const Word = styled.span`
-  color: ${(props: any) => (props.isMatched ? "red" : "default")};
+  color: ${(props: IBoardListStylesProps) =>
+    props.isMatched ? "red" : "default"};
 `;
 
 export const BestImg = styled.img`

@@ -1,12 +1,12 @@
 //상세페이지
-import BoardRouted from "../../../src/components/units/board/detail/BoardRouted_container";
+import BoardDetailContainer from "../../../src/components/units/board/detail/BoardDetail.container";
 import BoardCommentList from "../../../src/components/units/boardComment/list/BoardCommentList.container";
 import BoardCommentWrite from "../../../src/components/units/boardComment/Routing_Comment/BoardCommentRouting.container";
 
 export default function StaticRoutedPage() {
   return (
     <div>
-      <BoardRouted isEdit={false} />
+      <BoardDetailContainer isEdit={false} />
       <BoardCommentWrite />
       <BoardCommentList />
     </div>

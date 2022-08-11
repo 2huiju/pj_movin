@@ -19,10 +19,10 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/components/units/board/detail/BoardRouted_styles.ts",
-    "src/components/units/board/detail/BoardRouted_queries.ts",
-    "src/components/units/board/detail/BoardRouted_presenter.tsx",
-    "src/components/units/board/detail/BoardRouted_container.tsx",
+    "src/components/units/board/detail/BoardDetail_styles.ts",
+    "src/components/units/board/detail/BoardDetail_queries.ts",
+    "src/components/units/board/detail/BoardDetail_presenter.tsx",
+    "src/components/units/board/detail/BoardDetail_container.tsx",
     "pages/boards/new/index.tsx",
     "pages/boards/index.tsx",
     "pages/boards/[Board]/index.tsx",
@@ -31,10 +31,10 @@
     "src/components/units/board/write/BoardWrite.queries.ts",
     "src/components/units/board/write/BoardWrite_presenter.tsx",
     "src/components/units/board/write/BoardWrite_container.tsx",
-    "src/components/units/board/list/BoardList_styles.ts",
-    "src/components/units/board/list/BoardList_queries.ts",
-    "src/components/units/board/list/BoardList_presenter.tsx",
-    "src/components/units/board/list/BoardList_container.tsx"
+    "src/components/units/board/list/BoardList.styles.ts",
+    "src/components/units/board/list/BoardList.queries.ts",
+    "src/components/units/board/list/BoardList.presenter.tsx",
+    "src/components/units/board/list/BoardList.container.tsx"
   ],
   "exclude": ["node_modules"]
 }

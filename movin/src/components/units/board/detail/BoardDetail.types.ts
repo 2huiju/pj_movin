@@ -1,8 +1,8 @@
 export interface IBoardRoutedUIProps {
   data?: any;
-  onClickMoveTolist: () => void;
-  onClickMoveToEdit: () => void;
+  onClickMoveToPage: (path: any) => () => void;
   onClickLike: () => void;
   onClickDelete: () => void;
   onClickDislike: () => void;
+  BoardId: string | string[] | undefined;
 }
