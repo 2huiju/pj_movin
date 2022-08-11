@@ -1,6 +1,7 @@
 import * as S from "./BoardRouted_styles";
 import { getDate } from "../../../../commons/libraries/utils";
 import { IBoardRoutedUIProps } from "./BoardRouted_types";
+import DOMPurify from "dompurify";
 
 export default function BoardRoutedUI(props: IBoardRoutedUIProps) {
   return (
@@ -33,8 +34,15 @@ export default function BoardRoutedUI(props: IBoardRoutedUIProps) {
                   src={`https://storage.googleapis.com/${el}`}
                 />
               ))}
-            {/* <S.Image>{props.data?.fetchBoard.images}</S.Image> */}
-            <S.Content>{props.data?.fetchBoard.contents}</S.Content>
+            {typeof window !== "undefined" ? (
+              <S.Content
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(props.data?.fetchBoard.contents),
+                }}
+              />
+            ) : (
+              <div></div>
+            )}
           </S.MainWrapper>
           <S.YouTubeWrapper>
             {props.data?.fetchBoard.youtubeUrl && (

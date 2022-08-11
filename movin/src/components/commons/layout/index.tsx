@@ -23,10 +23,12 @@ export default function Layout(props: ILayoutProps) {
   const isHiddenFooter = HIDDEN_FOOTER.includes(router.asPath);
 
   return (
-    <Wrapper>
+    <>
       <LayoutHeaderContainer />
-      <div>{props.children}</div>
-      {!isHiddenFooter && <LayoutFooter />}
-    </Wrapper>
+      <Wrapper>
+        <div>{props.children}</div>
+        {!isHiddenFooter && <LayoutFooter />}
+      </Wrapper>
+    </>
   );
 }

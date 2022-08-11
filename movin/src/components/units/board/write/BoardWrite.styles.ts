@@ -1,22 +1,31 @@
 import styled from "@emotion/styled";
-import { ISubmitButtonProps } from "./BoardRouting_types";
-// export interface ISubmitButtonProps {
-//   backgourndColor?: any;
-//   isActive: any;
-//   isEdit?: any;
-// }
+import { breakPoints } from "../../../../commons/styles/media";
+import { ISubmitButtonProps } from "./BoardWirte.types";
 
 export const Wrapper = styled.div`
-  width: 1200px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 30px 100px 70px 100px;
-  margin: 30px 100px 100px 100px;
+  padding: 60px 100px 70px 100px;
+  margin: 100px 10;
   background: #ffffff;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+
+  @media ${breakPoints.tablet} {
+    padding: 10px 15px 30px 15px;
+    margin: 100px 10;
+    box-shadow: none;
+  }
+
+  @media ${breakPoints.mobile} {
+    padding: 10px 10px 30px 10px;
+    margin: 100px 0;
+    box-shadow: none;
+  }
 `;
-export const Title = styled.div`
+
+export const HeadTitle = styled.div`
   font-weight: 700;
   font-size: 36px;
   line-height: 53px;
@@ -24,13 +33,20 @@ export const Title = styled.div`
   padding-bottom: 40px;
 `;
 
-export const WriterWrapper = styled.div`
+export const WriterPwdBox = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  @media ${breakPoints.mobile} {
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 
 export const InputWrapper = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,11 +60,19 @@ export const Label = styled.div`
   line-height: 24px;
 `;
 
-export const InputName = styled.input`
-  width: 486px;
+export const InputWriterPwd = styled.input`
+  width: 100%;
   height: 52px;
   padding-left: 10px;
   border: 1px solid #bdbdbd;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
+`;
+
+export const SpaceDiv = styled.div`
+  width: 10%;
 `;
 
 export const InputTitle = styled.input`
@@ -100,14 +124,14 @@ export const NumberButton = styled.button`
   line-height: 24px;
 `;
 
-export const Address1 = styled.input`
+export const Address = styled.input`
   height: 52px;
   margin: 10px 0px;
   padding-left: 16px;
   border: 1px solid #bdbdbd;
 `;
 
-export const Address2 = styled.input`
+export const AddressDetail = styled.input`
   height: 52px;
   margin: 10px 0px;
   padding-left: 16px;
@@ -160,10 +184,6 @@ export const SubmitButton = styled.button`
   cursor: pointer;
 `;
 
-export const Red = styled.div`
-  color: red;
+export const Error = styled.div`
   font-size: 10px;
-  font-weight: bold;
-  padding-top: 5px;
-  padding-bottom: 30px;
 `;

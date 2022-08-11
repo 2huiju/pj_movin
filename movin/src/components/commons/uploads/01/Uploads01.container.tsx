@@ -19,20 +19,6 @@ export default function Uploads01(props: IUploads01Props) {
     const file = checkFileValidation(event.target.files?.[0]);
     if (!file) return;
 
-    // const fileReader = new FileReader();
-    // fileReader.readAsDataURL(file);
-    // // readAsDataURL : 파일을 url로 만들어줌
-    // fileReader.onload = (data) => {
-    //   if (typeof data.target?.result === "string") {
-    //     const tempUrls = [...props.fileUrls];
-    //     tempUrls[props.index] = data.target?.result;
-    //     props.setFileUrls(tempUrls);
-
-    //     const tempFiles = [...props.files];
-    //     tempFiles[props.index] = file;
-    //     props.setFiles(tempFiles);
-    //   }
-    // };
     try {
       const result = await uploadFile({ variables: { file } });
       props.onChangeFileUrls(result.data.uploadFile.url, props.index);

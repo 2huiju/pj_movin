@@ -15,6 +15,18 @@ declare const window: typeof globalThis & {
   kakao: any;
 };
 
+const schema = yup.object({
+  name: yup.string().required("필수 입력 사항"),
+  remarks: yup.string().required("필수 입력 사항"),
+  contents: yup.string().required("필수 입력 사항"),
+  price: yup.number().required("필수 입력 사항"),
+  tags: yup.string(),
+  zipcode: yup.string(),
+  address: yup.string(),
+  addressDetail: yup.string(),
+  useditemAddress: yup.string(),
+});
+
 function ProductWrite(props: any) {
   const router = useRouter();
   const [createUsedItem] = useMutation(CREATE_USED_ITEM);
@@ -30,18 +42,6 @@ function ProductWrite(props: any) {
   const [Ln, setLng] = useState(126.9027);
 
   const [Address, setAddress] = useState("서울 구로구 도림천로 477");
-
-  const schema = yup.object({
-    name: yup.string().required("필수 입력 사항"),
-    remarks: yup.string().required("필수 입력 사항"),
-    contents: yup.string().required("필수 입력 사항"),
-    price: yup.number().required("필수 입력 사항"),
-    tags: yup.string(),
-    zipcode: yup.string(),
-    address: yup.string(),
-    addressDetail: yup.string(),
-    useditemAddress: yup.string(),
-  });
 
   const { register, handleSubmit, formState, setValue, trigger, reset } =
     useForm({
@@ -61,22 +61,6 @@ function ProductWrite(props: any) {
     newFileUrls[index] = fileUrl;
     setFileUrls(newFileUrls);
   };
-  // const [imagePreview, setImagePreview] = useState("");
-  // const image = watch("image");
-
-  // useEffect(() => {
-  //   if (image && image.length > 0) {
-  //     const file = image[0];
-  //     console.log(URL.createObjectURL(file));
-  //     setImagePreview(URL.createObjectURL(file));
-  //   }
-  // }, [image]);
-
-  // useEffect(() => {
-  //   if (props.data?.fetchBoard.images?.length) {
-  //     setFileUrls([...props.data?.fetchBoard.images]);
-  //   }
-  // }, [props.data]);
 
   const showModal = () => {
     setIsModalVisible(true);
@@ -87,37 +71,12 @@ function ProductWrite(props: any) {
   };
 
   const onChangeContents = (value: string) => {
-    // 얘는 event가 아니라 value로 들어온다! (ReactQuill에서 정함)
-
-    // 1. register로 등록하지 않고, react-hook-form에 value를 강제로 넣어주기!!
-
-    // setValue("contents", value);
-
-    // ----------------------------------------
-    // 4. 값이 입력됐다가 지워졌을 때 <p><br></p> 이런 태그들이 남게 되는데,
-    // 나중에 값이 아예 없으면 에러메세지 띄워주기 위해서 삼항 연산자로 저런 태그들을 없애주기
     setValue("contents", value === "<p><br></p>" ? "" : value);
-    // 2. "내가만든state이름" , 에 value값을 넣어줘
-    // ----------------------------------------
-    // 3. 근데 이건 register로 등록하는게 아니라 value를 강제로 넣어주기 때문에, react-hook-form 입장에서는
-    // 이게 onChange로 바뀐건지 onClick으로 바뀐건지 뭔지 모름 -> 그래서 onChange가 작동 안하게 됨
-    // 그래서 hook-form에게 "이건 온체인지로 바뀐거야! 하고 알려줘야 함" -> trigger 사용해주기
     trigger("contents");
-    // react-hook-form아 지금 contents 변경됐어(onChange 됐어)하고 알려주기
   };
 
   const onClickUploadItem = async (data: any) => {
-    // try {
-    //   const FileResult = await Promise.all(
-    //     files.map((el) => el && uploadFile({ variables: { file: el } }))
-    //   );
-    //   const UrlsResult = FileResult.map((el) =>
-    //     el ? el.data.uploadFile.url : ""
-    //   );
-
     try {
-      // props.onChangeFileUrls(FileResult.data.uploadFile.url, props.index);
-
       const result = await createUsedItem({
         variables: {
           createUseditemInput: {
@@ -200,19 +159,6 @@ function ProductWrite(props: any) {
     alert("수정 성공");
     router.push("/product/" + result.data.updateUseditem._id);
   };
-
-  // createUseditemInput: {
-  //   name: data.name,
-  //   remarks: data.remarks,
-  //   contents: data.contents,
-  //   price: data.price,
-  //   // tags: [data.tags],
-  //   useditemAddress: {
-  //     zipcode: data.zipcode,
-  //     address: data.address,
-  //     addressDetail: data.addressDatail,
-  //   },
-  //   images: fileUrls,
 
   useEffect(() => {
     if (props.fetchData?.fetchUseditem.images?.length) {

@@ -19,5 +19,6 @@ module.exports = {
     "react/display-name": "off",
     "array-callback-return": "off",
     "spaced-comment": "off",
+    "no-useless-return": "off",
   },
 };
