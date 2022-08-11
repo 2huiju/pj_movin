@@ -3,7 +3,10 @@ import { useState, useEffect, useRef } from "react";
 import { useMutation } from "@apollo/client";
 import BoardRoutingUI from "./BoardWrite.presenter";
 import { CREATE_BOARD, UPDATE_BOARD } from "./BoardWrite.queries";
-import { IBoardRoutingUIprops, IUpdateBoardInput } from "./BoardWirte.types";
+import {
+  IBoardWriteContainerProps,
+  IUpdateBoardInput,
+} from "./BoardWrite.types";
 import { Modal } from "antd";
 import * as yup from "yup";
 import { Editor } from "@toast-ui/react-editor";
@@ -24,13 +27,12 @@ const schema = yup.object({
   youtubeUrl: yup.string(),
 });
 
-export default function BoardRouting(props: IBoardRoutingUIprops) {
+export default function BoardWriteContainer(props: IBoardWriteContainerProps) {
   const router = useRouter();
 
   const [createBoard] = useMutation(CREATE_BOARD);
   const [updateBoard] = useMutation(UPDATE_BOARD);
 
-  // const [isActive, setIsActive] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const [fileUrls, setFileUrls] = useState(["", "", ""]);
@@ -73,7 +75,7 @@ export default function BoardRouting(props: IBoardRoutingUIprops) {
     setIsModalVisible(false);
   };
 
-  const handleComplete = (data: any) => {
+  const handleComplete = (data: IBoardWriteContainerProps) => {
     console.log(data.address); // e.g. '서울 성동구 왕십리로2길 20 (성수동1가)'
     console.log(data);
     setAddress(data.address);
@@ -93,7 +95,7 @@ export default function BoardRouting(props: IBoardRoutingUIprops) {
   };
 
   //게시물 등록하기
-  const onClickUploadBoard = async (data) => {
+  const onClickUploadBoard = async (data: IBoardWriteContainerProps) => {
     try {
       const result = await createBoard({
         variables: {
@@ -124,7 +126,7 @@ export default function BoardRouting(props: IBoardRoutingUIprops) {
   };
 
   //게시물 수정하기
-  const onClickUpdate = async (data) => {
+  const onClickUpdate = async (data: IBoardWriteContainerProps) => {
     const currentFiles = JSON.stringify(fileUrls);
     const defaultFiles = JSON.stringify(props.data.fetchBoard.images);
     const isChangedFiles = currentFiles !== defaultFiles;
@@ -182,7 +184,6 @@ export default function BoardRouting(props: IBoardRoutingUIprops) {
         handleOk={handleOk}
         handleCancel={handleCancel}
         onChangeFileUrls={onChangeFileUrls}
-        // isActive={isActive}
         isEdit={props.isEdit}
         boardData={props.boardData}
         data={props.data}
@@ -190,6 +191,7 @@ export default function BoardRouting(props: IBoardRoutingUIprops) {
         zipcode={zipcode}
         address={address}
         fileUrls={fileUrls}
+        fileRef={undefined}
       />
     </>
   );

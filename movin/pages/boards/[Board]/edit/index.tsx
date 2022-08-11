@@ -1,7 +1,7 @@
 // 수정페이지
-import BoardRouting from "../../../../src/components/units/board/write/BoardWrite.container";
 import { useRouter } from "next/router";
 import { useQuery, gql } from "@apollo/client";
+import BoardWriteContainer from "../../../../src/components/units/board/write/BoardWrite.container";
 
 const FETCH_BOARD = gql`
   query fetchBoard($boardId: ID!) {
@@ -31,5 +31,5 @@ export default function EditPage() {
     variables: { boardId: router.query.Board },
   });
 
-  return <BoardRouting isEdit={true} boardData={data} data={data} />;
+  return <BoardWriteContainer isEdit={true} boardData={data} data={data} />;
 }

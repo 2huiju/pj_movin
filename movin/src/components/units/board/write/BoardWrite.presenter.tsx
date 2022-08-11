@@ -1,5 +1,5 @@
 import * as S from "./BoardWrite.styles";
-import { IBoardWriteUIProps } from "./BoardWirte.types";
+import { IBoardWriteUIProps } from "./BoardWrite.types";
 import { Modal } from "antd";
 import DaumPostcode from "react-daum-postcode";
 import Uploads01 from "../../../commons/uploads/01/Uploads01.container";
@@ -129,7 +129,6 @@ export default function BoardRoutingUI(props: IBoardWriteUIProps) {
         </S.RadioWrapper>
         <S.ButtonWrapper>
           <S.SubmitButton
-            isActive={props.isActive || props.isEdit}
             onClick={
               props.isEdit ? props.onClickUpdate : props.onClickUploadBoard
             }

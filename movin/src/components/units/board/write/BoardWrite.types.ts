@@ -1,8 +1,23 @@
-export interface IBoardRoutingUIprops {
+import {
+  FieldValues,
+  FormState,
+  UseFormHandleSubmit,
+  UseFormRegister,
+} from "react-hook-form";
+
+export interface IBoardWriteContainerProps {
+  password: string;
+  writer: string;
+  title: string;
+  contents: string;
+  youtubeUrl: string;
+  address: string;
+  zonecode: any;
   isEdit: boolean;
   data?: any;
   boardData?: any;
   isActive: any;
+  onClickUploadBoard: any;
 }
 
 export interface IUpdateBoardInput {
@@ -24,41 +39,25 @@ export interface ISubmitButtonProps {
 }
 
 export interface IBoardWriteUIProps {
-  isActive: boolean;
-  writerError: string;
-  passwordError: string;
-  titleError: string;
-  contentError: string;
-  onChangeName: any;
-  onChangePassword: any;
-  onChangeTitle: any;
-  onChangeContent: any;
-  onChangeYoutubeUrl: any;
+  editorRef: any;
+  onChangeContents: any;
   onChangeAddressDetail: any;
-  onClickAddressSearch: any;
-  onCompleteAddressSearch: any;
-  onChangeFile: any;
-
-  onClickSubmit: any;
+  formState: FormState<FieldValues>;
+  register: UseFormRegister<FieldValues>;
+  handleSubmit: UseFormHandleSubmit<FieldValues>;
+  onClickUploadBoard: any;
   onClickUpdate: any;
-  onClickSignup: any;
-  onClickImage: any;
   handleComplete: any;
   showModal: any;
   handleOk: any;
   handleCancel: any;
-  onChangeaddressDetail: any;
   isEdit: any;
   boardData?: any;
   data?: any;
-  isOpen: boolean;
   zipcode: string;
   address: string;
-  addressDetail: string;
   isModalVisible: any;
   fileRef: any;
-  imageUrl: any;
-  imageUrls: any;
   onChangeFileUrls: any;
   fileUrls: string[];
 }
