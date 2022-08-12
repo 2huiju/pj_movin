@@ -12,8 +12,8 @@ export const UploadButton = styled.button`
   cursor: pointer;
 
   @media ${breakPoints.mobile} {
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
   }
 `;
 
@@ -24,8 +24,8 @@ export const UploadImg = styled.img`
   border: 0;
 
   @media ${breakPoints.mobile} {
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
   }
 `;
 
@@ -35,4 +35,8 @@ export const UploadFileHidden = styled.input`
 
 export const UploadWrapper = styled.div`
   padding: 10px 10px 10px 0px;
+
+  @media ${breakPoints.mobile} {
+    padding: 0;
+  }
 `;

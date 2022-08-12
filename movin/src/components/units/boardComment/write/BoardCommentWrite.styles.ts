@@ -52,7 +52,8 @@ export const CommentWriter = styled.input`
   }
 
   @media ${breakPoints.mobile} {
-    width: 140px;
+    width: 90px;
+    margin-right: 10px;
   }
 `;
 
@@ -68,7 +69,7 @@ export const CommentPassword = styled.input`
   }
 
   @media ${breakPoints.mobile} {
-    width: 140px;
+    width: 100px;
   }
 `;
 
