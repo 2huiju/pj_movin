@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import "react-quill/dist/quill.snow.css";
 import { Modal } from "antd";
 import DaumPostcode from "react-daum-postcode";
+import Tags from "../../../commons/tags";
 
 // react-quill을 dynamic import 할건데, 서버사이드에서는 import 하지 않겠다 ! 라고 하는것
 
@@ -55,13 +56,14 @@ export default function ProductWriteUI(props: any) {
             </S.InputWrapper>
             <S.InputWrapper>
               <S.InputTitle>태그 입력</S.InputTitle>
-              <S.InputBox
+              {/* <S.InputBox
                 type="text"
                 placeholder="#태그 #태그 #태그 를 띄어쓰기로 입력해주세요"
                 {...props.register("tag")}
                 onChange={props.onChangeTags}
                 defaultValue={props.fetchData?.fetchUseditem.tags}
-              ></S.InputBox>
+              ></S.InputBox> */}
+              <Tags tags={props.tags} setTags={props.setTags} />
             </S.InputWrapper>
           </S.SubWrapper>
         </S.WriterWrapper>

@@ -33,6 +33,7 @@ function ProductWrite(props: any) {
   const [updateUsedItem] = useMutation(UPDATE_USED_ITEM);
   // const [uploadFile] = useMutation(UPLOAD_FILE);
 
+  const [tags, setTags] = useState<string[]>(["태그"]);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const [fileUrls, setFileUrls] = useState(["", "", ""]);
@@ -84,7 +85,7 @@ function ProductWrite(props: any) {
             remarks: data.remarks,
             contents: data.contents,
             price: data.price,
-            tags: data.tags,
+            tags,
             useditemAddress: {
               address: Address,
               addressDetail: data.addressDatail,
@@ -169,6 +170,12 @@ function ProductWrite(props: any) {
   useEffect(() => {
     if (props.fetchData?.fetchUseditem.useditemAddress) {
       setAddress(props.fetchData?.fetchUseditem.useditemAddress.address);
+    }
+  }, [props.fetchData]);
+
+  useEffect(() => {
+    if (props.fetchData?.fetchUseditem.tags.length) {
+      setTags([...props.fetchData?.fetchUseditem.tags.map((el) => el.name)]);
     }
   }, [props.fetchData]);
 
@@ -263,8 +270,8 @@ function ProductWrite(props: any) {
       La={La}
       Ln={Ln}
       isActive={isActive}
-      // files={files}
-      // setFiles={setFiles}
+      tags={tags}
+      setTags={setTags}
     />
   );
 }

@@ -12,8 +12,6 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.div`
-  font-family: "Roboto";
-  font-style: normal;
   font-weight: 700;
   font-size: 36px;
   line-height: 42px;
@@ -98,7 +96,7 @@ export const SearchDate = styled.input`
 export const SearchButton = styled.button`
   width: 10%;
   height: 52px;
-  background: #000000;
+  background: #484848;
   border-radius: 10px;
   font-weight: 500;
   font-size: 16px;
@@ -297,8 +295,8 @@ export const BestContentBox = styled.div`
   height: 80px;
   flex-direction: column;
   background-color: #fff0f5;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
   padding: 10px 0;
 
   @media ${breakPoints.tablet} {

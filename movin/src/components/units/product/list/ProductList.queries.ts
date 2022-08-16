@@ -41,3 +41,20 @@ export const FETCH_USED_ITEMS = gql`
     }
   }
 `;
+
+export const FETCH_USED_ITEM_BEST = gql`
+  query fetchUseditemsOfTheBest {
+    fetchUseditemsOfTheBest {
+      _id
+      name
+      remarks
+      price
+      images
+      pickedCount
+      seller {
+        _id
+        name
+      }
+    }
+  }
+`;

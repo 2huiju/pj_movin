@@ -4,14 +4,14 @@ import { useEffect, useState } from "react";
 import { getDate } from "../../../commons/libraries/utils";
 
 const Wrapper = styled.div`
-  width: 155px;
-  height: 600px;
+  width: 10%;
+  height: 400px;
   position: sticky;
   border: 1px solid;
   text-align: center;
-  top: 220px;
-  right: 200px;
-  padding: 20px;
+  top: 600px;
+  margin: 5px 0px 10px 10px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -46,10 +46,6 @@ export default function TodaySidebar() {
   const [basketItems, setBasketItems] = useState([]);
   const Today = getDate(new Date()).slice(0, 10);
 
-  // const OnError = (event) => {
-  //   event.target.src = "/movin.png";
-  // };
-
   const onClickDetail = (el) => () => {
     router.push("/product/" + el._id);
   };
@@ -64,7 +60,7 @@ export default function TodaySidebar() {
   return (
     <Wrapper>
       <Title>오늘 본 상품</Title>
-      {basketItems.slice(0, 4).map((el: any) => {
+      {basketItems.slice(0, 3).map((el: any) => {
         if (Today === el.date) {
           return (
             <MyRow key={el._id}>

@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
   align-items: center;
   padding: 5px;
   position: fixed;
-  z-index: 10;
+  z-index: 1000;
 `;
 
 export const ImgWrapper = styled.div`
