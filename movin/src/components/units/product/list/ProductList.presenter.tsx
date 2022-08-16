@@ -1,3 +1,4 @@
+import { HeartFilled } from "@ant-design/icons";
 import { getDateMoment } from "../../../../commons/libraries/utils";
 import * as S from "./ProductList.styles";
 import { v4 as uuidv4 } from "uuid";
@@ -98,7 +99,12 @@ export default function ProductListUI(props: any) {
                     <S.SellerColumn>
                       <S.ProfileIcon src="/commons/profile.svg" />
                       <S.SellerName>{el.seller.name}</S.SellerName>
-                      <S.ProfileIcon src="/freeboard_heart.png" />
+                      <HeartFilled
+                        style={{
+                          fontSize: "25px",
+                          color: "#fff0f5",
+                        }}
+                      />
                       <S.SellerName>{el.pickedCount}</S.SellerName>
                     </S.SellerColumn>
                   </S.ProductColumn>
