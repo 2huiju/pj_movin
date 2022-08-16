@@ -1,4 +1,4 @@
-import { getDate } from "../../../../commons/libraries/utils";
+import { getDateMoment } from "../../../../commons/libraries/utils";
 import * as S from "./ProductList.styles";
 import { v4 as uuidv4 } from "uuid";
 import InfiniteScroll from "react-infinite-scroller";
@@ -92,7 +92,9 @@ export default function ProductListUI(props: any) {
                     </S.TitleColumn>
                     <S.Remarks>{el.remarks}</S.Remarks>
                     <S.Tags>{el.tags.map((el) => "#" + el)}</S.Tags>
-                    <S.Time>{moment(getDate(el.createdAt)).fromNow()}</S.Time>
+                    <S.Time>
+                      {moment(getDateMoment(el.createdAt)).fromNow()}
+                    </S.Time>
                     <S.SellerColumn>
                       <S.ProfileIcon src="/commons/profile.svg" />
                       <S.SellerName>{el.seller.name}</S.SellerName>
