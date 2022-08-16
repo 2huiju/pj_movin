@@ -27,6 +27,7 @@ export const CarouselDiv = styled.div`
 export const CarouselImg = styled.img`
   width: 185px;
   height: 270px;
+  border-radius: 10px;
   cursor: pointer;
 
   &:hover {

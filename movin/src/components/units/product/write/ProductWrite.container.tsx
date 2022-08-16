@@ -33,7 +33,7 @@ function ProductWrite(props: any) {
   const [updateUsedItem] = useMutation(UPDATE_USED_ITEM);
   // const [uploadFile] = useMutation(UPLOAD_FILE);
 
-  const [tags, setTags] = useState<string[]>(["태그"]);
+  const [tags, setTags] = useState<string[]>([]);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const [fileUrls, setFileUrls] = useState(["", "", ""]);

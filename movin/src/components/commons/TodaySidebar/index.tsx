@@ -2,20 +2,26 @@ import styled from "@emotion/styled";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { getDate } from "../../../commons/libraries/utils";
+import { breakPoints } from "../../../commons/styles/media";
 
 const Wrapper = styled.div`
-  width: 10%;
-  height: 400px;
-  position: sticky;
-  border: 1px solid;
+  width: 120px;
+  height: 460px;
+  position: absolute;
+  right: 24px;
+  top: 710px;
+  border-radius: 10px;
+  border: 1.5px solid #fff0f5;
   text-align: center;
-  top: 600px;
-  margin: 5px 0px 10px 10px;
   padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: #ffffff;
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 const MyRow = styled.div`
@@ -23,22 +29,19 @@ const MyRow = styled.div`
   flex-direction: column;
   justify-content: center;
   cursor: pointer;
-  margin: 10px 0px;
 `;
 
 const Title = styled.div`
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: 400;
+  font-size: 14px;
   line-height: 100%;
   margin-bottom: 10px;
 `;
 
 const Image = styled.img`
-  width: 85px;
-  height: 85px;
   margin-top: 10px;
-  margin-left: 13px;
+  width: 100%;
+  height: 90px;
 `;
 
 export default function TodaySidebar() {
@@ -60,7 +63,7 @@ export default function TodaySidebar() {
   return (
     <Wrapper>
       <Title>오늘 본 상품</Title>
-      {basketItems.slice(0, 3).map((el: any) => {
+      {basketItems.slice(0, 4).map((el: any) => {
         if (Today === el.date) {
           return (
             <MyRow key={el._id}>

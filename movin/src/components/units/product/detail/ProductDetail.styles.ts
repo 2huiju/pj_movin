@@ -1,13 +1,18 @@
 import styled from "@emotion/styled";
 import ReactPlayer from "react-player";
+import Slider from "react-slick";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
-  width: 1600px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 30px 100px 30px 200px;
-  padding: 10px 100px 0px 100px;
+  padding: 150px 10px;
+
+  @media ${breakPoints.mobile} {
+    padding: 100px 10px;
+  }
 `;
 
 export const BoardWrapper = styled.div`
@@ -15,6 +20,30 @@ export const BoardWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 80px;
+
+  @media ${breakPoints.mobile} {
+    display: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+export const CarouselSlide = styled(Slider)`
+  width: 35%;
+  height: 500px;
+  margin-right: 30px;
+
+  .slick-prev:before,
+  .slick-next:before {
+    color: #b4b4b4;
+  }
+
+  @media ${breakPoints.mobile} {
+    display: flex;
+    width: 90%;
+    margin-right: 0;
+  }
 `;
 
 export const BottomWrapper = styled.div`
@@ -27,9 +56,7 @@ export const BottomWrapper = styled.div`
 export const Name = styled.div`
   font-weight: 700;
   font-size: 24px;
-  line-height: 100%;
-  margin-right: 650px;
-  margin-bottom: 30px;
+  display: flex;
 `;
 
 export const EDIcon = styled.img`
@@ -51,6 +78,11 @@ export const ContentsWrapper = styled.div`
   flex-direction: column;
   justify-content: left;
   padding-top: 10px;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    padding-top: 40px;
+  }
 `;
 
 export const HeadWrapper = styled.div`
@@ -67,12 +99,12 @@ export const ProfileIcon = styled.img`
 `;
 
 export const NameWrapper = styled.div`
-  width: 1050px;
+  width: 100%;
   padding-left: 10px;
 `;
 
-export const Writer = styled.div`
-  padding: 30px;
+export const Remarks = styled.div`
+  padding: 30px 0;
   height: 170px;
   font-weight: 400;
   font-size: 20px;
@@ -87,7 +119,7 @@ export const TagsWrapper = styled.div`
 export const Tags = styled.div`
   width: 100px;
   height: 30px;
-  background-color: #ffe004;
+  background-color: #fff0f5;
   font-weight: 400;
   font-size: 16px;
   line-height: 100%;
@@ -171,10 +203,8 @@ export const MainWrapper = styled.div`
 `;
 
 export const Title = styled.div`
-  font-weight: 700;
+  font-weight: 600;
   font-size: 36px;
-  line-height: 53px;
-  color: #000000;
   padding-bottom: 10px;
   border-bottom: 3px solid #555555;
 `;
@@ -269,26 +299,32 @@ export const ButtonWrapper = styled.div`
   padding-bottom: 20px;
 `;
 
-export const ListButton = styled.button`
-  padding: 14px 20px;
-  width: 280px;
+export const ListButton = styled.div`
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
   height: 80px;
   background: #ffffff;
   border: 1px solid #bdbdbd;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 18px;
   text-align: center;
-  color: #000000;
   flex: none;
   order: 0;
   flex-grow: 0;
   margin-top: 20px;
   &:hover {
-    background-color: #bdbdbd;
+    background-color: #ff3c8d;
+    border: none;
     color: #ffffff;
   }
   cursor: pointer;
+
+  @media ${breakPoints.mobile} {
+    height: 50px;
+  }
 `;
 
 export const EditButton = styled.button`
@@ -334,4 +370,8 @@ export const DeleteButton = styled.button`
     background-color: #ffd600;
   }
   cursor: pointer;
+`;
+
+export const ContentDiv = styled.div`
+  padding: 50px 0;
 `;

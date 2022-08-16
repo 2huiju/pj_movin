@@ -21,7 +21,7 @@ const Inputs = styled(Input)`
 const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: flex-end;
 `;
 
 export default function Tags(props: ITagsProps) {
@@ -92,7 +92,6 @@ export default function Tags(props: ITagsProps) {
             />
           );
         }
-
         const isLongTag = tag.length > 20;
         const tagElem = (
           <Tag

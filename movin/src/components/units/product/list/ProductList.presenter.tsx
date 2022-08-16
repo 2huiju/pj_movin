@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import InfiniteScroll from "react-infinite-scroller";
 import moment from "moment";
 import "moment/locale/ko";
+import TodaySidebar from "../../../commons/TodaySidebar";
 
 export default function ProductListUI(props: any) {
   const myImg = /^.*[.(jpg | svg | png | jpeg | gif )]$/g;
@@ -12,6 +13,7 @@ export default function ProductListUI(props: any) {
   return (
     <>
       <S.Wrapper>
+        <TodaySidebar />
         <S.Title>베스트 상품</S.Title>
         <S.BestItemWrapper>
           {props.BestItemData?.fetchUseditemsOfTheBest.map((el) => (
