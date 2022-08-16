@@ -3,6 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { breakPoints } from "../../../commons/styles/media";
 import Slider from "react-slick";
+import ReactTooltip from "react-tooltip";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -19,20 +20,37 @@ export const Title = styled.div`
   padding-left: 10px;
 `;
 
+export const CarouselDiv = styled.div`
+  width: 185px;
+`;
+
 export const CarouselImg = styled.img`
-  height: 260px;
+  width: 185px;
+  height: 270px;
   cursor: pointer;
-  padding: 0px 10px;
+
+  &:hover {
+    opacity: 0.5;
+  }
 
   @media ${breakPoints.tablet} {
+    padding: 0 5px;
     width: 100%;
-    height: 280px;
+    height: 300px;
   }
 
   @media ${breakPoints.mobile} {
+    padding: 0 5px;
     width: 100%;
     height: 280px;
   }
+`;
+
+export const StyledTooltip = styled(ReactTooltip)`
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  z-index: 1000;
 `;
 
 export const CarouselSlide = styled(Slider)`
@@ -45,6 +63,9 @@ export const CarouselSlide = styled(Slider)`
   .slick-prev:before,
   .slick-next:before {
     color: #484848;
-    margin: 0 auto;
+  }
+
+  @media ${breakPoints.mobile} {
+    padding: 10px;
   }
 `;

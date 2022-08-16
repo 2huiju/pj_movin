@@ -1,17 +1,36 @@
 import ReactPlayer from "react-player";
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../commons/styles/media";
 
 const VideoWrapper = styled.div`
-  width: 500px;
-  left: 90vh;
-  top: 500px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  z-index: 80;
   background-color: black;
+  width: 500px;
+  height: 300px;
+
+  @media ${breakPoints.tablet} {
+    width: 400px;
+    height: 250px;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 300px;
+    height: 250px;
+  }
+`;
+
+const ReactVideo = styled(ReactPlayer)`
+  width: 500px;
+  height: 300px;
+
+  @media ${breakPoints.tablet} {
+    width: 400px;
+    height: 250px;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 300px;
+    height: 250px;
+  }
 `;
 
 export default function YouTubePage(props) {
@@ -21,14 +40,14 @@ export default function YouTubePage(props) {
 
   return (
     <VideoWrapper>
-      <ReactPlayer
+      <ReactVideo
         url={"https://www.youtube.com/watch?v=" + props.YoutubeTitle}
         playing={true}
-        width="500px"
-        height="300px"
         muted={true}
         controls={true}
         onMouseLeave={onClickCancel}
+        width="500px"
+        height="300px"
       />
     </VideoWrapper>
   );

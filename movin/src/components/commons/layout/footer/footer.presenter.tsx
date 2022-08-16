@@ -1,9 +1,11 @@
+import TopButton from "../../buttons/TopButton";
 import * as F from "./footer.styles";
 
 export default function FooterPresenter() {
   return (
     <>
       <F.Wrapper>
+        <TopButton />
         <F.WrapperBox>
           <F.LeftBox>
             <F.Notice>공지사항</F.Notice>
