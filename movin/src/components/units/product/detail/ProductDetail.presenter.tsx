@@ -21,18 +21,30 @@ export default function ProductDetailUI(props) {
   return (
     <S.Wrapper>
       <S.BoardWrapper>
-        <S.CarouselSlide {...settings}>
-          {props.data?.fetchUseditem.images.map((el) => (
-            <S.Image
-              key={el.index}
-              src={
-                new RegExp(myImg, "i").test(el)
-                  ? `https://storage.googleapis.com/${el}`
-                  : "/movin.png"
-              }
-            />
-          ))}
-        </S.CarouselSlide>
+        {props.data?.fetchUseditem.images.filter((el) => el !== "").length >
+        1 ? (
+          <S.CarouselSlide {...settings}>
+            {props.data?.fetchUseditem.images.map((el) => (
+              <S.Image
+                key={el.index}
+                src={
+                  new RegExp(myImg, "i").test(el)
+                    ? `https://storage.googleapis.com/${el}`
+                    : "/movin.png"
+                }
+              />
+            ))}
+          </S.CarouselSlide>
+        ) : (
+          <S.Image
+            src={
+              new RegExp(myImg, "i").test(props.data?.fetchUseditem.images[0])
+                ? `https://storage.googleapis.com/${props.data?.fetchUseditem.images[0]}`
+                : "/movin.png"
+            }
+          />
+        )}
+
         <S.ContentsWrapper>
           <S.NameBox>
             <S.Name>{props.data?.fetchUseditem.name}</S.Name>
