@@ -1,4 +1,4 @@
-import * as S from "./ProductCommentList.styles";
+import * as S from "../write/ProductCommentWrite.styles";
 import { useMutation, useQuery } from "@apollo/client";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Modal } from "antd";
@@ -10,15 +10,18 @@ import {
   FETCH_USED_ITEM_QUESTION_ANSWERS,
   UPDATE_USED_ITEM_QUESTION_ANSWER,
 } from "./ProductCommentList.queries";
+import { useState } from "react";
 
 const schema = yup.object({
   contents: yup.string().required("필수 입력 사항"),
 });
 
 export default function ProductCommentListAnswerWrite(props: any) {
-  const { data } = useQuery(FETCH_USED_ITEM_QUESTION_ANSWERS, {
+  useQuery(FETCH_USED_ITEM_QUESTION_ANSWERS, {
     variables: { useditemQuestionId: props.el._id },
   });
+
+  const [conLength, setConLength] = useState(0);
 
   //수정하기에 담아둘 아이디
   const [createUseditemQuestionAnswer] = useMutation(
@@ -29,14 +32,18 @@ export default function ProductCommentListAnswerWrite(props: any) {
     UPDATE_USED_ITEM_QUESTION_ANSWER
   );
 
-  const { register, handleSubmit, formState } = useForm({
+  const { register, handleSubmit, formState, reset } = useForm({
     resolver: yupResolver(schema),
     mode: "onChange",
   });
 
+  const onChangeContentsLength = (event) => {
+    setConLength(event.target.value);
+  };
+
   // 대댓글 달기
   const onClickCommentAnswer = async (data: any) => {
-    const result = await createUseditemQuestionAnswer({
+    await createUseditemQuestionAnswer({
       variables: {
         createUseditemQuestionAnswerInput: {
           contents: data.contents,
@@ -50,7 +57,8 @@ export default function ProductCommentListAnswerWrite(props: any) {
         },
       ],
     });
-    console.log(result);
+    reset();
+    setConLength(0);
     props.setIsAnswer(false);
     Modal.success({
       content: "문의 답변 작성 완료되었습니다",
@@ -96,18 +104,23 @@ export default function ProductCommentListAnswerWrite(props: any) {
         )}
       >
         <S.AnswerWrapper>
-          <S.CommentWrite
+          <S.CommentContents
             maxLength={100}
-            placeholder="답변 작성하기."
+            placeholder="답변 작성하기"
             {...register("contents")}
             defaultValue={props.ee?.contents}
-          ></S.CommentWrite>
-          <S.CommentBoard>
-            <S.CommentNumber>{props.ee?.contents.length}/100</S.CommentNumber>
+            onChange={onChangeContentsLength}
+          ></S.CommentContents>
+          <S.CommentBox>
+            {conLength ? (
+              <S.CommentLength>{conLength.length}/100</S.CommentLength>
+            ) : (
+              <S.CommentLength>0/100</S.CommentLength>
+            )}
             <S.CommentButton isValid={formState.isValid}>
               {props.isEdit ? "수정" : "답변"}하기
             </S.CommentButton>
-          </S.CommentBoard>
+          </S.CommentBox>
         </S.AnswerWrapper>
       </form>
     </>

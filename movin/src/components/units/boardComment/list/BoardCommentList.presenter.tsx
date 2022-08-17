@@ -1,9 +1,9 @@
 import * as S from "./BoardCommentList.styles";
 import { getDate } from "../../../../commons/libraries/utils";
-import { HeartOutlined } from "@ant-design/icons";
 import BoardCommentWriteUI from "../write/BoardCommentWrite.container";
 import InfiniteScroll from "react-infinite-scroller";
 import { IBoardCommentListUIProps } from "./BoardCommentList.types";
+import { HeartOutlined, DeleteTwoTone, EditTwoTone } from "@ant-design/icons";
 
 export default function BoardCommentListUI(props: IBoardCommentListUIProps) {
   if (!props.data) return <div />;
@@ -28,20 +28,25 @@ export default function BoardCommentListUI(props: IBoardCommentListUIProps) {
                       ></S.Heart>
                     </S.MainWrapper>
                     <S.OptionWrapper>
-                      <S.EditIcon
-                        src="/boardCommentList/edit.svg"
+                      <EditTwoTone
+                        twoToneColor="#eb2f96"
                         id={el._id}
                         onClick={props.onClickToEdit}
+                        style={{
+                          fontSize: "20px",
+                          marginRight: "10px",
+                          marginTop: "1px",
+                        }}
                       />
-                      <S.DeleteIcon
-                        src="/boardCommentList/delete.svg"
+                      <DeleteTwoTone
+                        twoToneColor="#eb2f96"
                         id={el._id}
-                        // onClick={props.onClickDelete}
                         onClick={props.onClickOpenDeleteModal}
+                        style={{ fontSize: "21px" }}
                       />
                     </S.OptionWrapper>
                   </S.RowBox>
-                  <S.CreatTime>{getDate(el.createdAt)}</S.CreatTime>
+                  <S.CreateTime>{getDate(el.createdAt)}</S.CreateTime>
                 </S.CommentWrapper>
               </S.Wrapper>
             );

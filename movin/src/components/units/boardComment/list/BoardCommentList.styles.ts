@@ -64,7 +64,7 @@ export const OptionWrapper = styled.div`
   flex-direction: row;
 `;
 
-export const CreatTime = styled.div`
+export const CreateTime = styled.div`
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;

@@ -10,6 +10,7 @@ import {
 import * as yup from "yup";
 import { FETCH_USED_ITEM_QUESTIONS } from "../list/ProductCommentList.queries";
 import { Modal } from "antd";
+import { useState } from "react";
 
 const schema = yup.object({
   contents: yup.string().required("필수 입력 사항"),
@@ -20,6 +21,7 @@ export default function ProductCommentWrite(props: any) {
 
   const [createUseditemQuestion] = useMutation(CREATE_USED_ITEM_QUESTION);
   const [updateUseditemQuestion] = useMutation(UPDATE_USED_ITEM_QUESTION);
+  const [conLength, setConLength] = useState(0);
 
   //댓글 패치해서 받아오기
   const { data: fetchData } = useQuery(FETCH_USED_ITEM_QUESTIONS, {
@@ -28,6 +30,10 @@ export default function ProductCommentWrite(props: any) {
     //해당 게시글의 아이디로 댓글 목록을 불러오기
     //    ↑ gql에서 지정하는 값
   });
+
+  const onChangeContentsLength = (event) => {
+    setConLength(event.target.value);
+  };
 
   const { register, handleSubmit, formState, reset } = useForm({
     resolver: yupResolver(schema),
@@ -56,6 +62,7 @@ export default function ProductCommentWrite(props: any) {
         content: "댓글 작성이 완료되었습니다",
       });
       reset();
+      setConLength(0);
     } catch (error) {
       Modal.error({ content: "회원 정보 인증에 실패하였습니다" });
     }
@@ -73,7 +80,7 @@ export default function ProductCommentWrite(props: any) {
     const updateUseditemQuestionInput = {};
     if (data.contents) updateUseditemQuestionInput.contents = data.contents;
 
-    const result = await updateUseditemQuestion({
+    await updateUseditemQuestion({
       variables: {
         updateUseditemQuestionInput,
         useditemQuestionId: props.el._id,
@@ -95,6 +102,8 @@ export default function ProductCommentWrite(props: any) {
     <ProductCommentWriteUI
       onClickComment={onClickComment}
       onClickUpdateComment={onClickUpdateComment}
+      onChangeContentsLength={onChangeContentsLength}
+      conLength={conLength}
       register={register}
       handleSubmit={handleSubmit}
       formState={formState}

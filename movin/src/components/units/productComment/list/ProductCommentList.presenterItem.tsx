@@ -4,6 +4,11 @@ import { useMutation, useQuery } from "@apollo/client";
 import { Modal } from "antd";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import {
+  DeleteTwoTone,
+  EditTwoTone,
+  PlusSquareTwoTone,
+} from "@ant-design/icons";
 
 import {
   DELETE_USED_ITEM_QUESTION,
@@ -29,7 +34,7 @@ export default function ProductCommentListUIItem(props: any) {
   });
 
   // 댓글 받아오기
-  const { data: FetchData } = useQuery(FETCH_USED_ITEM_QUESTIONS, {
+  useQuery(FETCH_USED_ITEM_QUESTIONS, {
     variables: { useditemId: router.query.Product },
   });
   const { data: LoginData } = useQuery(FETCH_USER_LOGGED_IN);
@@ -51,13 +56,13 @@ export default function ProductCommentListUIItem(props: any) {
   }, [data]);
 
   //댓글 수정하기
-  const onClickToEdit = (event: any) => {
+  const onClickToEdit = (event) => {
     // const EditVariables = { boardId: router.query.Board };
     setisEdit(true);
   };
 
   //댓글 삭제
-  const onClickDelete = (event: any) => {
+  const onClickDelete = (event) => {
     deleteUseditemQuestion({
       variables: {
         useditemQuestionId: props.el._id,
@@ -75,7 +80,7 @@ export default function ProductCommentListUIItem(props: any) {
   };
 
   // 답글 달기
-  const onClickToAnswer = async (event: any) => {
+  const onClickToAnswer = async (event) => {
     setIsAnswer(true);
   };
 
@@ -83,49 +88,57 @@ export default function ProductCommentListUIItem(props: any) {
     <>
       {!isEdit && (
         <S.Wrapper key={props.el._id}>
-          <S.CommentWrapper>
-            <S.Avatar src="/freeboard_profile.svg" />
-            <S.MainWrapper>
-              <S.WriterWrapper>
-                <S.Writer>{props.el.user.name}</S.Writer>
-                <S.Contents>{props.el.contents}</S.Contents>
-              </S.WriterWrapper>
-            </S.MainWrapper>
-            <S.OptionWrapper>
-              {isMine && (
-                <S.EditIcon
-                  src="/freeboard_pen.png"
-                  id={props.el._id}
-                  onClick={onClickToEdit}
-                />
-              )}
-              {isMine && (
-                <S.DeleteIcon
-                  src="/delete.png"
-                  id={props.el._id}
-                  // onClick={props.onClickDelete}
-                  onClick={onClickDelete}
-                />
-              )}
-              {isSeller && (
-                <S.EditIcon
-                  src="/questions.png"
-                  id={props.el._id}
-                  onClick={onClickToAnswer}
-                />
-              )}
-            </S.OptionWrapper>
+          <S.CommentWrapper isEdit={isEdit}>
+            <S.RowBox>
+              <S.Avatar src="/commons/profile.svg" />
+              <S.MainWrapper>
+                <S.WriterWrapper>
+                  <S.Writer>{props.el.user.name}</S.Writer>
+                  <S.Contents>{props.el.contents}</S.Contents>
+                </S.WriterWrapper>
+              </S.MainWrapper>
+              <S.OptionWrapper>
+                {isMine && (
+                  <EditTwoTone
+                    twoToneColor="#eb2f96"
+                    id={props.el._id}
+                    onClick={onClickToEdit}
+                    style={{
+                      fontSize: "20px",
+                      marginRight: "10px",
+                      marginTop: "1px",
+                    }}
+                  />
+                )}
+                {isMine && (
+                  <DeleteTwoTone
+                    twoToneColor="#eb2f96"
+                    id={props.el._id}
+                    onClick={onClickDelete}
+                    style={{ fontSize: "21px", marginRight: "10px" }}
+                  />
+                )}
+                {isSeller && (
+                  <PlusSquareTwoTone
+                    twoToneColor="#eb2f96"
+                    id={props.el._id}
+                    onClick={onClickToAnswer}
+                    style={{ fontSize: "21px" }}
+                  />
+                )}
+              </S.OptionWrapper>
+            </S.RowBox>
+            <S.CreateTime>{getDate(props.el.createdAt)}</S.CreateTime>
+            {isAnswer && (
+              <ProductCommentListAnswerWrite
+                el={props.el}
+                setIsAnswer={setIsAnswer}
+              />
+            )}
+            {data?.fetchUseditemQuestionAnswers.map((ee: any) => (
+              <ProductCommentListAnswerUI key={ee} el={props.el} ee={ee} />
+            ))}
           </S.CommentWrapper>
-          <S.CreateTime>{getDate(props.el.createdAt)}</S.CreateTime>
-          {isAnswer && (
-            <ProductCommentListAnswerWrite
-              el={props.el}
-              setIsAnswer={setIsAnswer}
-            />
-          )}
-          {data?.fetchUseditemQuestionAnswers.map((ee: any) => (
-            <ProductCommentListAnswerUI key={ee} el={props.el} ee={ee} />
-          ))}
         </S.Wrapper>
       )}
       {isEdit && (

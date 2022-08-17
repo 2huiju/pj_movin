@@ -50,7 +50,6 @@ export default function BoardCommentWritePresenter(
           ) : (
             <S.CommentLength>0/100</S.CommentLength>
           )}
-
           <S.CommentButton>
             {props.isEdit ? "수정" : "등록"}하기
           </S.CommentButton>

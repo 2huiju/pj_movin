@@ -82,6 +82,7 @@ export default function BoardCommentWriteContainer(
           ],
         });
         reset();
+        setConLength(0);
         Modal.success({
           content: "댓글 작성이 완료되었습니다!",
         });

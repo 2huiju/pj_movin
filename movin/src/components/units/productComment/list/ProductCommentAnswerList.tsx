@@ -7,6 +7,8 @@ import {
   DELETE_USED_ITEM_QUESTION_ANSWER,
   FETCH_USED_ITEM_QUESTION_ANSWERS,
 } from "./ProductCommentList.queries";
+import { DeleteTwoTone, EditTwoTone } from "@ant-design/icons";
+
 import * as S from "./ProductCommentList.styles";
 
 export default function ProductCommentListAnswerUI(props: any) {
@@ -54,33 +56,42 @@ export default function ProductCommentListAnswerUI(props: any) {
   return (
     <>
       {!isEdit && (
-        <S.CommentWrapper key={props.ee._id}>
-          <S.DeleteIcon src="/arrow.png" />
-          <S.Avatar src="/freeboard_profile.svg" />
-          <S.MainWrapper>
-            <S.WriterWrapper>
-              <S.Writer>{props.ee.user.name}</S.Writer>
-              <S.Contents>{props.ee.contents}</S.Contents>
-            </S.WriterWrapper>
-          </S.MainWrapper>
-          <S.OptionWrapper>
-            {isMine && (
-              <S.EditIcon
-                src="/freeboard_pen.png"
-                id={props.ee._id}
-                onClick={onClickToEdit}
-              />
-            )}
-            {isMine && (
-              <S.DeleteIcon
-                src="/delete.png"
-                id={props.ee._id}
-                // onClick={props.onClickDelete}
-                onClick={onClickDelete}
-              />
-            )}
-          </S.OptionWrapper>
-        </S.CommentWrapper>
+        <S.CommentAnswerWrapper>
+          <S.RowBox key={props.ee._id}>
+            <S.AnswerBox>
+              <S.CommentAnswer>작성자</S.CommentAnswer>
+            </S.AnswerBox>
+            <S.Avatar src="/commons/profile.svg" />
+            <S.MainWrapper>
+              <S.WriterWrapper>
+                <S.Writer>{props.ee.user.name}</S.Writer>
+                <S.Contents>{props.ee.contents}</S.Contents>
+              </S.WriterWrapper>
+            </S.MainWrapper>
+            <S.OptionWrapper>
+              {isMine && (
+                <EditTwoTone
+                  twoToneColor="#eb2f96"
+                  id={props.ee._id}
+                  onClick={onClickToEdit}
+                  style={{
+                    fontSize: "20px",
+                    marginRight: "10px",
+                    marginTop: "1px",
+                  }}
+                />
+              )}
+              {isMine && (
+                <DeleteTwoTone
+                  twoToneColor="#eb2f96"
+                  id={props.ee._id}
+                  onClick={onClickDelete}
+                  style={{ fontSize: "21px" }}
+                />
+              )}
+            </S.OptionWrapper>
+          </S.RowBox>
+        </S.CommentAnswerWrapper>
       )}
       {isEdit && (
         <ProductCommentListAnswerWrite
