@@ -5,6 +5,7 @@ import "react-quill/dist/quill.snow.css";
 import { Modal } from "antd";
 import DaumPostcode from "react-daum-postcode";
 import Tags from "../../../commons/tags";
+import MapPageWrite from "../../../commons/map/productWrite";
 
 // react-quill을 dynamic import 할건데, 서버사이드에서는 import 하지 않겠다 ! 라고 하는것
 
@@ -56,22 +57,17 @@ export default function ProductWriteUI(props: any) {
             </S.InputWrapper>
             <S.InputWrapper>
               <S.InputTitle>태그 입력</S.InputTitle>
-              {/* <S.InputBox
-                type="text"
-                placeholder="#태그 #태그 #태그 를 띄어쓰기로 입력해주세요"
-                {...props.register("tag")}
-                onChange={props.onChangeTags}
-                defaultValue={props.fetchData?.fetchUseditem.tags}
-              ></S.InputBox> */}
               <Tags tags={props.tags} setTags={props.setTags} />
             </S.InputWrapper>
           </S.SubWrapper>
         </S.WriterWrapper>
         <S.InputTitle>거래 위치</S.InputTitle>
         <S.RadioWrapper>
-          <S.MapWrapper>
-            <S.MapImg id="map"></S.MapImg>
-          </S.MapWrapper>
+          <MapPageWrite
+            Address={props.Address}
+            setLat={props.setLat}
+            setLng={props.setLng}
+          />
           <S.MapWrapper2>
             <S.Label>GPS</S.Label>
             <S.GPSWrapper>

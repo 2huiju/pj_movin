@@ -2,6 +2,7 @@ import * as S from "./ProductDetail.styles";
 import Dompurify from "dompurify";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import MapPageDetail from "../../../commons/map/productDetail";
 
 export default function ProductDetailUI(props) {
   const myImg = /^.*[.(jpg | svg | png | jpeg | gif )]$/g;
@@ -52,9 +53,6 @@ export default function ProductDetailUI(props) {
           </S.SellerColumn>
           <S.NameBox>
             <S.Name>{props.data?.fetchUseditem.name}</S.Name>
-            {!props.isBuying && (
-              <S.EDIcon onClick={props.onClickEdit} src="/edit.png" />
-            )}
           </S.NameBox>
           <S.Title>
             {props.data?.fetchUseditem.price.toLocaleString("ko-KR")}원
@@ -66,21 +64,40 @@ export default function ProductDetailUI(props) {
             ))}
           </S.TagsWrapper>
           <S.ButtonBox>
-            <S.ListButton onClick={props.onClickHeart}>
-              ♡ 찜 {props.data?.fetchUseditem.pickedCount}
-            </S.ListButton>
-            <S.ListButton onClick={props.onClickBasket}>장바구니</S.ListButton>
-            <S.ListButton
-              onClick={
-                props.isBuying ? props.onClickBuying : props.onClickDelete
-              }
-            >
-              {props.isBuying ? "구매" : "삭제"}하기
-            </S.ListButton>
+            {props.isBuying ? (
+              <>
+                <S.ListButton
+                  onClick={props.onClickHeart}
+                  isBuying={props.isBuying}
+                >
+                  ♡ 찜 {props.data?.fetchUseditem.pickedCount}
+                </S.ListButton>
+                <S.ListButton
+                  onClick={props.onClickBasket}
+                  isBuying={props.isBuying}
+                >
+                  장바구니
+                </S.ListButton>
+                <S.ListButton
+                  onClick={props.onClickBuying}
+                  isBuying={props.isBuying}
+                >
+                  구매하기
+                </S.ListButton>
+              </>
+            ) : (
+              <>
+                <S.ListButton onClick={props.onClickEdit}>
+                  수정하기
+                </S.ListButton>
+                <S.ListButton onClick={props.onClickDelete}>
+                  삭제하기
+                </S.ListButton>
+              </>
+            )}
           </S.ButtonBox>
         </S.ContentsWrapper>
       </S.BoardWrapper>
-      {/* <S.Hr></S.Hr> */}
       <S.BottomWrapper>
         <S.Title>상품정보</S.Title>
         <S.ContentDiv>
@@ -95,7 +112,7 @@ export default function ProductDetailUI(props) {
           )}
         </S.ContentDiv>
         <S.Name>거래지역</S.Name>
-        <S.MapImg id="map"></S.MapImg>
+        <MapPageDetail Address={props.Address} />
       </S.BottomWrapper>
       <S.Hr></S.Hr>
       <S.ButtonWrapper>

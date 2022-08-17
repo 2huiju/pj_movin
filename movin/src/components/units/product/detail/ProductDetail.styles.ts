@@ -322,7 +322,6 @@ export const ListButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30%;
   height: 70px;
   background: #ffffff;
   border: 1px solid #bdbdbd;
@@ -339,6 +338,8 @@ export const ListButton = styled.div`
     color: #ffffff;
   }
   cursor: pointer;
+
+  width: ${(props) => (props.isBuying ? "30%" : "48%")};
 
   @media ${breakPoints.mobile} {
     height: 50px;
