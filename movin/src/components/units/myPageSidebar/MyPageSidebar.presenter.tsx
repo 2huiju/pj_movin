@@ -17,12 +17,17 @@ export default function MyPageSideBarPresenter(
         원
       </M.MyPoint>
       <M.PayMentButton onClick={props.onClickPayment}>충전하기</M.PayMentButton>
-      <M.SubTitle onClick={props.onClickMoveToPage("/mypage")}>
-        내 포인트
-      </M.SubTitle>
-      <M.SubTitle onClick={props.onClickMoveToPage("/mypageProfile")}>
-        내 프로필
-      </M.SubTitle>
+      {props.Menu.map((el) => (
+        <M.SubTitle
+          el={el}
+          activeMenu={props.activeMenu}
+          id={el.page}
+          key={el}
+          onClick={props.onClickMenu(el)}
+        >
+          {el.name}
+        </M.SubTitle>
+      ))}
       {props.isModalVisible && (
         <PaymentPage
           data={props.data}

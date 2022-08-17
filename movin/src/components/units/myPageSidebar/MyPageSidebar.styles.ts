@@ -33,6 +33,9 @@ export const SubTitle = styled.div`
   &:hover {
     background-size: 100% 100%;
   }
+
+  background-size: ${(props) =>
+    props.el.page === props.activeMenu ? "100% 100%" : "0% 100%"};
 `;
 
 export const MyPoint = styled.div`

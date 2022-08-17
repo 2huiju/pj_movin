@@ -27,20 +27,26 @@ export const ButtonWrapper = styled.div`
 
 export const FetchButton = styled.div`
   width: 70px;
-  font-family: "SUIT";
-  font-style: normal;
-  font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   color: #000000;
   cursor: pointer;
   &:hover {
-    font-weight: 600;
+    font-weight: 500;
     text-decoration: underline;
     text-decoration-color: #ff3c8d;
   }
   margin-bottom: 30px;
   margin-right: 10px;
+
+  font-weight: ${(props) =>
+    props.el.name === props.activeMenu ? "500" : "400"};
+
+  text-decoration: ${(props) =>
+    props.el.name === props.activeMenu ? "underline" : "none"};
+
+  text-decoration-color: ${(props) =>
+    props.el.name === props.activeMenu ? "#ff3c8d" : "none"};
 `;
 
 export const HeadWrapper = styled.div`
