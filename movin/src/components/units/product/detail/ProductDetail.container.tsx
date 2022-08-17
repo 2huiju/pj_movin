@@ -2,7 +2,7 @@ import { useMutation, useQuery } from "@apollo/client";
 import { Modal } from "antd";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { FETCH_USER_LOGGED_IN } from "../../mypagePoint/Mypage.queries";
+import { FETCH_USER_LOGGED_IN } from "../../mypagePoint/MypagePoint.queries";
 import ProductDetailUI from "./ProductDetail.presenter";
 import {
   CREATE_BUYING,

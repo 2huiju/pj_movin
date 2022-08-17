@@ -18,7 +18,7 @@ import {
 import ProductCommentWrite from "../write/ProductCommentWrite.container";
 import ProductCommentListAnswerWrite from "./ProductCommentAnswerWrite";
 import ProductCommentListAnswerUI from "./ProductCommentAnswerList";
-import { FETCH_USER_LOGGED_IN } from "../../mypagePoint/Mypage.queries";
+import { FETCH_USER_LOGGED_IN } from "../../mypagePoint/MypagePoint.queries";
 
 export default function ProductCommentListUIItem(props: any) {
   const router = useRouter();

@@ -1,4 +1,4 @@
-import * as S from "./Mypage.styles";
+import * as S from "./MypagePoint.styles";
 import { getDate } from "../../../commons/libraries/utils";
 
 export default function MyPagePresenter(props) {

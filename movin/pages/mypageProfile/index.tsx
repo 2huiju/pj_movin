@@ -1,7 +1,7 @@
 import { useQuery } from "@apollo/client";
 import { withAuth } from "../../src/commons/hooks/withAuth";
 import MyPageSideBarPage from "../../src/components/commons/myPageSidebar";
-import { FETCH_POINT_TRANSACTION } from "../../src/components/units/mypagePoint/Mypage.queries";
+import { FETCH_POINT_TRANSACTION } from "../../src/components/units/mypagePoint/MypagePoint.queries";
 import MyPageProfileContainer from "../../src/components/units/mypageProfile/MyPageProfile.container";
 
 function MyPage() {

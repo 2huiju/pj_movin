@@ -5,8 +5,8 @@ import {
   FETCH_POINT_TRANSACTIONS_OF_LOADING,
   FETCH_POINT_TRANSACTION_OF_BUYING,
   FETCH_POINT_TRANSACTION_OF_SELLING,
-} from "./Mypage.queries";
-import MyPagePresenter from "./Mypage.presenter";
+} from "./MypagePoint.queries";
+import MyPagePresenter from "./MypagePoint.presenter";
 
 export default function MyPagePointContainer(props) {
   const [isPoint, setIsPoint] = useState("TotalPoint");

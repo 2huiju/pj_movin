@@ -1,7 +1,7 @@
 import { gql, useQuery } from "@apollo/client";
 import { withAuth } from "../../src/commons/hooks/withAuth";
 import MyPageSideBarPage from "../../src/components/commons/myPageSidebar";
-import MyPagePointContainer from "../../src/components/units/mypagePoint/Mypage.container";
+import MyPagePointContainer from "../../src/components/units/mypagePoint/MypagePoint.container";
 
 const FETCH_POINT_TRANSACTION = gql`
   query fetchPointTransactions($search: String, $page: Int) {

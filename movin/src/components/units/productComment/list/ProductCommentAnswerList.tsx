@@ -1,7 +1,7 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { Modal } from "antd";
 import { useEffect, useState } from "react";
-import { FETCH_USER_LOGGED_IN } from "../../mypagePoint/Mypage.queries";
+import { FETCH_USER_LOGGED_IN } from "../../mypagePoint/MypagePoint.queries";
 import ProductCommentListAnswerWrite from "./ProductCommentAnswerWrite";
 import {
   DELETE_USED_ITEM_QUESTION_ANSWER,

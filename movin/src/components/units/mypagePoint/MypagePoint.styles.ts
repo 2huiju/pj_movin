@@ -1,13 +1,10 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  width: 1200px;
-  height: 900px;
+  width: 80%;
+  padding: 140px 10px 100px 50px;
   display: flex;
   flex-direction: column;
-  justify-content: top;
-  margin: 30px 100px 100px 100px;
-  padding-top: 110px;
 `;
 
 export const Title = styled.div`
