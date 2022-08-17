@@ -273,17 +273,15 @@ export const ButtonWrapper = styled.div`
 export const SubmitButton = styled.button`
   width: 195px;
   height: 60px;
-  background-color: ${(props: any) =>
-    props.isActive || props.isEdit ? "#ff3c8d" : "default"};
+  background-color: #fff0f5;
   border: 0;
   cursor: pointer;
   margin-left: 20px;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 20px;
   line-height: 100%;
   text-align: center;
   letter-spacing: -0.05em;
-  color: #ffffff;
 `;
 
 export const SubmitButton2 = styled.button`
@@ -293,12 +291,14 @@ export const SubmitButton2 = styled.button`
   border: 0;
   cursor: pointer;
   margin-left: 20px;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 20px;
-  line-height: 100%;
   text-align: center;
-  letter-spacing: -0.05em;
   color: #ffffff;
+
+  @media ${breakPoints.mobile} {
+    margin-left: 0;
+  }
 `;
 
 export const Red = styled.div`
