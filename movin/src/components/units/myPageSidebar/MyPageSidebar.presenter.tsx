@@ -7,7 +7,7 @@ export default function MyPageSideBarPresenter(
   return (
     <M.Wrapper>
       <M.Title>MYPAGE</M.Title>
-      <M.ProfileImage src="/freeboard_profile.svg"></M.ProfileImage>
+      <M.ProfileImage src="/commons/profile.svg"></M.ProfileImage>
       <M.Title>{props.data?.fetchUserLoggedIn.name}</M.Title>
       <M.MyPoint>
         🐷{" "}

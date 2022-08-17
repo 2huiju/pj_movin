@@ -1,67 +1,66 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../commons/styles/media";
 
-export const Hamburger = styled.img`
-  height: 18px;
-  width: 18px;
-  margin-right: 10px;
-  cursor: pointer;
-  display: none;
+export const Wrapper = styled.div`
+  width: 80%;
+  padding: 100px 10px 100px 50px;
 
   @media ${breakPoints.mobile} {
-    display: block;
+    width: 100%;
+    padding: 100px 10px;
   }
 `;
 
-export const Wrapper = styled.div`
-  width: 1200px;
-  height: 900px;
-  display: flex;
-  flex-direction: column;
-  justify-content: top;
-  margin: 30px 100px 100px 100px;
-  padding: 110px 80px 0px 80px;
-`;
-
 export const InputWrapper = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-`;
+  margin: 25px 0;
 
-export const InputBox = styled.input`
-  margin-top: 40px;
-  width: 1100px;
-  padding-left: 20px;
-  height: 56px;
-  background-color: #e9e9e9;
-  border: none;
-  &:focus {
-    outline: none;
+  @media ${breakPoints.mobile} {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 `;
 
 export const InputTitle = styled.div`
   font-weight: 500;
   font-size: 26px;
-  line-height: 100%;
   display: flex;
   align-items: center;
-  letter-spacing: -0.05em;
   padding-top: 40px;
   margin-bottom: 20px;
 `;
 
+export const InputBox = styled.input`
+  width: 80%;
+  height: 56px;
+  background-color: #e9e9e9;
+  padding: 0 10px;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
+`;
+
 export const InputContents = styled.div`
-  width: 200px;
+  width: 20%;
   font-weight: 400;
   font-size: 20px;
-  line-height: 100%;
   display: flex;
   align-items: center;
-  letter-spacing: -0.05em;
-  padding-top: 40px;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    padding-bottom: 10px;
+  }
 `;
 
 export const SubmitButton = styled.button`
@@ -72,10 +71,8 @@ export const SubmitButton = styled.button`
   margin-left: 20px;
   font-weight: 500;
   font-size: 20px;
-  line-height: 100%;
   text-align: center;
-  letter-spacing: -0.05em;
-  background-color: #cccccc;
+  background-color: #fff0f5;
 `;
 
 export const ButtonWrapper = styled.div`
@@ -86,8 +83,7 @@ export const ButtonWrapper = styled.div`
 `;
 
 export const Error = styled.div`
-  color: black;
   font-size: 14px;
   padding-top: 2px;
-  padding-left: 160px;
+  color: #ff3c8d;
 `;

@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { breakPoints } from "../../../commons/styles/media";
 
 export const Wrapper = styled.div`
-  width: 200px;
+  width: 20%;
   position: sticky;
   left: 10px;
   top: 600px;
