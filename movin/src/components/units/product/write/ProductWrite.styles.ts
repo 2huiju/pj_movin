@@ -4,6 +4,7 @@
 
 import styled from "@emotion/styled";
 import dynamic from "next/dynamic";
+import { breakPoints } from "../../../../commons/styles/media";
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 export const Error = styled.div`
@@ -12,13 +13,15 @@ export const Error = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  width: 1600px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 10px 100px 70px 100px;
-  margin: 30px 100px 100px 100px;
-  background: #ffffff;
+  padding: 150px 10px;
+
+  @media ${breakPoints.mobile} {
+    padding: 100px 10px;
+  }
 `;
 
 export const Title = styled.div`
@@ -27,7 +30,7 @@ export const Title = styled.div`
   line-height: 53px;
   padding-bottom: 20px;
   padding-top: 30px;
-  border-bottom: 3px solid #555555;
+  border-bottom: 2px solid #848484;
 `;
 export const WriterWrapper = styled.div`
   display: flex;
@@ -57,6 +60,11 @@ export const InputTitle = styled.div`
   align-items: center;
   letter-spacing: -0.05em;
   padding-top: 40px;
+  width: 15%;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 
 export const SubWrapper = styled.div`
@@ -72,17 +80,28 @@ export const InputWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  @media ${breakPoints.mobile} {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 `;
 
 export const InputBox = styled.input`
   margin-top: 40px;
-  width: 1100px;
+  width: 85%;
   padding-left: 20px;
   height: 56px;
   background-color: #e9e9e9;
   border: none;
   &:focus {
     outline: none;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    margin-top: 15px;
   }
 `;
 
@@ -99,9 +118,14 @@ export const InputBox2 = styled.input`
 
 export const InputContents = styled(ReactQuill)`
   height: 400px;
-  width: 1100px;
+  width: 85%;
   margin-top: 60px;
   margin-bottom: 60px;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    margin-top: 15px;
+  }
 `;
 
 export const InputName = styled.input`
@@ -175,6 +199,10 @@ export const UploadWrapper = styled.div`
 export const RadioWrapper = styled.div`
   display: flex;
   margin-bottom: 30px;
+
+  @media ${breakPoints.mobile} {
+    flex-direction: column;
+  }
 `;
 
 export const GPSWrapper = styled.div`
@@ -194,6 +222,11 @@ export const MapWrapper2 = styled.div`
   padding-left: 30px;
   padding-top: 18px;
   width: 70%;
+
+  @media ${breakPoints.mobile} {
+    padding-left: 0;
+    width: 100%;
+  }
 `;
 
 export const Label = styled.div`
@@ -234,7 +267,7 @@ export const ButtonWrapper = styled.div`
   flex-direction: row;
   justify-content: center;
   padding-top: 80px;
-  border-top: 3px solid #555555;
+  border-top: 2px solid #848484;
 `;
 
 export const SubmitButton = styled.button`

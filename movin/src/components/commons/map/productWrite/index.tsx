@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { useEffect } from "react";
+import { breakPoints } from "../../../../commons/styles/media";
 
 declare const window: typeof globalThis & {
   kakao: any;
@@ -10,6 +11,11 @@ const MapWrapper = styled.div`
   flex-direction: column;
   width: 30%;
   padding-right: 20px;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    padding-right: 0px;
+  }
 `;
 
 const MapImg = styled.div`

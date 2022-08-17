@@ -10,7 +10,7 @@ interface ITagsProps {
 }
 
 const Inputs = styled(Input)`
-  width: 200px;
+  width: 100px;
   border-radius: 10px;
 
   @media ${breakPoints.mobile} {
@@ -19,9 +19,11 @@ const Inputs = styled(Input)`
 `;
 
 const Wrapper = styled.div`
+  width: 85%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  padding-top: 40px;
 `;
 
 export default function Tags(props: ITagsProps) {
@@ -95,12 +97,12 @@ export default function Tags(props: ITagsProps) {
         const isLongTag = tag.length > 20;
         const tagElem = (
           <Tag
+            color="#ff3c8d"
             style={{
-              backgroundColor: "#2277D8",
-              borderRadius: 8,
-              color: "white",
+              borderRadius: 10,
+              color: "#ffffff",
               padding: "6px 13px",
-              margin: "0 10px",
+              margin: "1px 15px 1px 0",
             }}
             className="edit-tag"
             key={tag}
@@ -138,19 +140,21 @@ export default function Tags(props: ITagsProps) {
           onChange={handleInputChange}
           onBlur={handleInputConfirm}
           onPressEnter={handleInputConfirm}
+          style={{
+            outline: "none",
+            boxShadow: "none",
+            border: "1px solid #ff3c8d",
+          }}
         />
       )}
       {!inputVisible && (
         <Tag
+          color="magenta"
           className="site-tag-plus"
           onClick={showInput}
           style={{
-            backgroundColor: "#ffffff",
             borderRadius: 10,
-            border: "1px solid #2277d2",
-            color: "#2277d2",
             padding: "6px 13px",
-            margin: "0 10px",
             cursor: "pointer",
           }}
         >
