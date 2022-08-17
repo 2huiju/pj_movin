@@ -103,8 +103,8 @@ export default function ProductListUI(props: any) {
                       <S.SellerName>{el.seller.name}</S.SellerName>
                       <HeartFilled
                         style={{
-                          fontSize: "25px",
-                          color: "#fff0f5",
+                          fontSize: "24px",
+                          color: "#ff3c8d",
                         }}
                       />
                       <S.SellerName>{el.pickedCount}</S.SellerName>

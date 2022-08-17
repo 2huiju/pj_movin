@@ -241,9 +241,10 @@ export const ListRow = styled.div`
   text-align: center;
   font-weight: 400;
   font-size: 16px;
+  cursor: pointer;
 
   &:hover {
-    color: #ff3c8d;
+    background-color: #fbf5f7;
   }
 
   @media ${breakPoints.mobile} {
@@ -287,10 +288,6 @@ export const ProductColumn = styled.div`
   justify-content: center;
   text-align: left;
   padding-left: 30px;
-  &:hover {
-    color: #ff3c8d;
-    cursor: pointer;
-  }
 
   @media ${breakPoints.mobile} {
     width: 50%;

@@ -20,8 +20,21 @@ export const Title = styled.div`
   padding-left: 10px;
 `;
 
-export const CarouselDiv = styled.div`
-  width: 185px;
+export const CarouselSlide = styled(Slider)`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 70px;
+
+  .slick-prev:before,
+  .slick-next:before {
+    color: #484848;
+  }
+
+  @media ${breakPoints.mobile} {
+    padding: 10px;
+  }
 `;
 
 export const CarouselImg = styled.img`
@@ -31,7 +44,8 @@ export const CarouselImg = styled.img`
   cursor: pointer;
 
   &:hover {
-    opacity: 0.5;
+    transform: scale(1.1);
+    transition: 0.4s;
   }
 
   @media ${breakPoints.tablet} {
@@ -52,21 +66,4 @@ export const StyledTooltip = styled(ReactTooltip)`
   height: 100px;
   position: absolute;
   z-index: 1000;
-`;
-
-export const CarouselSlide = styled(Slider)`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-bottom: 70px;
-
-  .slick-prev:before,
-  .slick-next:before {
-    color: #484848;
-  }
-
-  @media ${breakPoints.mobile} {
-    padding: 10px;
-  }
 `;

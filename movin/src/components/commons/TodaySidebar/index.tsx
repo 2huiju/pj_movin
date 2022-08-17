@@ -11,13 +11,12 @@ const Wrapper = styled.div`
   right: 24px;
   top: 710px;
   border-radius: 10px;
-  border: 1.5px solid #fff0f5;
   text-align: center;
   padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #ffffff;
+  background-color: #fff0f5;
 
   @media ${breakPoints.mobile} {
     display: none;

@@ -60,7 +60,7 @@ export default function MyPagePresenter(props) {
             <S.ListWrapper key={el._id}>
               <S.ListRow>
                 <S.IndexColumn>{getDate(el.createdAt)}</S.IndexColumn>
-                <S.TitleColumn>{el.impUid}</S.TitleColumn>
+                <S.TitleColumn>{el.impUid.slice(-4)}</S.TitleColumn>
                 <S.WriterColumn>
                   +{el.amount.toLocaleString("ko-KR")}
                 </S.WriterColumn>

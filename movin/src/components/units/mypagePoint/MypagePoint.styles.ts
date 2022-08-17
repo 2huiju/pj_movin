@@ -1,10 +1,16 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   width: 80%;
   padding: 140px 10px 100px 50px;
   display: flex;
   flex-direction: column;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    padding: 100px 10px;
+  }
 `;
 
 export const Title = styled.div`
@@ -137,17 +143,17 @@ export const ListTitleRow = styled.div`
 `;
 
 export const NumberRow = styled.div`
-  width: 15%;
+  width: 30%;
   text-align: center;
 `;
 
 export const TitleRow = styled.div`
-  width: 45%;
+  width: 20%;
   text-align: center;
 `;
 
 export const WriterRow = styled.div`
-  width: 20%;
+  width: 30%;
   text-align: center;
 `;
 
@@ -171,16 +177,16 @@ export const ListRow = styled.div`
 `;
 
 export const IndexColumn = styled.div`
-  width: 15%;
+  width: 30%;
   text-align: center;
 `;
 
 export const TitleColumn = styled.div`
-  width: 45%;
+  width: 20%;
   text-align: center;
 `;
 export const WriterColumn = styled.div`
-  width: 20%;
+  width: 30%;
   text-align: center;
   font-weight: 600;
 `;
