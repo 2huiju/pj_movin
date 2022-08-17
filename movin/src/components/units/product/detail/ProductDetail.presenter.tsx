@@ -46,6 +46,10 @@ export default function ProductDetailUI(props) {
         )}
 
         <S.ContentsWrapper>
+          <S.SellerColumn>
+            <S.ProfileIcon src="/commons/profile.svg" />
+            <S.SellerName>{props.data?.fetchUseditem.seller.name}</S.SellerName>
+          </S.SellerColumn>
           <S.NameBox>
             <S.Name>{props.data?.fetchUseditem.name}</S.Name>
             {!props.isBuying && (

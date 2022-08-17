@@ -57,6 +57,10 @@ export const Name = styled.div`
   font-weight: 700;
   font-size: 24px;
   display: flex;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 export const EDIcon = styled.img`
@@ -77,12 +81,27 @@ export const ContentsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: left;
-  padding-top: 10px;
 
   @media ${breakPoints.mobile} {
     width: 100%;
     padding-top: 40px;
   }
+`;
+
+export const SellerColumn = styled.div`
+  display: flex;
+  width: 100%;
+  padding-top: 5px;
+  font-weight: 500;
+  font-size: 16px;
+`;
+
+export const SellerName = styled.div`
+  display: flex;
+  font-weight: 500;
+  font-size: 17px;
+  margin-left: 8px;
+  margin-top: -2px;
 `;
 
 export const HeadWrapper = styled.div`
@@ -93,9 +112,8 @@ export const HeadWrapper = styled.div`
 `;
 
 export const ProfileIcon = styled.img`
-  width: 46px;
-  height: 46px;
-  padding-bottom: 5px;
+  width: 25px;
+  height: 25px;
 `;
 
 export const NameWrapper = styled.div`
@@ -305,7 +323,7 @@ export const ListButton = styled.div`
   justify-content: center;
   align-items: center;
   width: 30%;
-  height: 80px;
+  height: 70px;
   background: #ffffff;
   border: 1px solid #bdbdbd;
   font-weight: 500;
@@ -314,7 +332,7 @@ export const ListButton = styled.div`
   flex: none;
   order: 0;
   flex-grow: 0;
-  margin-top: 20px;
+  margin-top: 15px;
   &:hover {
     background-color: #ff3c8d;
     border: none;

@@ -21,11 +21,11 @@ const schema = yup.object({
   writer: yup.string().required("필수 입력 사항"),
   password: yup
     .string()
-    .required("필수 입력 사항")
     .matches(
-      /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/,
-      "비밀번호는 영문, 숫자, 특수문자를 포함한 8~16자리 문자열입니다"
-    ),
+      /^(?=.*[a-zA-z])(?=.*[0-9]).{4,8}$/,
+      "비밀번호는 영문+숫자의 4~8자리 문자열입니다"
+    )
+    .required("필수 입력 사항"),
   contents: yup.string().required("필수 입력 사항"),
 });
 

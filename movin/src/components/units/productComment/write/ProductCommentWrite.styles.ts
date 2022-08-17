@@ -19,6 +19,11 @@ export const Wrapper = styled.div`
   }
 `;
 
+export const CommentTitleBox = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 export const AnswerWrapper = styled.div`
   width: 100%;
   display: flex;
@@ -27,13 +32,9 @@ export const AnswerWrapper = styled.div`
 `;
 
 export const CommentTitle = styled.div`
-  background-image: url(/freeboard_comment.png);
-  background-repeat: no-repeat;
-  background-position: 0px;
-  padding: 20px 0px 24px 30px;
+  padding: 0 0 1px 7px;
   font-weight: 500;
   font-size: 18px;
-  line-height: 27px;
 `;
 
 export const CommentHeader = styled.div`

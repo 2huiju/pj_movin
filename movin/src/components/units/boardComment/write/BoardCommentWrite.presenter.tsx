@@ -1,5 +1,5 @@
 import * as S from "./BoardCommentWrite.styles";
-import { HeartOutlined } from "@ant-design/icons";
+import { HeartOutlined, FormOutlined } from "@ant-design/icons";
 import { IBoardCommentWriteUIProps } from "./BoardCommentWrite.types";
 
 export default function BoardCommentWritePresenter(
@@ -14,7 +14,14 @@ export default function BoardCommentWritePresenter(
       }
     >
       <S.Wrapper>
-        <S.CommentTitle>댓글</S.CommentTitle>
+        <S.CommentTitleBox isEdit={props.isEdit}>
+          <FormOutlined style={{ fontSize: "20px", color: "#ff3c8d" }} />
+          {props.isEdit ? (
+            <S.CommentTitle>댓글 수정</S.CommentTitle>
+          ) : (
+            <S.CommentTitle>댓글</S.CommentTitle>
+          )}
+        </S.CommentTitleBox>
         <S.CommentHeader>
           <S.CommentWriter
             type="text"
@@ -35,7 +42,7 @@ export default function BoardCommentWritePresenter(
         </S.CommentHeader>
         <S.CommentErrorBox>
           <S.Error>{props.formState.errors.writer?.message}</S.Error>
-          <S.Error>{props.formState.errors.password?.message}</S.Error>
+          <S.PwdError>{props.formState.errors.password?.message}</S.PwdError>
         </S.CommentErrorBox>
         <S.CommentContents
           maxLength={100}
