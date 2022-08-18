@@ -14,6 +14,7 @@ export default function MainPageContainer() {
 
   const [Youtube, setYoutube] = useState(false);
   const [YoutubeTitle, setYoutubeTitle] = useState("");
+  const [MovieInfo, setMovieInfo] = useState([]);
 
   const randomPage = Math.floor(Math.random() * 5) + 1;
 
@@ -86,8 +87,10 @@ export default function MainPageContainer() {
       &part=snippet&order=viewCount&q=movie trailers ${item.original_title}&regionCode=KR&videoDefinition=high&videoDuration=short&maxResults=1&type=video`
     );
     const data = result.data.items;
+    console.log(data);
 
-    setYoutubeTitle(data[0].id.videoId);
+    setMovieInfo(data);
+    setYoutubeTitle(data[0]?.id.videoId);
   };
 
   return (
@@ -101,6 +104,7 @@ export default function MainPageContainer() {
         popularJP={popularJP}
         Youtube={Youtube}
         YoutubeTitle={YoutubeTitle}
+        MovieInfo={MovieInfo}
         setYoutube={setYoutube}
         onClickDetail={onClickDetail}
       />

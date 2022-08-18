@@ -17,7 +17,6 @@ export default function ProductList() {
   const { data, refetch, fetchMore } = useQuery(FETCH_USED_ITEMS);
   const { data: BestItemData } = useQuery(FETCH_USED_ITEM_BEST);
 
-  console.log(data);
   const onClickMoveToDetail = (el) => () => {
     console.log(el);
     router.push(`/product/${el._id}`);

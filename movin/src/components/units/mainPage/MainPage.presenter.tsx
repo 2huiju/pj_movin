@@ -1,7 +1,7 @@
 import * as S from "./MainPage.styles";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import YouTubePage from "../../commons/youtubeVideo";
+import YouTubePage from "../../commons/youtubeVideo/YoutubeVideo.container";
 import { IMainPagePresenterProps } from "./MainPage.types";
 import LayoutBanner from "../../commons/layout/banner";
 
@@ -58,6 +58,7 @@ export default function MainPagePresenter(props: IMainPagePresenterProps) {
         <YouTubePage
           setYoutube={props.setYoutube}
           YoutubeTitle={props.YoutubeTitle}
+          MovieInfo={props.MovieInfo}
         />
       )}
       <S.Title>인기 많은 영화</S.Title>
