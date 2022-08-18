@@ -1,7 +1,6 @@
 import * as S from "./MainPage.styles";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Tooltip } from "antd";
 import YouTubePage from "../../commons/youtubeVideo";
 import { IMainPagePresenterProps } from "./MainPage.types";
 import LayoutBanner from "../../commons/layout/banner";
@@ -55,25 +54,20 @@ export default function MainPagePresenter(props: IMainPagePresenterProps) {
   return (
     <S.Wrapper>
       <LayoutBanner />
+      {props.Youtube && (
+        <YouTubePage
+          setYoutube={props.setYoutube}
+          YoutubeTitle={props.YoutubeTitle}
+        />
+      )}
       <S.Title>인기 많은 영화</S.Title>
       <S.CarouselSlide {...settings}>
         {props.popularKO?.map((item: any) => (
           <div key={item.id}>
-            <Tooltip
-              color="white"
-              placement="right"
-              title={
-                <YouTubePage
-                  setYoutube={props.setYoutube}
-                  YoutubeTitle={props.YoutubeTitle}
-                />
-              }
-            >
-              <S.CarouselImg
-                src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
-                onMouseEnter={props.onClickDetail(item)}
-              />
-            </Tooltip>
+            <S.CarouselImg
+              src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
+              onClick={props.onClickDetail(item)}
+            />
           </div>
         ))}
       </S.CarouselSlide>
@@ -81,21 +75,10 @@ export default function MainPagePresenter(props: IMainPagePresenterProps) {
       <S.CarouselSlide {...settings}>
         {props.nowPlaying.map((item: any) => (
           <div key={item.id}>
-            <Tooltip
-              color="white"
-              placement="right"
-              title={
-                <YouTubePage
-                  setYoutube={props.setYoutube}
-                  YoutubeTitle={props.YoutubeTitle}
-                />
-              }
-            >
-              <S.CarouselImg
-                src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
-                onMouseEnter={props.onClickDetail(item)}
-              />
-            </Tooltip>
+            <S.CarouselImg
+              src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
+              onClick={props.onClickDetail(item)}
+            />
           </div>
         ))}
       </S.CarouselSlide>
@@ -103,20 +86,10 @@ export default function MainPagePresenter(props: IMainPagePresenterProps) {
       <S.CarouselSlide {...settings}>
         {props.upComing.map((item: any) => (
           <div key={item.id}>
-            <Tooltip
-              placement="right"
-              title={
-                <YouTubePage
-                  setYoutube={props.setYoutube}
-                  YoutubeTitle={props.YoutubeTitle}
-                />
-              }
-            >
-              <S.CarouselImg
-                src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
-                onMouseEnter={props.onClickDetail(item)}
-              />
-            </Tooltip>
+            <S.CarouselImg
+              src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
+              onClick={props.onClickDetail(item)}
+            />
           </div>
         ))}
       </S.CarouselSlide>
@@ -124,20 +97,10 @@ export default function MainPagePresenter(props: IMainPagePresenterProps) {
       <S.CarouselSlide {...settings}>
         {props.topGrade.map((item: any) => (
           <div key={item.id}>
-            <Tooltip
-              placement="right"
-              title={
-                <YouTubePage
-                  setYoutube={props.setYoutube}
-                  YoutubeTitle={props.YoutubeTitle}
-                />
-              }
-            >
-              <S.CarouselImg
-                src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
-                onMouseEnter={props.onClickDetail(item)}
-              />
-            </Tooltip>
+            <S.CarouselImg
+              src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
+              onClick={props.onClickDetail(item)}
+            />
           </div>
         ))}
       </S.CarouselSlide>
@@ -145,20 +108,10 @@ export default function MainPagePresenter(props: IMainPagePresenterProps) {
       <S.CarouselSlide {...settings}>
         {props.popularUS.map((item: any) => (
           <div key={item.id}>
-            <Tooltip
-              placement="right"
-              title={
-                <YouTubePage
-                  setYoutube={props.setYoutube}
-                  YoutubeTitle={props.YoutubeTitle}
-                />
-              }
-            >
-              <S.CarouselImg
-                src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
-                onMouseEnter={props.onClickDetail(item)}
-              />
-            </Tooltip>
+            <S.CarouselImg
+              src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
+              onClick={props.onClickDetail(item)}
+            />
           </div>
         ))}
       </S.CarouselSlide>
@@ -166,20 +119,10 @@ export default function MainPagePresenter(props: IMainPagePresenterProps) {
       <S.CarouselSlide {...settings}>
         {props.popularJP.map((item: any) => (
           <div key={item.id}>
-            <Tooltip
-              placement="right"
-              title={
-                <YouTubePage
-                  setYoutube={props.setYoutube}
-                  YoutubeTitle={props.YoutubeTitle}
-                />
-              }
-            >
-              <S.CarouselImg
-                src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
-                onMouseEnter={props.onClickDetail(item)}
-              />
-            </Tooltip>
+            <S.CarouselImg
+              src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
+              onClick={props.onClickDetail(item)}
+            />
           </div>
         ))}
       </S.CarouselSlide>

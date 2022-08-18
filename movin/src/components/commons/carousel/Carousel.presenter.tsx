@@ -22,9 +22,15 @@ export default function CarouselPresenter(props: ICarouselPresenterProps) {
   return (
     <div>
       <S.Wrapper>
-        {props.isDetail1 && <MovieDetailPage1 />}
-        {props.isDetail2 && <MovieDetailPage2 />}
-        {props.isDetail3 && <MovieDetailPage3 />}
+        {props.isDetail1 && (
+          <MovieDetailPage1 onClickCancelDetail={props.onClickCancelDetail} />
+        )}
+        {props.isDetail2 && (
+          <MovieDetailPage2 onClickCancelDetail={props.onClickCancelDetail} />
+        )}
+        {props.isDetail3 && (
+          <MovieDetailPage3 onClickCancelDetail={props.onClickCancelDetail} />
+        )}
         <S.BannerSlide {...settings}>
           <S.ContainBox>
             <S.Title>아바타2: 물의 길</S.Title>

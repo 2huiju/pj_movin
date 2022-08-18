@@ -40,11 +40,10 @@ export const CarouselSlide = styled(Slider)`
 export const CarouselImg = styled.img`
   width: 185px;
   height: 270px;
-  border-radius: 10px;
   cursor: pointer;
 
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
     transition: 0.4s;
   }
 

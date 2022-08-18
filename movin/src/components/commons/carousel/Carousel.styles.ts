@@ -103,11 +103,13 @@ export const DetailButton = styled.div`
   cursor: pointer;
 
   @media ${breakPoints.tablet} {
-    display: none;
+    top: 240px;
+    left: 100px;
   }
 
   @media ${breakPoints.mobile} {
-    display: none;
+    top: 180px;
+    left: 25px;
   }
 `;
 

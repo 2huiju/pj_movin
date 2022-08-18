@@ -82,7 +82,7 @@ export default function MainPageContainer() {
   const onClickDetail = (item: IMainPageContainerProps) => async () => {
     setYoutube(true);
     const result = await axios.get(
-      `https://www.googleapis.com/youtube/v3/search?key=AIzaSyBa4v_jjfrWvMrb75YF5HixYp93hFO6rrg
+      `https://www.googleapis.com/youtube/v3/search?key=AIzaSyDYXjwMz5yTp6cK2dczmrCjKWjG49b0Sko
       &part=snippet&order=viewCount&q=movie trailers ${item.original_title}&regionCode=KR&videoDefinition=high&videoDuration=short&maxResults=1&type=video`
     );
     const data = result.data.items;
