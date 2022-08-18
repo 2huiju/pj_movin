@@ -60,6 +60,7 @@ export default function LayoutHeaderContainer() {
       accessToken={accessToken}
       data={data}
       sideBar={sideBar}
+      setSideBar={setSideBar}
       name={undefined}
       page={undefined}
     />

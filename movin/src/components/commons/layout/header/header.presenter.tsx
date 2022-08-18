@@ -1,4 +1,4 @@
-import PhoneSidebar from "../phoneSidebar";
+import PhoneSidebar from "../phoneSidebar/PhoneSidebar.container";
 import * as H from "./header.styles";
 import { ILayoutHeaderPresenterProps } from "./header.types";
 
@@ -56,6 +56,7 @@ export default function LayoutHeaderPresenter(
       </H.Wrapper>
       <PhoneSidebar
         sideBar={props.sideBar}
+        setSideBar={props.setSideBar}
         onClickMoveToPage={props.onClickMoveToPage}
       />
     </>

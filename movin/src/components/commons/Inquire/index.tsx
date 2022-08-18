@@ -27,7 +27,6 @@ export default function InquireKaKao() {
         container: "#kakao-talk-channel-add-button",
         channelPublicId: "_xlFMExj",
         size: "large",
-
         supportMultipleDensities: true,
       });
 

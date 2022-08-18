@@ -13,12 +13,12 @@ export const Wrapper = styled.div`
   padding: 10px;
 
   @media ${breakPoints.mobile} {
-    height: 220px;
+    height: 230px;
   }
 `;
 
 export const WrapperBox = styled.div`
-  max-width: 1200px;
+  width: 1200px;
   display: flex;
   justify-content: space-between;
   padding: 10px;
