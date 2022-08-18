@@ -7,6 +7,7 @@ import { useMutation } from "@apollo/client";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { Modal } from "antd";
 
 const schema = yup.object({
   email: yup
@@ -25,7 +26,7 @@ const schema = yup.object({
 export default function LoginPageContainer() {
   const router = useRouter();
 
-  const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
+  const [, setAccessToken] = useRecoilState(accessTokenState);
 
   const [loginUser] = useMutation(LOGIN_USER);
 
@@ -42,11 +43,9 @@ export default function LoginPageContainer() {
       },
     });
     setAccessToken(result.data?.loginUser.accessToken);
-    // console.log(accessToken);
-    // mutation해서 받은 토큰을 변수에 담아주기
-    localStorage.setItem("refreshToken", "true");
-    alert("로그인 성공");
-    router.push("/mypage");
+    localStorage.setItem("refreshToken", result.data?.loginUser.accessToken);
+    Modal.success({ content: "MOVIN에 오신 걸 환영합니다" });
+    router.push("/");
   };
 
   const onClickToSignup = () => {

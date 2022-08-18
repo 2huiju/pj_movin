@@ -38,8 +38,7 @@ export default function LayoutHeaderContainer() {
   }, [router.asPath]);
 
   const onClickLogout = async () => {
-    const result = await logoutUser();
-    console.log(result);
+    await logoutUser();
 
     localStorage.removeItem("refreshToken");
     setAccessToken("");
