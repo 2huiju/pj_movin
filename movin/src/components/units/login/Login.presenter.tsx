@@ -21,7 +21,11 @@ export default function LoginPagePresenter(props: any) {
             {...props.register("password")}
           />
           <S.Error>{props.formState.errors.password?.message}</S.Error>
-          <S.LoginBox isValid={props.formState.isValid}>로그인</S.LoginBox>
+          <S.LoginBox>
+            <S.LoginButton isValid={props.formState.isValid}>
+              로그인
+            </S.LoginButton>
+          </S.LoginBox>
           <S.SignUpWrapper>
             <S.SignUpFont>아직 계정이 없으신가요?</S.SignUpFont>
             <S.SignUp onClick={props.onClickToSignup}>회원가입</S.SignUp>

@@ -20,11 +20,11 @@ export const Wrapper = styled.div`
 
 export const SubWrapper = styled.div`
   width: 642px;
-  height: 502px;
+  height: 550px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 60px 100px 70px 100px;
+  padding: 50px 100px 40px 100px;
   background-color: #ffffff;
 
   @media ${breakPoints.mobile} {
@@ -58,7 +58,6 @@ export const SubTitle = styled.div`
 export const SignUpFont = styled.div`
   font-weight: 400;
   font-size: 18px;
-  line-height: 100%;
   display: flex;
   align-items: center;
   color: #888888;
@@ -69,7 +68,6 @@ export const SignUp = styled.div`
   cursor: pointer;
   font-weight: 500;
   font-size: 18px;
-  line-height: 100%;
   display: flex;
   align-items: center;
   border-bottom: 1px solid;
@@ -84,7 +82,7 @@ export const Error = styled.div`
 export const InputBox = styled.input`
   margin-top: 40px;
   padding-left: 20px;
-  height: 78px;
+  height: 50px;
   border-radius: 5px;
   border: 1px solid #cccccc;
   background-color: #f6f6f6;
@@ -93,22 +91,24 @@ export const InputBox = styled.input`
   }
 `;
 
-export const LoginBox = styled.button`
+export const LoginButton = styled.button`
+  width: 100%;
+  height: 50px;
   margin-top: 30px;
-  height: 88px;
   background-color: #ff3c8d;
   text-align: center;
   font-weight: 400;
   font-size: 18px;
-  line-height: 100%;
   color: #ffffff;
   border: none;
   cursor: pointer;
 `;
 
+export const LoginBox = styled.div``;
+
 export const SignUpWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding-top: 40px;
+  padding-top: 30px;
 `;
