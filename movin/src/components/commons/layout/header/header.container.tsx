@@ -24,6 +24,7 @@ export default function LayoutHeaderContainer() {
     { name: "자유게시판", page: "/boards" },
     { name: "무비마켓", page: "/product" },
     { name: "글쓰러가기", page: "/boards/new" },
+    { name: "하트 무비", page: "/myPageHeartMovie" },
   ];
 
   const onClickMenu = () => (event: ILayoutHeaderContainerProps) => {

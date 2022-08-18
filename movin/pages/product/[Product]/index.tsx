@@ -4,7 +4,7 @@ import ProductDetail from "../../../src/components/units/product/detail/ProductD
 import { FETCH_USED_ITEM } from "../../../src/components/units/product/detail/ProductDetail.queries";
 import ProductCommentList from "../../../src/components/units/productComment/list/ProductCommentList.container";
 import ProductCommentWrite from "../../../src/components/units/productComment/write/ProductCommentWrite.container";
-import TodaySidebar from "../../../src/components/commons/TodaySidebar";
+import TodaySidebar from "../../../src/components/commons/todaySidebar";
 
 export default function ProductDetailPage() {
   const router = useRouter();

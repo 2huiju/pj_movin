@@ -9,9 +9,10 @@ export default function YouTubeVideoContainer(props) {
     console.log("안냥", props.MovieInfo);
 
     const hearts = JSON.parse(localStorage.getItem("HeartMovie") || "[]");
+    console.log(hearts);
 
     const temp = hearts.filter(
-      (heartsEl) => heartsEl.id.videoId === props.MovieInfo.id.videoId
+      (basketsEl) => basketsEl.title === props.MovieInfo.title
     );
 
     if (temp.length === 1) {

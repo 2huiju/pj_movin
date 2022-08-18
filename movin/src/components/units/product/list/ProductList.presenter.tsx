@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import InfiniteScroll from "react-infinite-scroller";
 import moment from "moment";
 import "moment/locale/ko";
-import TodaySidebar from "../../../commons/TodaySidebar";
+import TodaySidebar from "../../../commons/todaySidebar";
 
 export default function ProductListUI(props: any) {
   const myImg = /^.*[.(jpg | svg | png | jpeg | gif )]$/g;

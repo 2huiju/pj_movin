@@ -87,9 +87,8 @@ export default function MainPageContainer() {
       &part=snippet&order=viewCount&q=movie trailers ${item.original_title}&regionCode=KR&videoDefinition=high&videoDuration=short&maxResults=1&type=video`
     );
     const data = result.data.items;
-    console.log(data);
 
-    setMovieInfo(data);
+    setMovieInfo(item);
     setYoutubeTitle(data[0]?.id.videoId);
   };
 

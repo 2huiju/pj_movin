@@ -76,6 +76,10 @@ export const Button = styled.div`
   text-underline-position: ${(props: ILayoutHeaderStylesProps) =>
     props.el.page === props.activeMenu ? "under" : "none"};
 
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
+
   @media ${breakPoints.mobile} {
     display: none;
   }
@@ -87,6 +91,14 @@ export const Button3 = styled.div`
   color: #ffffff;
   margin-right: 10px;
   padding-top: 1px;
+
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const Button4 = styled.div`
@@ -96,6 +108,10 @@ export const Button4 = styled.div`
   margin-right: 10px;
   font-weight: 600;
   padding-top: 1px;
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const Hamburger = styled.img`
