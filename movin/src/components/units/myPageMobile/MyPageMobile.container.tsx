@@ -1,10 +1,10 @@
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import MyPageSideBarPresenter from "./MyPageSidebar.presenter";
-import { FETCH_USER_LOGGED_IN } from "./MyPageSidebar.queries";
+import MyPageMobilePresenter from "./MyPageMobile.presenter";
+import { FETCH_USER_LOGGED_IN } from "./MyPageMobile.queries";
 
-export default function MyPageSideBarContainer() {
+export default function MyPageMobileContainer() {
   const router = useRouter();
   const { data } = useQuery(FETCH_USER_LOGGED_IN);
 
@@ -32,7 +32,7 @@ export default function MyPageSideBarContainer() {
   }, [router.asPath]);
 
   return (
-    <MyPageSideBarPresenter
+    <MyPageMobilePresenter
       data={data}
       Menu={Menu}
       isModalVisible={isModalVisible}

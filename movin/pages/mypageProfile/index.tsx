@@ -4,15 +4,15 @@ import MyPageSideBarPage from "../../src/components/commons/myPageSidebar";
 import { FETCH_POINT_TRANSACTION } from "../../src/components/units/mypagePoint/MypagePoint.queries";
 import MyPageProfileContainer from "../../src/components/units/mypageProfile/MyPageProfile.container";
 
-function MyPage() {
+function MyPageProfile() {
   const { data: PointData, refetch } = useQuery(FETCH_POINT_TRANSACTION);
 
   return (
-    <div style={{ display: "flex" }}>
+    <div style={{ display: "flex", height: "1000px" }}>
       <MyPageSideBarPage PointData={PointData} refetch={refetch} />
       <MyPageProfileContainer />
     </div>
   );
 }
 
-export default withAuth(MyPage);
+export default withAuth(MyPageProfile);

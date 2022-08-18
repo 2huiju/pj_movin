@@ -150,16 +150,28 @@ export const NumberRow = styled.div`
 export const TitleRow = styled.div`
   width: 20%;
   text-align: center;
+
+  @media ${breakPoints.mobile} {
+    width: 35%;
+  }
 `;
 
 export const WriterRow = styled.div`
   width: 30%;
   text-align: center;
+
+  @media ${breakPoints.mobile} {
+    width: 35%;
+  }
 `;
 
 export const AtRow = styled.div`
   width: 20%;
   text-align: center;
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const ListRow = styled.div`
@@ -176,7 +188,7 @@ export const ListRow = styled.div`
   color: #4f4f4f;
 `;
 
-export const IndexColumn = styled.div`
+export const AtColumn = styled.div`
   width: 30%;
   text-align: center;
 `;
@@ -184,15 +196,27 @@ export const IndexColumn = styled.div`
 export const TitleColumn = styled.div`
   width: 20%;
   text-align: center;
+
+  @media ${breakPoints.mobile} {
+    width: 35%;
+  }
 `;
 export const WriterColumn = styled.div`
   width: 30%;
   text-align: center;
   font-weight: 600;
+
+  @media ${breakPoints.mobile} {
+    width: 35%;
+  }
 `;
-export const AtColumn = styled.div`
+export const BalanceColumn = styled.div`
   width: 20%;
   text-align: center;
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const FooterWrapper = styled.div`
