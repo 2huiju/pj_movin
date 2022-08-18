@@ -1,5 +1,5 @@
 import TopButton from "../../buttons/TopButton";
-import InquireKaKao from "../../Inquire";
+import InquireKaKao from "../../inquire";
 import * as F from "./footer.styles";
 
 export default function FooterPresenter() {

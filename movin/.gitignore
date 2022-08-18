@@ -31,11 +31,3 @@ yarn-error.log*
 # vercel
 .vercel
 
-*.gif
-/.gif
-
-public/.gif
-public/movie1.gif
-public/JurassicTrailer.gif
-public/AvatarTrailer.gif
-public/AvengersTrailer.gif

@@ -1,6 +1,6 @@
 import * as S from "./BoardList.styles";
 import { getDate } from "../../../../commons/libraries/utils";
-import Paginations01 from "../../../commons/layout/paginations/01/pagination_container";
+import Paginations01 from "../../../commons/layout/paginations/Pagination.container";
 import { IBoardListUIProps } from "./BoardList.types";
 import { v4 as uuidv4 } from "uuid";
 
