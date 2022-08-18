@@ -13,15 +13,19 @@ export const Wrapper = styled.div`
   padding: 10px;
 
   @media ${breakPoints.mobile} {
-    display: none;
+    height: 220px;
   }
 `;
 
 export const WrapperBox = styled.div`
-  width: 1200px;
+  max-width: 1200px;
   display: flex;
   justify-content: space-between;
   padding: 10px;
+
+  @media ${breakPoints.mobile} {
+    flex-direction: column;
+  }
 `;
 
 export const LeftBox = styled.div`
@@ -31,6 +35,12 @@ export const LeftBox = styled.div`
   justify-content: center;
   padding-right: 50px;
   border-right: 1px solid #cccccc;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    border-right: none;
+    padding-right: 0;
+  }
 `;
 
 export const RightBox = styled.div`
@@ -39,6 +49,11 @@ export const RightBox = styled.div`
   flex-direction: column;
   justify-content: center;
   padding-left: 50px;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    padding-left: 0;
+  }
 `;
 
 export const Notice = styled.div`
@@ -65,6 +80,10 @@ export const Contents = styled.div`
   letter-spacing: 0.232836px;
   color: #bbbbbb;
   margin-bottom: 30px;
+
+  @media ${breakPoints.mobile} {
+    margin-bottom: 10px;
+  }
 `;
 
 export const Corp = styled.div`
@@ -73,12 +92,20 @@ export const Corp = styled.div`
   line-height: 15px;
   letter-spacing: 0.232836px;
   color: #bbbbbb;
+
+  @media ${breakPoints.mobile} {
+    margin-bottom: 10px;
+  }
 `;
 
 export const RightSubBox = styled.div`
   display: flex;
   flex-direction: row;
   margin-bottom: 15px;
+
+  @media ${breakPoints.mobile} {
+    margin-bottom: 0;
+  }
 `;
 
 export const SNSButton = styled.img`
@@ -118,4 +145,10 @@ export const Contents2 = styled.div`
   line-height: 15px;
   letter-spacing: 0.232836px;
   color: #bbbbbb;
+`;
+
+export const inquireBox = styled.div`
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
