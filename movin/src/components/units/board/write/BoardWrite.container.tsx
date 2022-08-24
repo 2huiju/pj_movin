@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, ChangeEvent } from "react";
 import { useMutation } from "@apollo/client";
 import BoardRoutingUI from "./BoardWrite.presenter";
 import { CREATE_BOARD, UPDATE_BOARD } from "./BoardWrite.queries";
@@ -83,7 +83,7 @@ export default function BoardWriteContainer(props: IBoardWriteContainerProps) {
     setIsModalVisible(false);
   };
 
-  const onChangeAddressDetail = (event: any) => {
+  const onChangeAddressDetail = (event: ChangeEvent<HTMLInputElement>) => {
     setAddressDetail(event.target.value);
   };
 

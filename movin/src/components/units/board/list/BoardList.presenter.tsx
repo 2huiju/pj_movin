@@ -52,7 +52,7 @@ export default function BoardListPresenter(props: IBoardListUIProps) {
             <S.WriterRow>작성자</S.WriterRow>
             <S.AtRow>날짜</S.AtRow>
           </S.ListTitleRow>
-          {props.data?.fetchBoards.map((el: any, index: any) => (
+          {props.data?.fetchBoards.map((el: any, index: number) => (
             <S.ListRow key={el._id}>
               <S.IndexColumn>{index + 1}</S.IndexColumn>
               <S.TitleColumn id={el._id} onClick={props.onClickMoveToDetail}>

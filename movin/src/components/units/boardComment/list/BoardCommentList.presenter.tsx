@@ -1,6 +1,6 @@
 import * as S from "./BoardCommentList.styles";
 import { getDate } from "../../../../commons/libraries/utils";
-import BoardCommentWriteUI from "../write/BoardCommentWrite.container";
+import BoardCommentWriteContainer from "../write/BoardCommentWrite.container";
 import InfiniteScroll from "react-infinite-scroller";
 import { IBoardCommentListUIProps } from "./BoardCommentList.types";
 import { HeartOutlined, DeleteTwoTone, EditTwoTone } from "@ant-design/icons";
@@ -53,7 +53,7 @@ export default function BoardCommentListUI(props: IBoardCommentListUIProps) {
           else {
             return (
               <>
-                <BoardCommentWriteUI
+                <BoardCommentWriteContainer
                   isEdit={true}
                   setEditId={props.setEditId}
                   el={el}
