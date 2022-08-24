@@ -18,6 +18,7 @@ export default function MyPageSideBarContainer() {
   const Menu = [
     { name: "내 포인트", page: "/mypagePoint" },
     { name: "내 프로필", page: "/mypageProfile" },
+    { name: "찜한 영화", page: "/myPageHeartMovie" },
   ];
 
   const onClickMenu = () => (event) => {

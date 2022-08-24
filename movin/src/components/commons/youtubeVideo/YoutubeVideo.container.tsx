@@ -1,3 +1,4 @@
+import { Modal } from "antd";
 import YoutubeVideoPresenter from "./YoutubeVideo.presenter";
 
 export default function YouTubeVideoContainer(props) {
@@ -16,6 +17,7 @@ export default function YouTubeVideoContainer(props) {
     );
 
     if (temp.length === 1) {
+      Modal.warning({ content: "이미 찜한 영화입니다" });
       return;
     }
 
@@ -23,6 +25,10 @@ export default function YouTubeVideoContainer(props) {
     hearts.unshift(newEl);
 
     localStorage.setItem("HeartMovie", JSON.stringify(hearts));
+
+    Modal.success({
+      content: "찜하기 완료! 마이페이지에서 확인 가능합니다",
+    });
   };
 
   return (

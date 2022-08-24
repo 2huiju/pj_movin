@@ -16,6 +16,7 @@ export default function MyPageHeartMoviePresenter(props) {
                 <M.PickedWrap>
                   <M.PickedTitle>찜 취소</M.PickedTitle>
                   <HeartTwoTone
+                    onClick={props.onClickCancelHeart(el)}
                     style={{
                       fontSize: "20px",
                       cursor: "pointer",

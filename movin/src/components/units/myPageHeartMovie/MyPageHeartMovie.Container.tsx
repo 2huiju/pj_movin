@@ -1,3 +1,4 @@
+import { Modal } from "antd";
 import { useEffect, useState } from "react";
 import MyPageHeartMoviePresenter from "./MyPageHeartMovie.Presenter";
 
@@ -9,7 +10,25 @@ export default function MyPageHeartMovieContainer() {
     setHeartMovie(hearts);
   }, []);
 
-  console.log("이건", heartMovie);
+  const onClickCancelHeart = (el) => () => {
+    try {
+      const hearts = JSON.parse(localStorage.getItem("HeartMovie") || "[]");
+      const temp = hearts.filter((basketsEl) => basketsEl.id !== el.id);
 
-  return <MyPageHeartMoviePresenter heartMovie={heartMovie} />;
+      localStorage.setItem("HeartMovie", JSON.stringify(temp));
+
+      window.location.replace("/myPageHeartMovie");
+    } catch (error) {
+      console.log(error.message);
+    }
+
+    Modal.success({ content: "찜하기가 취소되었습니다" });
+  };
+
+  return (
+    <MyPageHeartMoviePresenter
+      onClickCancelHeart={onClickCancelHeart}
+      heartMovie={heartMovie}
+    />
+  );
 }

@@ -31,8 +31,11 @@ export default function ProductList() {
     }
 
     const { __typename, ...newEl } = el;
+    console.log("뉴이엘은", newEl);
     newEl.date = Today;
     baskets.unshift(newEl);
+
+    console.log("넣고나서", baskets);
 
     localStorage.setItem("baskets", JSON.stringify(baskets));
   };

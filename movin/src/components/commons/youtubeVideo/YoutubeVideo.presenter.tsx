@@ -1,21 +1,12 @@
 import * as Y from "./YoutubeVideo.styles";
-import { CloseOutlined, HeartTwoTone, HeartOutlined } from "@ant-design/icons";
+import { CloseOutlined, HeartTwoTone } from "@ant-design/icons";
 
 export default function YoutubeVideoPresenter(props) {
   return (
     <Y.VideoWrapper onMouseLeave={props.onClickCancel}>
       <Y.CancelWrapper>
-        <HeartOutlined
-          onClick={props.onClickHeart}
-          style={{
-            fontSize: "20px",
-            color: "#ff3c8d",
-            marginBottom: "5px",
-            marginRight: "10px",
-            cursor: "pointer",
-          }}
-        />
         <HeartTwoTone
+          onClick={props.onClickHeart}
           style={{
             fontSize: "20px",
             marginBottom: "5px",

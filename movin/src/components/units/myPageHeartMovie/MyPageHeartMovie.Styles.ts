@@ -2,16 +2,21 @@ import styled from "@emotion/styled";
 import { breakPoints } from "../../../commons/styles/media";
 
 export const Wrapper = styled.div`
-  width: 100%;
+  width: 80%;
+  min-height: 900px;
+  padding: 140px 10px 100px 50px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 150px 10px;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    padding: 100px 10px;
+  }
 `;
 
 export const Title = styled.div`
-  font-weight: 700;
-  font-size: 36px;
+  font-weight: 500;
+  font-size: 30px;
   line-height: 42px;
   text-align: center;
   padding-bottom: 30px;

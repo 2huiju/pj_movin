@@ -6,16 +6,15 @@ import { breakPoints } from "../../../commons/styles/media";
 
 const Wrapper = styled.div`
   width: 120px;
-  height: 460px;
   position: absolute;
   right: 24px;
   top: 710px;
   border-radius: 10px;
   text-align: center;
-  padding: 10px;
+  padding: 15px 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: #fff0f5;
 
   @media ${breakPoints.mobile} {
