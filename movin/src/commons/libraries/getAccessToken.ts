@@ -15,7 +15,7 @@ export async function getAccessToken() {
   try {
     // 1. GraphQlClient import
     const graphQlClient = new GraphQLClient(
-      "https://backend07.codebootcamp.co.kr/graphql",
+      "https://backend07.codebootcamp.co.kr/graphql06",
       { credentials: "include" }
     );
     // 2. RESTORE_ACCESS_TOKEN gql을 요청한 뒤 반환되는 결과값을 result에 담기
