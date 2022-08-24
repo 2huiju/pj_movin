@@ -19,8 +19,11 @@ import ProductCommentWrite from "../write/ProductCommentWrite.container";
 import ProductCommentListAnswerWrite from "./ProductCommentAnswerWrite";
 import ProductCommentListAnswerUI from "./ProductCommentAnswerList";
 import { FETCH_USER_LOGGED_IN } from "../../mypagePoint/MypagePoint.queries";
+import { IProductCommentListUIItemProps } from "./ProductCommentList.types";
 
-export default function ProductCommentListUIItem(props: any) {
+export default function ProductCommentListUIItem(
+  props: IProductCommentListUIItemProps
+) {
   const router = useRouter();
 
   //수정하기에 담아둘 아이디
@@ -56,13 +59,12 @@ export default function ProductCommentListUIItem(props: any) {
   }, [data]);
 
   //댓글 수정하기
-  const onClickToEdit = (event) => {
-    // const EditVariables = { boardId: router.query.Board };
+  const onClickToEdit = () => {
     setisEdit(true);
   };
 
   //댓글 삭제
-  const onClickDelete = (event) => {
+  const onClickDelete = () => {
     deleteUseditemQuestion({
       variables: {
         useditemQuestionId: props.el._id,
@@ -80,7 +82,7 @@ export default function ProductCommentListUIItem(props: any) {
   };
 
   // 답글 달기
-  const onClickToAnswer = async (event) => {
+  const onClickToAnswer = async () => {
     setIsAnswer(true);
   };
 
@@ -88,7 +90,7 @@ export default function ProductCommentListUIItem(props: any) {
     <>
       {!isEdit && (
         <S.Wrapper key={props.el._id}>
-          <S.CommentWrapper isEdit={isEdit}>
+          <S.CommentWrapper>
             <S.RowBox>
               <S.Avatar src="/commons/profile.svg" />
               <S.MainWrapper>
@@ -133,6 +135,9 @@ export default function ProductCommentListUIItem(props: any) {
               <ProductCommentListAnswerWrite
                 el={props.el}
                 setIsAnswer={setIsAnswer}
+                isEdit={false}
+                setisEdit={undefined}
+                ee={undefined}
               />
             )}
             {data?.fetchUseditemQuestionAnswers.map((ee: any) => (

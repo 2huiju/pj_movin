@@ -1,7 +1,10 @@
 import * as Y from "./YoutubeVideo.styles";
 import { CloseOutlined, HeartTwoTone } from "@ant-design/icons";
+import { IYoutubeVideoPresenterProps } from "./YoutubeVideo.types";
 
-export default function YoutubeVideoPresenter(props) {
+export default function YoutubeVideoPresenter(
+  props: IYoutubeVideoPresenterProps
+) {
   return (
     <Y.VideoWrapper onMouseLeave={props.onClickCancel}>
       <Y.CancelWrapper>

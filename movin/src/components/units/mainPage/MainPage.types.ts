@@ -3,6 +3,7 @@ export interface IMainPageContainerProps {
 }
 
 export interface IMainPagePresenterProps {
+  MovieInfo: any;
   popularKO: any;
   popularJP: any;
   popularUS: any;

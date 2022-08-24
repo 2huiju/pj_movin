@@ -24,7 +24,7 @@ export interface IBoardCommentWriteUIProps {
   onClickUploadComment: any;
   handleSubmit: UseFormHandleSubmit<FieldValues>;
   el: any;
-  isEdit: any;
+  isEdit: boolean;
   data: any;
 }
 

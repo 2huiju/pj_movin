@@ -5,6 +5,7 @@ export interface ILayoutHeaderContainerProps {
 }
 
 export interface ILayoutHeaderPresenterProps {
+  setSideBar: any;
   sideBar: any;
   onClickMenu: any;
   onClickLogout: MouseEventHandler<HTMLDivElement> | undefined;

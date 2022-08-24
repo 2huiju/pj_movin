@@ -20,7 +20,7 @@ export default function MyPageMobileContainer() {
     { name: "내 프로필", page: "/mypageProfile" },
   ];
 
-  const onClickMenu = () => (event) => {
+  const onClickMenu = () => (event: any) => {
     setActiveMenu(event.target.id);
     router.push(event.target.id);
   };

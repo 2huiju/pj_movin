@@ -3,7 +3,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { gql, useMutation } from "@apollo/client";
 import { Modal } from "antd";
-import MyPageProfilePresenter from "./myPageProfile.presenter";
+import MyPageProfilePresenter from "./MyPageProfile.presenter";
 
 export const RESET_PASSWORD = gql`
   mutation resetUserPassword($password: String!) {
@@ -31,7 +31,7 @@ export default function MyPageProfileContainer() {
     mode: "onChange",
   });
 
-  const onClickResetPassword = (data) => {
+  const onClickResetPassword = (data: any) => {
     try {
       resetUserPassword({
         variables: {
@@ -39,7 +39,7 @@ export default function MyPageProfileContainer() {
         },
       });
       Modal.success({ content: "비밀번호가 변경되었습니다." });
-    } catch (error) {
+    } catch (error: any) {
       console.log(error.message);
     }
   };

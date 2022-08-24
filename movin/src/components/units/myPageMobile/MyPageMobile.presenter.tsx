@@ -1,6 +1,9 @@
 import PaymentPage from "../../commons/payment";
 import * as M from "./MyPageMobile.styles";
-export default function MyPageMobilePresenter(props) {
+import { IMyPageMobilePresenterProps } from "./MyPageMobile.types";
+export default function MyPageMobilePresenter(
+  props: IMyPageMobilePresenterProps
+) {
   return (
     <M.Wrapper>
       <M.Title>MYPAGE</M.Title>
@@ -14,7 +17,7 @@ export default function MyPageMobilePresenter(props) {
         원
       </M.MyPoint>
       <M.PayMentButton onClick={props.onClickPayment}>충전하기</M.PayMentButton>
-      {props.Menu.map((el) => (
+      {props.Menu.map((el: any) => (
         <M.SubTitle
           el={el}
           activeMenu={props.activeMenu}

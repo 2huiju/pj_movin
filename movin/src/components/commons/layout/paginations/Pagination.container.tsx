@@ -13,14 +13,14 @@ export default function Paginations01(props: any) {
     props.refetch({ page: activedPage });
   };
 
-  const onClickPrevPage = (e) => {
+  const onClickPrevPage = () => {
     if (startPage <= 1) return;
     setStartPage((prev) => prev - 10);
     setActivedPage(startPage - 10);
     props.refetch({ page: startPage - 10 });
   };
 
-  const onClickNextPage = (e) => {
+  const onClickNextPage = () => {
     if (startPage + 10 > lastPage) return;
     setStartPage((prev) => prev + 10);
     setActivedPage(startPage + 10);

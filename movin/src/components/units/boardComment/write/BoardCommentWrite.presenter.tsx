@@ -1,10 +1,7 @@
 import * as S from "./BoardCommentWrite.styles";
 import { HeartOutlined, FormOutlined } from "@ant-design/icons";
-import { IBoardCommentWriteUIProps } from "./BoardCommentWrite.types";
 
-export default function BoardCommentWritePresenter(
-  props: IBoardCommentWriteUIProps
-) {
+export default function BoardCommentWritePresenter(props: any) {
   return (
     <form
       onSubmit={
@@ -14,7 +11,7 @@ export default function BoardCommentWritePresenter(
       }
     >
       <S.Wrapper>
-        <S.CommentTitleBox isEdit={props.isEdit}>
+        <S.CommentTitleBox>
           <FormOutlined style={{ fontSize: "20px", color: "#ff3c8d" }} />
           {props.isEdit ? (
             <S.CommentTitle>댓글 수정</S.CommentTitle>

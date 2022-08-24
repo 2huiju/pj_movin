@@ -1,5 +1,5 @@
 import { useMutation } from "@apollo/client";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import PaymentPresenter from "./payment.presenter";
 import { CREATE_POINT_TRANSACTION_OF_LOADING } from "./payment.queries";
 import { IPaymentContainerProps } from "./payment.types";
@@ -18,8 +18,8 @@ export default function PaymentContainer(props: IPaymentContainerProps) {
 
   const Price = [1000, 2000, 5000, 10000];
 
-  const onChangeMoney = (event: any) => {
-    setMoney(event?.target.value);
+  const onChangeMoney = (event: ChangeEvent<any>) => {
+    setMoney(event.target.value);
   };
 
   const onClickMoney = (event: IPaymentContainerProps) => {

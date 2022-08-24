@@ -1,7 +1,10 @@
 import { Modal } from "antd";
 import YoutubeVideoPresenter from "./YoutubeVideo.presenter";
+import { IYouTubeVideoContainerProps } from "./YoutubeVideo.types";
 
-export default function YouTubeVideoContainer(props) {
+export default function YouTubeVideoContainer(
+  props: IYouTubeVideoContainerProps
+) {
   const onClickCancel = () => {
     props.setYoutube(false);
   };
@@ -13,7 +16,7 @@ export default function YouTubeVideoContainer(props) {
     console.log(hearts);
 
     const temp = hearts.filter(
-      (basketsEl) => basketsEl.title === props.MovieInfo.title
+      (basketsEl: any) => basketsEl.title === props.MovieInfo.title
     );
 
     if (temp.length === 1) {

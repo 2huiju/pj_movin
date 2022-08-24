@@ -1,19 +1,14 @@
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import { useState } from "react";
 import ProductCommentListUI from "./ProductCommentList.presenter";
 import {
   // CREATE_USED_ITEM_QUESTION_ANSWER,
   FETCH_USED_ITEM_QUESTIONS,
 } from "./ProductCommentList.queries";
+import { IProductCommentListProps } from "./ProductCommentList.types";
 
-export default function ProductCommentList(props) {
+export default function ProductCommentList(props: IProductCommentListProps) {
   const router = useRouter();
-
-  //수정하러가기
-  const [isEdit, setisEdit] = useState(false);
-  // //수정하기에 담아둘 아이디
-  // const [isAnswer, setIsAnswer] = useState(false);
 
   // 댓글 받아오기
   const { data, fetchMore } = useQuery(FETCH_USED_ITEM_QUESTIONS, {
@@ -55,8 +50,6 @@ export default function ProductCommentList(props) {
         Itemdata={props.Itemdata}
         data={data}
         loadFunc={loadFunc}
-        isEdit={isEdit}
-        setisEdit={setisEdit}
       />
     </>
   );

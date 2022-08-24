@@ -53,7 +53,7 @@ export default function ProductDetail() {
   };
 
   // 상품 목록으로 이동
-  const onClickMoveTolist = () => {
+  const onClickMoveToList = () => {
     router.push("/product");
   };
 
@@ -84,7 +84,7 @@ export default function ProductDetail() {
     <>
       <ProductDetailUI
         data={data}
-        onClickMoveTolist={onClickMoveTolist}
+        onClickMoveToList={onClickMoveToList}
         onClickDelete={onClickDelete}
         onClickEdit={onClickEdit}
         onClickHeart={onClickHeart}

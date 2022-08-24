@@ -10,8 +10,11 @@ import {
 import { DeleteTwoTone, EditTwoTone } from "@ant-design/icons";
 
 import * as S from "./ProductCommentList.styles";
+import { IProductCommentListAnswerUIProps } from "./ProductCommentList.types";
 
-export default function ProductCommentListAnswerUI(props: any) {
+export default function ProductCommentListAnswerUI(
+  props: IProductCommentListAnswerUIProps
+) {
   const { data } = useQuery(FETCH_USED_ITEM_QUESTION_ANSWERS, {
     variables: { useditemQuestionId: props.el._id },
   });
@@ -31,7 +34,7 @@ export default function ProductCommentListAnswerUI(props: any) {
   }, [data]);
 
   // 대댓글 삭제
-  const onClickDelete = (event: any) => {
+  const onClickDelete = () => {
     deleteUseditemQuestionAnswer({
       variables: {
         useditemQuestionAnswerId: props.ee._id,

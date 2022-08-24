@@ -5,7 +5,7 @@ import { useRecoilState } from "recoil";
 import { getAccessToken } from "../libraries/getAccessToken";
 import { accessTokenState } from "../store";
 
-export const withAuth = (Component) => (props) => {
+export const withAuth = (Component: any) => (props: any) => {
   const router = useRouter();
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
   useEffect(() => {

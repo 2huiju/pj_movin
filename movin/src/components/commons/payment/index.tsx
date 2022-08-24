@@ -5,6 +5,7 @@ export default function PaymentPage(props: any) {
     <PaymentContainer
       data={props.data}
       setIsModalVisible={props.setIsModalVisible}
+      target={undefined}
     />
   );
 }

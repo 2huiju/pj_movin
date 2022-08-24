@@ -17,7 +17,7 @@ export default function MyPageSideBarPresenter(
         원
       </M.MyPoint>
       <M.PayMentButton onClick={props.onClickPayment}>충전하기</M.PayMentButton>
-      {props.Menu.map((el) => (
+      {props.Menu.map((el: any) => (
         <M.SubTitle
           el={el}
           activeMenu={props.activeMenu}

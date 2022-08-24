@@ -6,8 +6,9 @@ import InfiniteScroll from "react-infinite-scroller";
 import moment from "moment";
 import "moment/locale/ko";
 import TodaySidebar from "../../../commons/todaySidebar";
+import { IProductListUIProps } from "./ProductList.types";
 
-export default function ProductListUI(props: any) {
+export default function ProductListUI(props: IProductListUIProps) {
   const myImg = /^.*[.(jpg | svg | png | jpeg | gif )]$/g;
 
   return (
@@ -16,7 +17,7 @@ export default function ProductListUI(props: any) {
         <TodaySidebar />
         <S.Title>베스트 상품</S.Title>
         <S.BestItemWrapper>
-          {props.BestItemData?.fetchUseditemsOfTheBest.map((el) => (
+          {props.BestItemData?.fetchUseditemsOfTheBest.map((el: any) => (
             <S.BestBox
               key={el._id}
               onClick={props.onClickMoveToPage(`/product/${el._id}`)}
@@ -43,9 +44,7 @@ export default function ProductListUI(props: any) {
             placeholder="제목을 검색해주세요"
             onChange={props.onChangeSearch}
           ></S.SearchTitle>
-          <S.SearchButton onClick={props.onClickSearch}>
-            검색하기
-          </S.SearchButton>
+          <S.SearchButton>검색하기</S.SearchButton>
           <S.WriteButton onClick={props.onClickMoveToWrite}>
             상품 등록
           </S.WriteButton>
@@ -82,7 +81,7 @@ export default function ProductListUI(props: any) {
                       {el.name
                         .replaceAll(props.keyword, `#$%${props.keyword}#$%`)
                         .split("#$%")
-                        .map((el) => (
+                        .map((el: any) => (
                           <S.Word
                             key={uuidv4()}
                             isMatched={props.keyword === el}
@@ -94,7 +93,7 @@ export default function ProductListUI(props: any) {
                         ))}
                     </S.TitleColumn>
                     <S.Remarks>{el.remarks}</S.Remarks>
-                    <S.Tags>{el.tags.map((el) => "#" + el)}</S.Tags>
+                    <S.Tags>{el.tags.map((el: any) => "#" + el)}</S.Tags>
                     <S.Time>
                       {moment(getDateMoment(el.createdAt)).fromNow()}
                     </S.Time>

@@ -23,7 +23,7 @@ export async function getAccessToken() {
     // 3. 재발급 받은 accessToken 을 newAccessToken에 저장하기
     const newAccessToken = result.restoreAccessToken.accessToken;
     return newAccessToken;
-  } catch (error) {
+  } catch (error: any) {
     console.log(error.message);
     // refreshToken까지 만료된 상황이기 때문에 로그인 페이지로 이동시켜 줘야 함
   }

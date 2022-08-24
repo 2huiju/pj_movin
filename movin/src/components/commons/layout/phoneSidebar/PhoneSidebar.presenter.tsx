@@ -1,9 +1,12 @@
 import * as P from "./PhoneSidebar.styles";
+import { IPhoneSidebarPresenterProps } from "./PhoneSidebar.types";
 
-export default function PhoneSidebarPresenter(props) {
+export default function PhoneSidebarPresenter(
+  props: IPhoneSidebarPresenterProps
+) {
   return (
     <P.SideBarDiv sideBar={props.sideBar}>
-      {props.Menu.map((el) => (
+      {props.Menu.map((el: any) => (
         <P.SideBarTitle
           key={el}
           el={el}

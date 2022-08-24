@@ -1,8 +1,11 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import PhoneSidebarPresenter from "./PhoneSidebar.presenter";
+import { IPhoneSidebarContainerProps } from "./PhoneSidebar.types";
 
-export default function PhoneSidebarContainer(props) {
+export default function PhoneSidebarContainer(
+  props: IPhoneSidebarContainerProps
+) {
   const router = useRouter();
   const [activeMenu, setActiveMenu] = useState("");
 
@@ -15,7 +18,7 @@ export default function PhoneSidebarContainer(props) {
     { name: "상품판매", page: "/product/new" },
   ];
 
-  const onClickMenu = () => (event) => {
+  const onClickMenu = () => (event: any) => {
     setActiveMenu(event.target.id);
     router.push(event.target.id);
     props.setSideBar(false);

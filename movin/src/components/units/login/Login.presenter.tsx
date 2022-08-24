@@ -1,6 +1,7 @@
 import * as S from "./Login.styles";
+import { ILoginPagePresenterProps } from "./Login.types";
 
-export default function LoginPagePresenter(props: any) {
+export default function LoginPagePresenter(props: ILoginPagePresenterProps) {
   return (
     <form onSubmit={props.handleSubmit(props.onClickLogin)}>
       <S.Wrapper>
@@ -22,9 +23,7 @@ export default function LoginPagePresenter(props: any) {
           />
           <S.Error>{props.formState.errors.password?.message}</S.Error>
           <S.LoginBox>
-            <S.LoginButton isValid={props.formState.isValid}>
-              로그인
-            </S.LoginButton>
+            <S.LoginButton>로그인</S.LoginButton>
           </S.LoginBox>
           <S.SignUpWrapper>
             <S.SignUpFont>아직 계정이 없으신가요?</S.SignUpFont>

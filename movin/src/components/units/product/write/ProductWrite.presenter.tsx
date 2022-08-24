@@ -6,10 +6,11 @@ import { Modal } from "antd";
 import DaumPostcode from "react-daum-postcode";
 import Tags from "../../../commons/tags";
 import MapPageWrite from "../../../commons/map/productWrite";
+import { IProductWriteUIProps } from "./ProductWrite.types";
 
 // react-quill을 dynamic import 할건데, 서버사이드에서는 import 하지 않겠다 ! 라고 하는것
 
-export default function ProductWriteUI(props: any) {
+export default function ProductWriteUI(props: IProductWriteUIProps) {
   return (
     <form
       onSubmit={props.handleSubmit(
@@ -121,25 +122,18 @@ export default function ProductWriteUI(props: any) {
         <S.UploadBox>
           {props.fileUrls.map((el: any, index: any) => (
             <Uploads01
-              setFileUrls={props.setFileUrls}
-              fileUrls={props.fileUrls}
               key={uuidv4()}
               index={index}
-              files={props.files}
-              setFiles={props.setFiles}
               fileUrl={el}
               onChangeFileUrls={props.onChangeFileUrls}
             />
           ))}
         </S.UploadBox>
         <S.ButtonWrapper>
-          <S.SubmitButton2 onClick={props.onClickCancel}>취소</S.SubmitButton2>
-          <S.SubmitButton
-            isActive={props.isActive || props.isEdit}
-            isValid={props.formState.isValid}
-          >
-            {props.isEdit ? "수정" : "등록"}
-          </S.SubmitButton>
+          <S.SubmitButton2 type="button" onClick={props.onClickCancel}>
+            취소
+          </S.SubmitButton2>
+          <S.SubmitButton>{props.isEdit ? "수정" : "등록"}</S.SubmitButton>
         </S.ButtonWrapper>
       </S.Wrapper>
     </form>

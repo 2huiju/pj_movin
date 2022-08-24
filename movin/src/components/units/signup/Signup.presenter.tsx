@@ -1,5 +1,6 @@
 import * as S from "./Signup.styles";
-export default function SignupPagePresenter(props: any) {
+import { ISignupPagePresenterProps } from "./Signup.types";
+export default function SignupPagePresenter(props: ISignupPagePresenterProps) {
   return (
     <form onSubmit={props.handleSubmit(props.onClickSignup)}>
       <S.Wrapper>
@@ -48,9 +49,7 @@ export default function SignupPagePresenter(props: any) {
               "비밀번호가 일치하지 않습니다"}
           </S.Error>
           <S.ButtonWrapper>
-            <S.LoginBox isValid={props.formState.isValid}>
-              회원가입하기
-            </S.LoginBox>
+            <S.LoginBox>회원가입하기</S.LoginBox>
             <S.LoginBox2 type="button" onClick={props.onClickToCancel}>
               취소
             </S.LoginBox2>

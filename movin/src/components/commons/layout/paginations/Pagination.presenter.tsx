@@ -1,6 +1,7 @@
 import * as S from "./Pagination.styles";
+import { IPaginations01UIProps } from "./Pagination.types";
 
-export default function Paginations01UI(props: any) {
+export default function Paginations01UI(props: IPaginations01UIProps) {
   return (
     <S.Wrapper>
       <S.Button

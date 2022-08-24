@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { IPaginations01StylesProps } from "./Pagination.types";
 
 export const Wrapper = styled.div`
   width: 50%;
@@ -20,10 +21,11 @@ export const MyColumn = styled.div`
 
 export const PageSpan = styled.span`
   font-size: 17px;
-  color: ${(props: any) => (props.isActive ? "#ff3c8d" : "default")};
-  font-weight: ${(props: any) => (props.isActive ? 500 : "normal")};
+  color: ${(props: IPaginations01StylesProps) =>
+    props.isActive ? "#ff3c8d" : "default"};
+  font-weight: ${(props) => (props.isActive ? 500 : "normal")};
   margin: 0px 10px;
-  cursor: ${(props: any) => (props.isActive ? "none" : "pointer")};
+  cursor: ${(props) => (props.isActive ? "none" : "pointer")};
 `;
 
 export const Button = styled.img`

@@ -2,7 +2,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import MovieApiPagePresenter from "./MainPage.presenter";
-import { IMainPageContainerProps } from "./MainPage.types";
 
 export default function MainPageContainer() {
   const [popularKO, setPopularKO] = useState([]);
@@ -80,7 +79,7 @@ export default function MainPageContainer() {
       .catch((error) => console.log(error));
   }, []);
 
-  const onClickDetail = (item: IMainPageContainerProps) => async () => {
+  const onClickDetail = (item: any) => async () => {
     setYoutube(true);
     const result = await axios.get(
       `https://www.googleapis.com/youtube/v3/search?key=AIzaSyDYXjwMz5yTp6cK2dczmrCjKWjG49b0Sko

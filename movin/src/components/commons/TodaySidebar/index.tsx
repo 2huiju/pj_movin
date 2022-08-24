@@ -47,7 +47,7 @@ export default function TodaySidebar() {
   const [basketItems, setBasketItems] = useState([]);
   const Today = getDate(new Date()).slice(0, 10);
 
-  const onClickDetail = (el) => () => {
+  const onClickDetail = (el: any) => () => {
     router.push("/product/" + el._id);
   };
 

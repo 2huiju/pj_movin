@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { IMyPageMobileStylesProps } from "./MyPageMobile.types";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -27,7 +28,7 @@ export const SubTitle = styled.div`
     background-size: 100% 100%;
   }
 
-  background-size: ${(props) =>
+  background-size: ${(props: IMyPageMobileStylesProps) =>
     props.el.page === props.activeMenu ? "100% 100%" : "0% 100%"};
 `;
 

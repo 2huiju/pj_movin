@@ -54,11 +54,7 @@ export default function LayoutHeaderPresenter(
           )}
         </H.ButtonWrapper>
       </H.Wrapper>
-      <PhoneSidebar
-        sideBar={props.sideBar}
-        setSideBar={props.setSideBar}
-        onClickMoveToPage={props.onClickMoveToPage}
-      />
+      <PhoneSidebar sideBar={props.sideBar} setSideBar={props.setSideBar} />
     </>
   );
 }

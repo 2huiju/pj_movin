@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { useEffect } from "react";
 import { breakPoints } from "../../../../commons/styles/media";
+import { IMapPageWriteProps } from "./index.type";
 
 declare const window: typeof globalThis & {
   kakao: any;
@@ -24,7 +25,7 @@ const MapImg = styled.div`
   background-image: url(/map_default.png);
 `;
 
-export default function MapPageWrite(props) {
+export default function MapPageWrite(props: IMapPageWriteProps) {
   // 지도그리기
   useEffect(() => {
     if (props.Address !== "서울 구로구 도림천로 477") {
@@ -52,40 +53,43 @@ export default function MapPageWrite(props) {
 
           const geocoder = new window.kakao.maps.services.Geocoder();
 
-          geocoder.addressSearch(`${props.Address}`, function (result, status) {
-            // 정상적으로 검색이 완료됐으면
+          geocoder.addressSearch(
+            `${props.Address}`,
+            function (result: any, status: any) {
+              // 정상적으로 검색이 완료됐으면
 
-            if (status === window.kakao.maps.services.Status.OK) {
-              var coords = new window.kakao.maps.LatLng(
-                result[0].y,
-                result[0].x
-              );
+              if (status === window.kakao.maps.services.Status.OK) {
+                var coords = new window.kakao.maps.LatLng(
+                  result[0].y,
+                  result[0].x
+                );
 
-              props.setLat(coords.Ma);
-              props.setLng(coords.La);
+                props.setLat(coords.Ma);
+                props.setLng(coords.La);
 
-              // 결과값으로 받은 위치를 마커로 표시합니다
-              var marker = new window.kakao.maps.Marker({
-                map: map,
-                position: coords,
-              });
+                // 결과값으로 받은 위치를 마커로 표시합니다
+                var marker = new window.kakao.maps.Marker({
+                  map: map,
+                  position: coords,
+                });
 
-              // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-              map.setCenter(coords);
+                // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+                map.setCenter(coords);
 
-              window.kakao.maps.event.addListener(
-                map,
-                "click",
-                function (mouseEvent: any) {
-                  // 클릭한 위도, 경도 정보를 가져옵니다
-                  var latlng = mouseEvent.latLng;
+                window.kakao.maps.event.addListener(
+                  map,
+                  "click",
+                  function (mouseEvent: any) {
+                    // 클릭한 위도, 경도 정보를 가져옵니다
+                    var latlng = mouseEvent.latLng;
 
-                  // 마커 위치를 클릭한 위치로 옮깁니다
-                  marker.setPosition(latlng);
-                }
-              );
+                    // 마커 위치를 클릭한 위치로 옮깁니다
+                    marker.setPosition(latlng);
+                  }
+                );
+              }
             }
-          });
+          );
         });
       };
     }

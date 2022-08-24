@@ -17,14 +17,14 @@ export default function ProductList() {
   const { data, refetch, fetchMore } = useQuery(FETCH_USED_ITEMS);
   const { data: BestItemData } = useQuery(FETCH_USED_ITEM_BEST);
 
-  const onClickMoveToDetail = (el) => () => {
+  const onClickMoveToDetail = (el: any) => () => {
     console.log(el);
     router.push(`/product/${el._id}`);
 
     const baskets = JSON.parse(localStorage.getItem("baskets") || "[]");
     console.log(baskets);
 
-    const temp = baskets.filter((basketsEl) => basketsEl._id === el._id);
+    const temp = baskets.filter((basketsEl: any) => basketsEl._id === el._id);
 
     if (temp.length === 1) {
       return;

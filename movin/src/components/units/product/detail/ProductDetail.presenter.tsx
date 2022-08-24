@@ -3,8 +3,9 @@ import Dompurify from "dompurify";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import MapPageDetail from "../../../commons/map/productDetail";
+import { IProductDetailUIProps } from "./ProductDetail.types";
 
-export default function ProductDetailUI(props) {
+export default function ProductDetailUI(props: IProductDetailUIProps) {
   const myImg = /^.*[.(jpg | svg | png | jpeg | gif )]$/g;
 
   const settings = {
@@ -22,10 +23,10 @@ export default function ProductDetailUI(props) {
   return (
     <S.Wrapper>
       <S.BoardWrapper>
-        {props.data?.fetchUseditem.images.filter((el) => el !== "").length >
-        1 ? (
+        {props.data?.fetchUseditem.images.filter((el: any) => el !== "")
+          .length > 1 ? (
           <S.CarouselSlide {...settings}>
-            {props.data?.fetchUseditem.images.map((el) => (
+            {props.data?.fetchUseditem.images.map((el: any) => (
               <S.Image
                 key={el.index}
                 src={
@@ -66,22 +67,10 @@ export default function ProductDetailUI(props) {
           <S.ButtonBox>
             {props.isBuying ? (
               <>
-                <S.ListButton
-                  onClick={props.onClickHeart}
-                  isBuying={props.isBuying}
-                >
+                <S.ListButton onClick={props.onClickHeart}>
                   ♡ 찜 {props.data?.fetchUseditem.pickedCount}
                 </S.ListButton>
-                <S.ListButton
-                  onClick={props.onClickBasket}
-                  isBuying={props.isBuying}
-                >
-                  장바구니
-                </S.ListButton>
-                <S.ListButton
-                  onClick={props.onClickBuying}
-                  isBuying={props.isBuying}
-                >
+                <S.ListButton onClick={props.onClickBuying}>
                   구매하기
                 </S.ListButton>
               </>
@@ -116,7 +105,7 @@ export default function ProductDetailUI(props) {
       </S.BottomWrapper>
       <S.Hr></S.Hr>
       <S.ButtonWrapper>
-        <S.ListButton onClick={props.onClickMoveTolist}>목록으로</S.ListButton>
+        <S.ListButton onClick={props.onClickMoveToList}>목록으로</S.ListButton>
       </S.ButtonWrapper>
     </S.Wrapper>
   );

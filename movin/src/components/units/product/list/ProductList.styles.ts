@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
+import { IProductStylesProps } from "./ProductList.types";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -409,7 +410,8 @@ export const WriteButton = styled.button`
 `;
 
 export const Word = styled.span`
-  color: ${(props: any) => (props.isMatched ? "#ff3c8d" : "default")};
+  color: ${(props: IProductStylesProps) =>
+    props.isMatched ? "#ff3c8d" : "default"};
   font-weight: 500;
   font-size: 30px;
 `;

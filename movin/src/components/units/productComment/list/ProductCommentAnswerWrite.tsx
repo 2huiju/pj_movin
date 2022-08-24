@@ -11,17 +11,23 @@ import {
   UPDATE_USED_ITEM_QUESTION_ANSWER,
 } from "./ProductCommentList.queries";
 import { useState } from "react";
+import {
+  IProductCommentListAnswerWriteProps,
+  IupdateUseditemQuestionAnswerInputProps,
+} from "./ProductCommentList.types";
 
 const schema = yup.object({
   contents: yup.string().required("필수 입력 사항"),
 });
 
-export default function ProductCommentListAnswerWrite(props: any) {
+export default function ProductCommentListAnswerWrite(
+  props: IProductCommentListAnswerWriteProps
+) {
   useQuery(FETCH_USED_ITEM_QUESTION_ANSWERS, {
     variables: { useditemQuestionId: props.el._id },
   });
 
-  const [conLength, setConLength] = useState(0);
+  const [conLength, setConLength] = useState("");
 
   //수정하기에 담아둘 아이디
   const [createUseditemQuestionAnswer] = useMutation(
@@ -32,12 +38,12 @@ export default function ProductCommentListAnswerWrite(props: any) {
     UPDATE_USED_ITEM_QUESTION_ANSWER
   );
 
-  const { register, handleSubmit, formState, reset } = useForm({
+  const { register, handleSubmit, reset } = useForm({
     resolver: yupResolver(schema),
     mode: "onChange",
   });
 
-  const onChangeContentsLength = (event) => {
+  const onChangeContentsLength = (event: any) => {
     setConLength(event.target.value);
   };
 
@@ -58,7 +64,7 @@ export default function ProductCommentListAnswerWrite(props: any) {
       ],
     });
     reset();
-    setConLength(0);
+    setConLength("");
     props.setIsAnswer(false);
     Modal.success({
       content: "문의 답변 작성 완료되었습니다",
@@ -73,7 +79,10 @@ export default function ProductCommentListAnswerWrite(props: any) {
       return;
     }
 
-    const updateUseditemQuestionAnswerInput = {};
+    const updateUseditemQuestionAnswerInput: IupdateUseditemQuestionAnswerInputProps =
+      {
+        contents: "",
+      };
     if (data.contents)
       updateUseditemQuestionAnswerInput.contents = data.contents;
 
@@ -117,7 +126,7 @@ export default function ProductCommentListAnswerWrite(props: any) {
             ) : (
               <S.CommentLength>0/100</S.CommentLength>
             )}
-            <S.CommentButton isValid={formState.isValid}>
+            <S.CommentButton>
               {props.isEdit ? "수정" : "답변"}하기
             </S.CommentButton>
           </S.CommentBox>

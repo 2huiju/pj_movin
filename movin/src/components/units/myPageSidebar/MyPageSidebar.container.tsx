@@ -21,7 +21,7 @@ export default function MyPageSideBarContainer() {
     { name: "찜한 영화", page: "/myPageHeartMovie" },
   ];
 
-  const onClickMenu = () => (event) => {
+  const onClickMenu = () => (event: any) => {
     setActiveMenu(event.target.id);
     router.push(event.target.id);
   };

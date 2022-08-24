@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../commons/styles/media";
+import { IMyPageSideBarStylesProps } from "./MyPageSidebar.types";
 
 export const Wrapper = styled.div`
   width: 20%;
@@ -34,7 +35,7 @@ export const SubTitle = styled.div`
     background-size: 100% 100%;
   }
 
-  background-size: ${(props) =>
+  background-size: ${(props: IMyPageSideBarStylesProps) =>
     props.el.page === props.activeMenu ? "100% 100%" : "0% 100%"};
 `;
 

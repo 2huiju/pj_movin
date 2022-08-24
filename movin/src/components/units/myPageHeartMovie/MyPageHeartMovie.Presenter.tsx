@@ -1,12 +1,15 @@
 import * as M from "./MyPageHeartMovie.Styles";
 import { HeartTwoTone } from "@ant-design/icons";
+import { IMyPageHeartMoviePresenterProps } from "./MyPageHeartMovie.types";
 
-export default function MyPageHeartMoviePresenter(props) {
+export default function MyPageHeartMoviePresenter(
+  props: IMyPageHeartMoviePresenterProps
+) {
   return (
     <M.Wrapper>
       <M.Title>내가 찜한 영화</M.Title>
       <M.GridWrap>
-        {props.heartMovie.map((el) => (
+        {props.heartMovie.map((el: any) => (
           <>
             <M.ItemWrap key={el.id}>
               <M.RowWrap>

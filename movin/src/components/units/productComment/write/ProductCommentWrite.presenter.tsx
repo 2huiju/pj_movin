@@ -1,7 +1,10 @@
 import * as S from "./ProductCommentWrite.styles";
 import { FormOutlined } from "@ant-design/icons";
+import { IProductCommentWriteUIProps } from "./ProductCommentWrite.types";
 
-export default function ProductCommentWriteUI(props: any) {
+export default function ProductCommentWriteUI(
+  props: IProductCommentWriteUIProps
+) {
   return (
     <form
       onSubmit={props.handleSubmit(
@@ -26,7 +29,7 @@ export default function ProductCommentWriteUI(props: any) {
           ) : (
             <S.CommentLength>0/100</S.CommentLength>
           )}
-          <S.CommentButton isValid={props.formState.isValid}>
+          <S.CommentButton>
             {props.isEdit ? "수정" : "문의"}하기
           </S.CommentButton>
           <S.Error>{props.contentsError}</S.Error>

@@ -92,9 +92,9 @@ function ProductWrite(props: any) {
       });
       reset();
       console.log(result);
-      alert("등록 성공");
       router.push("/product/" + result.data.createUseditem._id);
-    } catch (error) {
+      Modal.success({ content: "상품이 등록되었습니다" });
+    } catch (error: any) {
       Modal.error({ content: error.message });
     }
   };
@@ -152,8 +152,8 @@ function ProductWrite(props: any) {
     });
     reset();
     console.log(result);
-    alert("수정 성공");
     router.push("/product/" + result.data.updateUseditem._id);
+    Modal.success({ content: "상품이 수정되었습니다" });
   };
 
   useEffect(() => {
@@ -170,7 +170,9 @@ function ProductWrite(props: any) {
 
   useEffect(() => {
     if (props.fetchData?.fetchUseditem.tags.length) {
-      setTags([...props.fetchData?.fetchUseditem.tags.map((el) => el.name)]);
+      setTags([
+        ...props.fetchData?.fetchUseditem.tags.map((el: any) => el.name),
+      ]);
     }
   }, [props.fetchData]);
 
@@ -200,6 +202,10 @@ function ProductWrite(props: any) {
       setTags={setTags}
       setLat={setLat}
       setLng={setLng}
+      onClickCancel={undefined}
+      setFiles={undefined}
+      files={undefined}
+      handleOk={undefined}
     />
   );
 }

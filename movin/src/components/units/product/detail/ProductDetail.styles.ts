@@ -339,7 +339,7 @@ export const ListButton = styled.div`
   }
   cursor: pointer;
 
-  width: ${(props) => (props.isBuying ? "30%" : "48%")};
+  width: 48%;
 
   @media ${breakPoints.mobile} {
     height: 50px;

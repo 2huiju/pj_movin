@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
 
-export default function MovieDetailPage1(props) {
+export default function MovieDetailPage1(props: any) {
   return (
     <DetailBox onMouseLeave={props.onClickCancelDetail}>
       <Poster src="/Banner/Avatar/avatarposter.jpeg" />

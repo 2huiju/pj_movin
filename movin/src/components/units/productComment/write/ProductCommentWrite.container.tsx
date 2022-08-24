@@ -11,12 +11,16 @@ import * as yup from "yup";
 import { FETCH_USED_ITEM_QUESTIONS } from "../list/ProductCommentList.queries";
 import { Modal } from "antd";
 import { useState } from "react";
+import {
+  IProductCommentWriteProps,
+  IupdateUseditemQuestionInputProps,
+} from "./ProductCommentWrite.types";
 
 const schema = yup.object({
   contents: yup.string().required("필수 입력 사항"),
 });
 
-export default function ProductCommentWrite(props: any) {
+export default function ProductCommentWrite(props: IProductCommentWriteProps) {
   const router = useRouter();
 
   const [createUseditemQuestion] = useMutation(CREATE_USED_ITEM_QUESTION);
@@ -24,14 +28,14 @@ export default function ProductCommentWrite(props: any) {
   const [conLength, setConLength] = useState(0);
 
   //댓글 패치해서 받아오기
-  const { data: fetchData } = useQuery(FETCH_USED_ITEM_QUESTIONS, {
+  useQuery(FETCH_USED_ITEM_QUESTIONS, {
     //요청이 날아감(비어있는 상태 undefined)
     variables: { useditemId: router.query.Product },
     //해당 게시글의 아이디로 댓글 목록을 불러오기
     //    ↑ gql에서 지정하는 값
   });
 
-  const onChangeContentsLength = (event) => {
+  const onChangeContentsLength = (event: any) => {
     setConLength(event.target.value);
   };
 
@@ -77,7 +81,9 @@ export default function ProductCommentWrite(props: any) {
       return;
     }
 
-    const updateUseditemQuestionInput = {};
+    const updateUseditemQuestionInput: IupdateUseditemQuestionInputProps = {
+      contents: "",
+    };
     if (data.contents) updateUseditemQuestionInput.contents = data.contents;
 
     await updateUseditemQuestion({
@@ -107,9 +113,9 @@ export default function ProductCommentWrite(props: any) {
       register={register}
       handleSubmit={handleSubmit}
       formState={formState}
-      fetchData={fetchData}
       isEdit={props.isEdit}
       el={props.el}
+      contentsError={undefined}
     />
   );
 }

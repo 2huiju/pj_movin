@@ -1,11 +1,12 @@
 import * as S from "./MypagePoint.styles";
 import { getDate } from "../../../commons/libraries/utils";
+import { IMyPagePointPresenterProps } from "./MypagePoint.types";
 
-export default function MyPagePresenter(props) {
+export default function MyPagePresenter(props: IMyPagePointPresenterProps) {
   return (
     <S.Wrapper>
       <S.ButtonWrapper>
-        {props.Menu.map((el) => (
+        {props.Menu.map((el: any) => (
           <S.FetchButton
             key={el}
             el={el}

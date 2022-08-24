@@ -10,15 +10,17 @@ export default function MyPageHeartMovieContainer() {
     setHeartMovie(hearts);
   }, []);
 
-  const onClickCancelHeart = (el) => () => {
+  const onClickCancelHeart = (el: any) => () => {
     try {
       const hearts = JSON.parse(localStorage.getItem("HeartMovie") || "[]");
-      const temp = hearts.filter((basketsEl) => basketsEl.id !== el.id);
+      const temp = hearts.filter(
+        (basketsEl: { id: any }) => basketsEl.id !== el.id
+      );
 
       localStorage.setItem("HeartMovie", JSON.stringify(temp));
 
       window.location.replace("/myPageHeartMovie");
-    } catch (error) {
+    } catch (error: any) {
       console.log(error.message);
     }
 

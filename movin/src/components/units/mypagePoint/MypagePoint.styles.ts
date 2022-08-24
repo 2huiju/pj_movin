@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../commons/styles/media";
+import { IIMyPagePointStylesProps } from "./MypagePoint.types";
 
 export const Wrapper = styled.div`
   width: 80%;
@@ -42,7 +43,7 @@ export const FetchButton = styled.div`
   margin-bottom: 30px;
   margin-right: 10px;
 
-  font-weight: ${(props) =>
+  font-weight: ${(props: IIMyPagePointStylesProps) =>
     props.el.name === props.activeMenu ? "500" : "400"};
 
   text-decoration: ${(props) =>

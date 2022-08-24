@@ -1,19 +1,13 @@
 import { DatePicker, Space } from "antd";
-import moment from "moment";
 import { useState } from "react";
-import { getDate } from "../../../commons/libraries/utils";
 
 export default function DatePickerPage() {
-  const dateFormat = "YYYY-MM-DD";
-
-  const Today = getDate(new Date()).slice(0, 10);
-
   const [startDate, setStartDate] = useState(
     new Date(1900, 2, 1).toISOString()
   );
   const [endDate, setEndDate] = useState(new Date().toISOString());
 
-  const onChangeStartDate = (date, dateString) => {
+  const onChangeStartDate = (date: any, dateString: any) => {
     if (date === null) {
       const aaa = new Date(1900, 2, 1);
       setStartDate(aaa.toISOString());
@@ -24,7 +18,7 @@ export default function DatePickerPage() {
     console.log(startDate);
   };
 
-  const onChangeEndDate = (date, dateString) => {
+  const onChangeEndDate = (date: any, dateString: any) => {
     if (date === null) {
       const aaa = new Date(3000, 2, 1);
       setEndDate(aaa.toISOString());
