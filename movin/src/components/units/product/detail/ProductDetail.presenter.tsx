@@ -32,7 +32,7 @@ export default function ProductDetailUI(props: IProductDetailUIProps) {
                 src={
                   new RegExp(myImg, "i").test(el)
                     ? `https://storage.googleapis.com/${el}`
-                    : "/movin.png"
+                    : "/commons/movin.png"
                 }
               />
             ))}
@@ -42,7 +42,7 @@ export default function ProductDetailUI(props: IProductDetailUIProps) {
             src={
               new RegExp(myImg, "i").test(props.data?.fetchUseditem.images[0])
                 ? `https://storage.googleapis.com/${props.data?.fetchUseditem.images[0]}`
-                : "/movin.png"
+                : "/commons/movin.png"
             }
           />
         )}

@@ -68,7 +68,7 @@ export const SearchTitle = styled.input`
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  background-image: url(/freeboard_search.png);
+  background-image: url(/commons/search.png);
   background-repeat: no-repeat;
   background-position: 20px;
 
@@ -255,7 +255,7 @@ export const WriteButton = styled.button`
   background: #ffffff;
   border: 1px solid #f2f2f2;
   border-radius: 10px;
-  background-image: url(/freeboard_pen.png);
+  background-image: url(/commons/pen.png);
   background-repeat: no-repeat;
   background-position: 20px;
   font-weight: 500;

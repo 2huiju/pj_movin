@@ -21,7 +21,7 @@ export default function BoardListPresenter(props: IBoardListUIProps) {
                 src={
                   new RegExp(myImg, "i").test(el.images[0])
                     ? `https://storage.googleapis.com/${el.images[0]}`
-                    : "/movin.png"
+                    : "/commons/movin.png"
                 }
               />
               <S.BestContentBox>

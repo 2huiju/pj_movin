@@ -22,7 +22,7 @@ const MapWrapper = styled.div`
 const MapImg = styled.div`
   margin-top: 20px;
   height: 264px;
-  background-image: url(/map_default.png);
+  background-image: url(/commons/map_default.png);
 `;
 
 export default function MapPageWrite(props: IMapPageWriteProps) {

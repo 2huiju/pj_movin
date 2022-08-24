@@ -18,7 +18,7 @@ export default function PaymentPresenter(props: IPaymentPresenterProps) {
         </Head>
         <P.CancelImg
           onClick={props.handleCancel}
-          src="/delete.png"
+          src="/payment/delete.png"
         ></P.CancelImg>
         <P.Title>충전하실 금액을 선택해주세요</P.Title>
         <P.MoneyWrapper>

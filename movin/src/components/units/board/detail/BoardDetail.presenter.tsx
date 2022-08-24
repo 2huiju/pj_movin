@@ -56,14 +56,14 @@ export default function BoardDetailPresenter(props: IBoardRoutedUIProps) {
           <S.FooterWrapper>
             <S.Like>
               <S.LikeIcon
-                src="/freeboard_likeicon.svg"
+                src="/boardDetail/likeicon.svg"
                 onClick={props.onClickLike}
               />
               <S.LikeCount>{props.data?.fetchBoard.likeCount}</S.LikeCount>
             </S.Like>
             <S.DisLike>
               <S.DislikeIcon
-                src="/freeboard_dislikeicon.svg"
+                src="/boardDetail/dislikeicon.svg"
                 onClick={props.onClickDislike}
               />
               <S.DislikeCount>

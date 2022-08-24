@@ -42,6 +42,7 @@ export const CarouselSlide = styled(Slider)`
 
   @media ${breakPoints.mobile} {
     display: flex;
+    justify-content: center;
     width: 90%;
     margin-right: 0;
   }
@@ -232,6 +233,10 @@ export const Image = styled.img`
   width: 35%;
   height: 500px;
   margin-right: 30px;
+
+  @media ${breakPoints.mobile} {
+    width: 90%;
+  }
 `;
 
 export const Image2 = styled.img`
