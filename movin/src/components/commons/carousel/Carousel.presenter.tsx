@@ -39,7 +39,7 @@ export default function CarouselPresenter(props: ICarouselPresenterProps) {
               상세보기
             </S.DetailButton>
             <S.YoutubeImg
-              src="/Banner/AvatarTrailer.gif"
+              src="/banner/AvatarTrailer.gif"
               onClick={props.onClickCancelDetail}
             ></S.YoutubeImg>
           </S.ContainBox>
@@ -52,7 +52,7 @@ export default function CarouselPresenter(props: ICarouselPresenterProps) {
               상세보기
             </S.DetailButton>
             <S.YoutubeImg
-              src="/Banner/AvengersTrailer.gif"
+              src="/banner/AvengersTrailer.gif"
               onClick={props.onClickCancelDetail}
             ></S.YoutubeImg>
           </S.ContainBox>
@@ -66,7 +66,7 @@ export default function CarouselPresenter(props: ICarouselPresenterProps) {
               상세보기
             </S.DetailButton>
             <S.YoutubeImg
-              src="/Banner/JurassicTrailer.gif"
+              src="/banner/JurassicTrailer.gif"
               onClick={props.onClickCancelDetail}
             ></S.YoutubeImg>
           </S.ContainBox>
