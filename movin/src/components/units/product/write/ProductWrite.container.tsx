@@ -119,7 +119,6 @@ function ProductWrite(props: any) {
       Modal.warning({
         content: "수정한 내용이 없습니다",
       });
-      // alert("수정한 내용이 없습니다");
       return;
     }
 

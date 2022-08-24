@@ -100,6 +100,7 @@ export default function ProductCommentListAnswerUI(
         <ProductCommentListAnswerWrite
           isEdit={true}
           setisEdit={setisEdit}
+          // @ts-ignore
           data={data}
           el={props.el}
           ee={props.ee}

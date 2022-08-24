@@ -55,6 +55,7 @@ export default function BoardRoutingUI(props: IBoardWriteUIProps) {
         </S.InputWrapper>
         <S.InputWrapper>
           <S.Label>내용</S.Label>
+          {/* @ts-ignore */}
           <ToastUi
             onChangeContents={props.onChangeContents}
             editorRef={props.editorRef}

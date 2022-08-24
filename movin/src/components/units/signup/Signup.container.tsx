@@ -5,6 +5,7 @@ import { CREATE_USER } from "./Signup.queries";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
+import { Modal } from "antd";
 
 const schema = yup.object({
   email: yup
@@ -50,8 +51,8 @@ export default function SignUpPageContainer() {
             },
           },
         });
-        alert("회원가입 성공");
         router.push("/login");
+        Modal.success({ content: "회원가입 되었습니다" });
         console.log(result);
       } catch (error) {
         console.log(error);

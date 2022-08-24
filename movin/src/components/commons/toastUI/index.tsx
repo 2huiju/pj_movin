@@ -11,6 +11,7 @@ export default function ToastUi(props: IToastUIProps) {
   // useRef
 
   return (
+    // @ts-ignore
     <Editor
       onChange={props.onChangeContents}
       previewStyle="vertical"

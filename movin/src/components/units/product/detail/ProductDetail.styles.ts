@@ -29,6 +29,7 @@ export const BoardWrapper = styled.div`
   }
 `;
 
+// @ts-ignore
 export const CarouselSlide = styled(Slider)`
   width: 35%;
   height: 500px;

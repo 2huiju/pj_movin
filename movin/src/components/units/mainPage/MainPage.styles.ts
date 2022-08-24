@@ -20,6 +20,7 @@ export const Title = styled.div`
   padding-left: 10px;
 `;
 
+// @ts-ignore
 export const CarouselSlide = styled(Slider)`
   width: 100%;
   display: flex;

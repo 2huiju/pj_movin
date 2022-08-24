@@ -101,7 +101,11 @@ export default function ProductDetailUI(props: IProductDetailUIProps) {
           )}
         </S.ContentDiv>
         <S.Name>거래지역</S.Name>
-        <MapPageDetail Address={props.Address} />
+        <MapPageDetail
+          Address={props.Address}
+          setLng={undefined}
+          setLat={undefined}
+        />
       </S.BottomWrapper>
       <S.Hr></S.Hr>
       <S.ButtonWrapper>

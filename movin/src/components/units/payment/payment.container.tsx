@@ -1,4 +1,5 @@
 import { useMutation } from "@apollo/client";
+import { Modal } from "antd";
 import { ChangeEvent, useState } from "react";
 import PaymentPresenter from "./payment.presenter";
 import { CREATE_POINT_TRANSACTION_OF_LOADING } from "./payment.queries";
@@ -64,12 +65,12 @@ export default function PaymentContainer(props: IPaymentContainerProps) {
               },
             });
             console.log(result);
-            alert("충전완료");
+            Modal.success({ content: "충전이 완료되었습니다" });
           } catch (error) {
             console.log(error);
           }
         } else {
-          alert("결제 실패");
+          Modal.error({ content: "결제에 실패했습니다" });
         }
       }
     );

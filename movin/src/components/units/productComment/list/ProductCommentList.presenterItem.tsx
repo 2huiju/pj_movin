@@ -151,6 +151,7 @@ export default function ProductCommentListUIItem(
           isEdit={true}
           setisEdit={setisEdit}
           el={props.el}
+          // @ts-ignore
           data={data}
         />
       )}
