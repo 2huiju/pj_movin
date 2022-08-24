@@ -9,6 +9,7 @@ function MyPageProfile() {
 
   return (
     <div style={{ display: "flex", height: "1000px" }}>
+      {/* @ts-ignore */}
       <MyPageSideBarPage PointData={PointData} refetch={refetch} />
       <MyPageProfileContainer />
     </div>

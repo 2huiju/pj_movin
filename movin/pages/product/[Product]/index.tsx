@@ -16,9 +16,11 @@ export default function ProductDetailPage() {
   return (
     <>
       <div style={{ display: "flex" }}>
+        {/* @ts-ignore */}
         <ProductDetail isEdit={false} />
         <TodaySidebar />
       </div>
+      {/* @ts-ignore */}
       <ProductCommentWrite />
       <ProductCommentList Itemdata={data} />
     </>

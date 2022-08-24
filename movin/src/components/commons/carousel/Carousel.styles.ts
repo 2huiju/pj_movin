@@ -82,6 +82,7 @@ export const SubTitle = styled.div`
   }
 `;
 
+// @ts-ignore
 export const BannerSlide = styled(Slider)`
   width: 100%;
   margin-bottom: 30px;

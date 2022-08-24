@@ -31,7 +31,9 @@ export default function DatePickerPage() {
 
   return (
     <Space direction="vertical" size={12}>
+      {/* @ts-ignore */}
       <DatePicker onChange={onChangeStartDate} />
+      {/* @ts-ignore */}
       <DatePicker onChange={onChangeEndDate} />
       {/* <RangePicker
         defaultValue={[moment(Today, dateFormat), moment(Today, dateFormat)]}

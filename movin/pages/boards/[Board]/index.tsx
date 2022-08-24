@@ -16,7 +16,9 @@ const Wrapper = styled.div`
 export default function StaticRoutedPage() {
   return (
     <Wrapper>
+      {/* @ts-ignore */}
       <BoardDetailContainer isEdit={false} />
+      {/* @ts-ignore */}
       <BoardCommentWrite />
       <BoardCommentList />
     </Wrapper>

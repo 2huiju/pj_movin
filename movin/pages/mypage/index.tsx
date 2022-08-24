@@ -38,6 +38,7 @@ export default function MyPage() {
   return (
     <>
       <MobileWrapper>
+        {/* @ts-ignore */}
         <MyPageMobileContainer PointData={PointData} />
       </MobileWrapper>
       <Wrapper>

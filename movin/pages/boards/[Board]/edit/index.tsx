@@ -31,5 +31,6 @@ export default function EditPage() {
     variables: { boardId: router.query.Board },
   });
 
+  // @ts-ignore
   return <BoardWriteContainer isEdit={true} boardData={data} data={data} />;
 }
