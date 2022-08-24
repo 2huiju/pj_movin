@@ -30,7 +30,7 @@ function MyPagePoint() {
     <>
       <Wrapper>
         <MyPageSideBarPage />
-        <MyPagePointContainer PointData={PointData} />;
+        <MyPagePointContainer PointData={PointData} />
       </Wrapper>
     </>
   );

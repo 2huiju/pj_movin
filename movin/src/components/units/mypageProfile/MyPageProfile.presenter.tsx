@@ -5,8 +5,8 @@ export default function MyPageProfilePresenter(
   props: IMyPageProfilePresenterProps
 ) {
   return (
-    <form onSubmit={props.handleSubmit(props.onClickResetPassword)}>
-      <S.Wrapper>
+    <S.Wrapper>
+      <form onSubmit={props.handleSubmit(props.onClickResetPassword)}>
         <S.InputTitle>비밀번호 변경</S.InputTitle>
         <S.InputWrapper>
           <S.InputContents>현재 비밀번호</S.InputContents>
@@ -39,7 +39,7 @@ export default function MyPageProfilePresenter(
         <S.ButtonWrapper>
           <S.SubmitButton>비밀번호 변경</S.SubmitButton>
         </S.ButtonWrapper>
-      </S.Wrapper>
-    </form>
+      </form>
+    </S.Wrapper>
   );
 }
