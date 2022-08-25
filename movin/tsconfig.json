@@ -27,6 +27,7 @@
     "pages/boards/index.tsx",
     "pages/boards/[Board]/index.tsx",
     "pages/boards/[Board]/edit/index.tsx",
+    "pages/product/[Product]/index.tsx",
     "src/components/units/board/write/BoardWrite.styles.ts",
     "src/components/units/board/write/BoardWrite.queries.ts",
     "src/components/units/board/write/BoardWrite_presenter.tsx",
