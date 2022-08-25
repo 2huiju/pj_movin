@@ -4,11 +4,9 @@ import { HeartOutlined, FormOutlined } from "@ant-design/icons";
 export default function BoardCommentWritePresenter(props: any) {
   return (
     <form
-      onSubmit={
-        props.isEdit
-          ? props.handleSubmit(props.onClickUpdate)
-          : props.handleSubmit(props.onClickUploadComment)
-      }
+      onSubmit={props.handleSubmit(
+        props.isEdit ? props.onClickUpdate : props.onClickUploadComment
+      )}
     >
       <S.Wrapper>
         <S.CommentTitleBox>
