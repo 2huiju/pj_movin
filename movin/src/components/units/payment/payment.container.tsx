@@ -54,7 +54,7 @@ export default function PaymentContainer(props: IPaymentContainerProps) {
         buyer_tel: "010-4242-4242",
         buyer_addr: "서울특별시 구로구 구로동",
         buyer_postcode: "01181",
-        m_redirect_url: "http://localhost:3000/mypage",
+        m_redirect_url: "https:/huiju.today/mypagePoint",
       },
       async (rsp: any) => {
         if (rsp.success) {
