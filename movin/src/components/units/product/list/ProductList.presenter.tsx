@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import InfiniteScroll from "react-infinite-scroller";
 import moment from "moment";
 import "moment/locale/ko";
+// @ts-ignore
 import TodaySidebar from "../../../commons/todaySidebar";
 import { IProductListUIProps } from "./ProductList.types";
 
