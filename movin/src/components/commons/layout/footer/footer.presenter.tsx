@@ -1,4 +1,5 @@
 import TopButton from "../../buttons/TopButton";
+// @ts-ignore
 import InquireKaKao from "../../inquire";
 import * as F from "./footer.styles";
 
