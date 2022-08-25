@@ -1,6 +1,5 @@
 import TopButton from "../../buttons/TopButton";
-// @ts-ignore
-import InquireKaKao from "../../inquire";
+import KaKaoChatPage from "../../kakaoChat";
 import * as F from "./footer.styles";
 
 export default function FooterPresenter() {
@@ -24,7 +23,7 @@ export default function FooterPresenter() {
           </F.LeftBox>
           <F.RightBox>
             <F.RightSubBox>
-              <InquireKaKao />
+              <KaKaoChatPage />
             </F.RightSubBox>
             <F.inquireBox>
               <F.Title>MOVIN 고객센터</F.Title>

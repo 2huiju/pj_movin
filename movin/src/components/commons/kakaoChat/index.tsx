@@ -11,7 +11,7 @@ const KaKaoChat = styled.div`
 `;
 const KaKaoChannel = styled.div``;
 
-export default function InquireKaKao() {
+export default function KaKaoChatPage() {
   useEffect(() => {
     const script = document.createElement("script");
     script.async = true;
