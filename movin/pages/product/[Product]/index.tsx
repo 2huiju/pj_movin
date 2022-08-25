@@ -4,7 +4,7 @@ import ProductDetail from "../../../src/components/units/product/detail/ProductD
 import { FETCH_USED_ITEM } from "../../../src/components/units/product/detail/ProductDetail.queries";
 import ProductCommentList from "../../../src/components/units/productComment/list/ProductCommentList.container";
 import ProductCommentWrite from "../../../src/components/units/productComment/write/ProductCommentWrite.container";
-import TodaySidebarPage from "../../../src/components/commons/todaySidebar";
+// import TodaySidebarPage from "../../../src/components/commons/todaySidebar";
 
 export default function ProductDetailPage() {
   const router = useRouter();
@@ -18,7 +18,7 @@ export default function ProductDetailPage() {
       <div style={{ display: "flex" }}>
         {/* @ts-ignore */}
         <ProductDetail isEdit={false} />
-        <TodaySidebarPage />
+        {/* <TodaySidebarPage /> */}
       </div>
       {/* @ts-ignore */}
       <ProductCommentWrite />
