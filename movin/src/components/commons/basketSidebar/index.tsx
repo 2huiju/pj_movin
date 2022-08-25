@@ -42,7 +42,7 @@ const Image = styled.img`
   height: 90px;
 `;
 
-export default function TodaySidebarPage() {
+export default function BasketSidebarPage() {
   const router = useRouter();
   const [basketItems, setBasketItems] = useState([]);
   const Today = getDate(new Date()).slice(0, 10);

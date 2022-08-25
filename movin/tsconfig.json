@@ -35,9 +35,7 @@
     "src/components/units/board/list/BoardList.styles.ts",
     "src/components/units/board/list/BoardList.queries.ts",
     "src/components/units/board/list/BoardList.presenter.tsx",
-    "src/components/units/board/list/BoardList.container.tsx",
-    "src/components/commons/todaySidebar/index.tsx",
-    "src/components/commons/inquire/index.tsx"
+    "src/components/units/board/list/BoardList.container.tsx"
   ],
   "exclude": ["node_modules"]
 }

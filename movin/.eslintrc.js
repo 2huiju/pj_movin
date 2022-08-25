@@ -20,7 +20,5 @@ module.exports = {
     "array-callback-return": "off",
     "spaced-comment": "off",
     "no-useless-return": "off",
-    "react/no-unescaped-entities": "off",
-    "@next/next/no-page-custom-font": "off",
   },
 };
